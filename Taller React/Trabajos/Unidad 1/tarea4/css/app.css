@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.contenedor{
+    margin-top: 4em;
+}
+.fondo{
+    margin-bottom: 1em;
+    background-color: aqua;
+    border-radius:1%;
+}
+.imagen{
+    display:flex;
+    align-items: left;
+    width: 8em;
+}
+.titulo{
+    color:rgb(6, 201, 6);
+    font-weight:bold;
+    font-size: 6em;
+    display:flex;
+    align-items: left;
+}
+
+.btn {
+    width: 18em;
+    height: 5em;
+    max-width: 100%;
+}
