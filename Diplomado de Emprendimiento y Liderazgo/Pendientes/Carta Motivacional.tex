@@ -1,0 +1,78 @@
+\documentclass[12pt,a4paper,sans]{moderncv}        % posibles opciones de tamaño de fuente ('10pt', '11pt' and '12pt'), papel ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') y familia de fuentes ('sans' and 'roman')
+
+% temas moderncv
+\moderncvstyle{casual}                             % Los estilos disponibles son 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % las opciones de color son 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\renewcommand{\familydefault}{\sfdefault}         % descomentar al inicio de la línea para definir la fuente por defecto; use '\sfdefault' para sans serif por defecto, '\rmdefault' para roman, o cualquier otro nombre de fuente instalada en sus sistema
+\nopagenumbers{}                                  % descomente para eliminar el numerado automático de las páginas en cartas de más de una página
+
+% Codificación de carácteres
+\usepackage[utf8]{inputenc}                        % Si no esta usando xelatex o lualatex, remplace por la codificación que este usando
+%\usepackage{CJKutf8}                              % descomente si necesita usar CJK para escribir su carta en Chino, Japones or Koreano
+\usepackage[spanish, english]{babel}			   % comentar si su carta esta escrita en un idioma diferente del Español
+\usepackage{ragged2e}
+
+
+% Configuración de márgenes
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % descomente si quiere modificar el ancho de columna para la fecha
+%\setlength{\makecvtitlenamewidth}{10cm}           % para el estilo 'classic', si quiere forzar el ancho del nombre. la longitud es normalmente calculada para evitar sobrelapamientos con su información personal; descomente esta línea bajo su propio riesgo
+
+% Información personal
+\name{Abraham}{Marianjel Sepúlveda}
+\title{Estudiante Ingeniería Civil Informática}   % opcional, remover o comentar si no quiere que aparezca su título personal
+\address{Baltazar Hernández 999}{3930515}{Chile}% opcional, remover o comentar si no quiere que aparezca sus datos de ubicación; el código postal y país son argumentos que puede omitirse o pasarse vacíos
+\phone[mobile]{+56999044562}		                   % opcional, remover o comentar si no quiere incluir su número de móvil
+%\phone[fixed]{3115483925}       		           % opcional, remover o comentar si no quiere incluir su número de teléfono fijo
+%\phone[fax]{+3~(456)~789~012}                      % opcional, remover o comentar si no quiere incluir su número de fax
+\email{abraham.marianjel@gmail.com}                               % opcional, remover o comentar si no quiere incluir su dirección de email
+%\homepage{https://www.facebook.com/Abraham13071993}                         % opcional, remover o comentar si no quiere incluir su dirección web
+%\extrainfo{información adicional}                  % opcional, remover o comentar si no quiere información adicional
+\photo[64pt][0.4pt]{imágen}                        % opcional, remover o comentar si no quiere incluir su fotografía o logosímbolo; '64pt' es la algura de la imágen, 0.4pt es el grosor del cuadro al rededor de la imágen (indique 0pt para no utilizar recuadro), 'imágen' es la ubicación y nombre del archivo de imágen a incluir
+%\quote{Some quote}      % opcional, remover o comentar si no quiere una frase o cita
+
+% para mostrar etiquetas numéricas en la bibliografía (por defecto no se muestran etiquecas); descomente las siguientes líneas solo si usa referencias bibliográficas en su carta
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]} % Considere reemplazar la línea 44 con esta
+
+% bibliografía con múltiples entradas
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+\lhead{\includegraphics[scale=0.11]{../../../../Logos FACE/logo-face.png}  }
+
+%----------------------------------------------------------------------------------
+%            contenido
+%----------------------------------------------------------------------------------
+\begin{document}
+%-----       carta ---------------------------------------------------------
+% Datos del destinatario
+\recipient{\bigskip  \bigskip Diplomados y Talleres de Formación\\ \textit{Diplomado Emprendimiento y Liderazgo}}{Andrés Bello 720, Chillán}
+%\date{05 de Diciembre del 2019}
+\opening{Estimada Marisela Fonseca Fuentes:}
+\closing{\hspace{1em} Gracias por su tiempo y consideración, espero poder ser parte del grupo del Diplomado y poder adquirir los nuevos conocimientos para mi futuro.\\
+\\Atentamente,}
+%\enclosure[Anexos]{Título de los anexos}          % opcional, remover o comentar si no incluye anexos 
+\makelettertitle
+
+\justify
+\hspace{1em} Junto con un cordial saludo y esperando que se encuentre bien, me es grato manifestarle mi interés en poder acceder al Diplomado de Emprendimiento y Liderazgo de la Universidad del Bio Bio que se imparte en el campus Fernando May de Chillán.\par
+
+\hspace{1em}Mi nombre es Abraham Marianjel y fue un placer conocerla a través de video llamada el otro día. \par
+
+\hspace{1em}En este periodo me encuentro cursando último año de Ingeniería Civil Informática en la Universidad en el campus Fernando May y me apasiona la idea de aprovechar adquirir habilidades y formación que la carrera no contempla, pero que la Unidad de Formación Integral ofrece para crecer como estudiante y profesional. \par
+
+\hspace{1em}He tenido la oportunidad de participar en actividades que están relacionadas con el titulo del diplomado, pero siento la necesidad de perfeccionarme en esa área para realizar las actividades con mayor sustento y profundidad, todo esto relacionado con mi área. \par
+
+\hspace{1em}Me gustaría perfeccionar mis habilidades y a futuro poder liderar equipos de trabajo para la empresa que estaré trabajando o para quizás mi propia empresa. \par
+
+\hspace{1em}Sería una gran ayuda en mi carrera profesional acceder al Diplomado y estoy muy motivado para contribuir con mis conocimientos al momento de realizar actividades creativas o de análisis con equipos multidisciplinarios en el diplomado. \par
+
+\makeletterclosing
+\begin{center}
+	\includegraphics[scale=0.04]{../../../../../Administración/Mi firma 2.png}  \\
+	\emph{Estudiante de Ingeniería Civil informática }
+\end{center}
+
+\end{document}
