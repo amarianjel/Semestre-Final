@@ -1,0 +1,350 @@
+    \hypertarget{decision-tree---testeo-del-algoritmo}{%
+\section{Decision Tree - Testeo del
+algoritmo}\label{decision-tree---testeo-del-algoritmo}}
+
+El testing tiene la finalidad de llevar a cabo la prueba si el modelo
+funciona correctamente, identificando riesgos o erros que se produjeron
+en los datos. No se realizará ajustes posteriores al testing para poder
+comparar los algoritmos en la sección de resultados.
+
+    \hypertarget{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}{%
+\subsection{Predicciones sobre los datos del testing y métricas de
+rendimiento}\label{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}}
+
+Ahora es momento de evaluar los datos ya entrenados con el testing. Las
+métricas de rendimiento nos ofrecerán información de cómo se comportó el
+algoritmo durante el entrenamiento, dando a conocer valores importantes
+como lo son la precisión, exhaustividad, valor-F.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{60}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Tests \PYZhy{} Presición :}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{metrics}\PY{o}{.}\PY{n}{accuracy\PYZus{}score}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{prediccionTests}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Tests \PYZhy{} Reporte de clasificación:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{metrics}\PY{o}{.}\PY{n}{classification\PYZus{}report}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{prediccionTests}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Tests - Presición : 0.8333333333333334
+Tests - Reporte de clasificación:
+               precision    recall  f1-score   support
+
+           0       0.83      0.83      0.83         6
+           1       0.83      0.83      0.83         6
+
+    accuracy                           0.83        12
+   macro avg       0.83      0.83      0.83        12
+weighted avg       0.83      0.83      0.83        12
+
+    \end{Verbatim}
+
+    La precisión de los datos del testing en el modelo tiene un valor de
+83\% en ambos estados. La exhaustividad en el estado 0 alcanza un 83\%.
+Por otra parte, el F1 combina los valores de precisión y exhaustividad
+obteniéndose un 83\%.
+
+Lo que se busca es la precisión del modelo, por consecuencia, el
+Algoritmo de ML Decision Tree tiene una precisión del
+83,3\% de predicción.
+
+    \hypertarget{matriz-de-confusiuxf3n}{%
+\subsection{Matriz de Confusión}\label{matriz-de-confusiuxf3n}}
+
+Evaluaremos la matriz de confusión que se elaboró con los datos del
+testing.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{61}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{matriz} \PY{o}{=} \PY{n}{confusion\PYZus{}matrix}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{prediccionTests}\PY{p}{)}
+
+\PY{n}{plot\PYZus{}confusion\PYZus{}matrix}\PY{p}{(}\PY{n}{conf\PYZus{}mat}\PY{o}{=}\PY{n}{matriz}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{,} \PY{n}{show\PYZus{}normed}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{center}
+    	\begin{figure}[H]
+	\centering
+    \adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{Decision Tree - Arbol de Decisión/output_101_0.png}
+	\caption{Matriz de confusión de testing Decision Tree}
+	\label{fig:mctdt}
+	\end{figure}
+\end{center}
+    
+    En la matriz de confusión \ref{fig:mctdt} (1, 1) podemos observar el resultado en el que
+el modelo predice correctamente la clase positiva con un alto valor y en
+el (2, 2) el resultado donde el modelo predice correctamente la clase
+negativa también con un alto valor, acercándose a la misma de la clase
+positiva. Los demás elementos de la matriz contienen valor pequeño,
+estos son los errores de la predicción.
+
+Las afirmaciones anteriores sugieren que la las predicciones son altas y
+el error es muy pequeño en la predicción.
+
+    \hypertarget{decision-tree---uso-del-algoritmo}{%
+\section{Decision Tree - Uso del
+algoritmo}\label{decision-tree---uso-del-algoritmo}}
+
+El último paso de la metodología es el uso del algoritmo, nosotros lo
+utilizaremos para desarrollar probabilidades en los predictores. No
+todos los modelos poseen los mismos métodos ni atributos, por ende, se
+tratará de realizar comparaciones con métodos similares entre sí.
+
+    \hypertarget{importancia-de-los-predictores}{%
+\subsection{Importancia de los
+predictores}\label{importancia-de-los-predictores}}
+
+Por experiencia previa y contemplando los gráficos producidos en el paso
+3, sabemos que algunas características no son útiles para nuestro
+problema de predicción. Reducir la cantidad de funciones será la mejor
+alternativa, lo que acotará el tiempo de ejecución, con suerte sin
+comprometer significativamente el rendimiento, asi podemos examinar la
+importancia de las funciones de nuestro modelo. La importancia de cada
+predictor en el modelo se calcula como la reducción total (normalizada)
+en el criterio de división. Si un predictor no ha sido seleccionado en
+ninguna división, no se ha incluido en el modelo y por lo tanto su
+importancia es 0.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{62}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Predicciones probabilísticas}
+\PY{c+c1}{\PYZsh{} =======================================}
+\PY{c+c1}{\PYZsh{} Con .predict\PYZus{}proba() se obtiene, para cada observación, la probabilidad predicha}
+\PY{c+c1}{\PYZsh{} de pertenecer a cada una de las dos clases.}
+\PY{n}{predicciones} \PY{o}{=} \PY{n}{dtc}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}
+\PY{n}{predicciones} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{predicciones}\PY{p}{,} \PY{n}{columns} \PY{o}{=} \PY{n}{dtc}\PY{o}{.}\PY{n}{classes\PYZus{}}\PY{p}{)}
+\PY{n}{predicciones}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{table}[H]
+\centering
+\setlength{\tabcolsep}{10pt}
+\resizebox{0.2\textwidth}{!}{
+\begin{tabular}{|c|l|l|}
+\hline
+\multicolumn{1}{|l|}{} & \multicolumn{1}{c|}{\textbf{0}} & \multicolumn{1}{c|}{\textbf{1}} \\ \hline \hline
+\textbf{0} & 0 & 1 \\ \hline
+\textbf{1} & 1 & 0 \\ \hline
+\textbf{2} & 1 & 0 \\ \hline
+\textbf{3} & 1 & 0 \\ \hline
+\textbf{4} & 0 & 1 \\ \hline
+\textbf{5} & 0 & 1 \\ \hline
+\textbf{6} & 0 & 1 \\ \hline
+\textbf{7} & 1 & 0 \\ \hline
+\textbf{8} & 0 & 1 \\ \hline
+\textbf{9} & 0 & 1 \\ \hline
+\textbf{10} & 1 & 0 \\ \hline
+\textbf{11} & 1 & 0 \\ \hline
+\end{tabular}%
+}
+\caption{Predicciones probabilísticas para cada observación Decision Tree
+}
+\label{tab:clasificacin dt}
+\end{table}
+        
+    Según la tabla \ref{tab:clasificacin dt} la predicción probabilistica en los estados 0 y 1 tuvo éxito al momento
+de la desición. Los resultados arrojados son exactos.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{63}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Predicciones con clasificación final}
+\PY{c+c1}{\PYZsh{} =====================================}
+\PY{c+c1}{\PYZsh{} Con .predict() se obtiene, para cada observación, la clasificación predicha por}
+\PY{c+c1}{\PYZsh{} el modelo. Esta clasificación se corresponde con la clase con mayor probabilidad.}
+\PY{n}{predicciones} \PY{o}{=} \PY{n}{dtc}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}
+\PY{n}{predicciones} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{predicciones}\PY{p}{)}
+\PY{n}{predicciones}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{table}[H]
+\centering
+\setlength{\tabcolsep}{10pt}
+\resizebox{0.15\textwidth}{!}{
+\begin{tabular}{|c|l|}
+\hline
+\multicolumn{1}{|l|}{} & \multicolumn{1}{c|}{\textbf{0}} \\ \hline
+\textbf{0} & 1 \\ \hline
+\textbf{1} & 0 \\ \hline
+\textbf{2} & 0 \\ \hline
+\textbf{3} & 0 \\ \hline
+\textbf{4} & 1 \\ \hline
+\textbf{5} & 1 \\ \hline
+\textbf{6} & 1 \\ \hline
+\textbf{7} & 0 \\ \hline
+\textbf{8} & 1 \\ \hline
+\textbf{9} & 1 \\ \hline
+\textbf{10} & 0 \\ \hline
+\textbf{11} & 0 \\ \hline
+\end{tabular}%
+}
+\caption{Predicciones probabilísticas con clasificación final Decision Tree}
+\label{tab:clasificacion dt}
+\end{table}
+        
+    Se observa en la tabla \ref{tab:clasificacion dt} un valor binario de 0 o 1, donde se muestra cada variable
+desarrollada en el modelo puede tomar dicho valor. El valor 0 demuestra
+que la tupla no logra predecir el estado 0 de la variable predictora, y
+por el contrario, el estado 1 es que logra la predicción del estado en
+esa tupla. Como reflejo de la tabla, éxiste un gran poder de predicción.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{64}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{importancia\PYZus{}predictores} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}
+                            \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Predictor}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{dataset}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{n}{columns} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{NIHSS\PYZus{}alta\PYZus{}ESTABLE\PYZus{}O\PYZus{}GRAVE}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{columns}\PY{p}{,}
+                             \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{importancia}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{dtc}\PY{o}{.}\PY{n}{feature\PYZus{}importances\PYZus{}}\PY{p}{\PYZcb{}}
+                            \PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Importancia de los predictores en el modelo}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{importancia\PYZus{}predictores}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{importancia}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{ascending}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{table}[H]
+\centering
+\setlength{\tabcolsep}{5pt}
+\resizebox{0.8\textwidth}{!}{
+\begin{tabular}{|c|l|l|}
+\hline
+\multicolumn{1}{|l|}{} & \multicolumn{1}{c|}{\textbf{Predictor}} & \multicolumn{1}{c|}{\textbf{importancia}} \\ \hline
+\textbf{11} & NIHSS\_alta\_cat & 0,419841 \\ \hline
+\textbf{10} & NIHSS alta ACV & 0,215873 \\ \hline
+\textbf{13} & CONTEO G.B.\_cat & 0,208163 \\ \hline
+\textbf{17} & GLUCOSA\_cat & 0,156122 \\ \hline
+\textbf{0} & HTA & 0 \\ \hline
+\textbf{14} & INR\_cat & 0 \\ \hline
+\textbf{23} & NIHSS\_INICIO\_cat\_Moderado (Buen Pronostico) & 0 \\ \hline
+\textbf{22} & NIHSS\_INICIO\_cat\_Leve (Trombolisando) & 0 \\ \hline
+\textbf{21} & NIHSS\_INICIO\_cat\_Grave & 0 \\ \hline
+\textbf{20} & NIHSS\_INICIO\_cat\_Déficit Mínimo & 0 \\ \hline
+\textbf{19} & NIHSS\_INICIO\_cat\_Déficit Importante & 0 \\ \hline
+\textbf{18} & EDAD\_cat & 0 \\ \hline
+\textbf{16} & COL. TOTAL\_cat & 0 \\ \hline
+\textbf{15} & TRIGLICERIDOS\_cat & 0 \\ \hline
+\textbf{12} & GLASGOW\_cat & 0 \\ \hline
+\textbf{1} & DIABETES & 0 \\ \hline
+\textbf{9} & NIHSS INICO ACV & 0 \\ \hline
+\textbf{8} & GLASGOW AL INICO ACV & 0 \\ \hline
+\textbf{7} & CONTEO G.B. & 0 \\ \hline
+\textbf{6} & INR & 0 \\ \hline
+\textbf{5} & TRIGLICERIDOS & 0 \\ \hline
+\textbf{4} & COL. TOTAL & 0 \\ \hline
+\textbf{3} & GLUCOSA & 0 \\ \hline
+\textbf{2} & EDAD & 0 \\ \hline
+\textbf{24} & NIHSS\_INICIO\_cat\_Sin Déficit & 0 \\ \hline
+\end{tabular}%
+}
+\caption{Importancia de los predictores Decision Tree}
+\label{tab:importancia predictor dt}
+\end{table}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{65}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Get numerical feature importances}
+\PY{n}{importances} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n}{dtc}\PY{o}{.}\PY{n}{feature\PYZus{}importances\PYZus{}}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} List of tuples with variable and importance}
+\PY{n}{feature\PYZus{}importances} \PY{o}{=} \PY{p}{[}\PY{p}{(}\PY{n}{feature}\PY{p}{,} \PY{n+nb}{round}\PY{p}{(}\PY{n}{importance}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)} \PY{k}{for} \PY{n}{feature}\PY{p}{,} \PY{n}{importance} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{feature\PYZus{}list}\PY{p}{,} \PY{n}{importances}\PY{p}{)}\PY{p}{]}
+\PY{c+c1}{\PYZsh{} Sort the feature importances by most important first}
+\PY{n}{feature\PYZus{}importances} \PY{o}{=} \PY{n+nb}{sorted}\PY{p}{(}\PY{n}{feature\PYZus{}importances}\PY{p}{,} \PY{n}{key} \PY{o}{=} \PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{reverse} \PY{o}{=} \PY{k+kc}{True}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Reset style }
+\PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fivethirtyeight}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} lista de x ubicaciones para trazar}
+\PY{n}{x\PYZus{}values} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{importances}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Gráfico de barras}
+\PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x\PYZus{}values}\PY{p}{,} \PY{n}{importances}\PY{p}{,} \PY{n}{orientation} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{vertical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{edgecolor} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linewidth} \PY{o}{=} \PY{l+m+mf}{1.2}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Marque las etiquetas para el eje x}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{n}{x\PYZus{}values}\PY{p}{,} \PY{n}{feature\PYZus{}list}\PY{p}{,} \PY{n}{rotation}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{vertical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Etiquetas de eje y título}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Importancia}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Variable}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Importancia de Variables}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{center}
+    	\begin{figure}[H]
+	\centering
+
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Decision Tree - Arbol de Decisión/output_110_0.png}
+	\caption{Importancia de los predictores en Decision Tree}
+	\label{fig:ipdt}
+	\end{figure}
+\end{center}
+    
+    Las variables que presentan gran importancia al momento de la predicción según la tabla \ref{tab:importancia predictor dt} y el gráfico \ref{fig:ipdt}
+son ``NIHSS\_alta\_cat'', ``NIHSS alta ACV'', ``CONTEO G.B.\_cat'' y
+``GLUCOSA\_cat'' con más del 98\%, siendo que el mayor predictor esta
+con un 41,9\% que es ``NIHSS\_alta\_cat. Se ve reflejado en el grafico
+la gran importancia que representan las variables mencionadas para el
+modelo.
+
+    \hypertarget{importancia-acumulada}{%
+\subsection{Importancia acumulada}\label{importancia-acumulada}}
+
+Ahora reduciremos la cantidad de funciones en uso por el modelo a solo
+aquellas requeridas para representar el 95\% de la importancia. Se debe
+usar el mismo número de características en los conjuntos de
+entrenamiento y prueba.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{66}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Lista de funciones ordenadas de mayor a menor importancia}
+\PY{n}{sorted\PYZus{}importances} \PY{o}{=} \PY{p}{[}\PY{n}{importance}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{k}{for} \PY{n}{importance} \PY{o+ow}{in} \PY{n}{feature\PYZus{}importances}\PY{p}{]}
+\PY{n}{sorted\PYZus{}features} \PY{o}{=} \PY{p}{[}\PY{n}{importance}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{k}{for} \PY{n}{importance} \PY{o+ow}{in} \PY{n}{feature\PYZus{}importances}\PY{p}{]}
+
+\PY{c+c1}{\PYZsh{} Importancias acumulativas}
+\PY{n}{cumulative\PYZus{}importances} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{cumsum}\PY{p}{(}\PY{n}{sorted\PYZus{}importances}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Haz un gráfico de líneas}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}values}\PY{p}{,} \PY{n}{cumulative\PYZus{}importances}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Dibujar línea al 95\PYZpc{} de importancia retenida}
+\PY{n}{plt}\PY{o}{.}\PY{n}{hlines}\PY{p}{(}\PY{n}{y} \PY{o}{=} \PY{l+m+mf}{0.95}\PY{p}{,} \PY{n}{xmin}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{xmax}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sorted\PYZus{}importances}\PY{p}{)}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linestyles} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dashed}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Formato x ticks y etiquetas}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{n}{x\PYZus{}values}\PY{p}{,} \PY{n}{sorted\PYZus{}features}\PY{p}{,} \PY{n}{rotation} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{vertical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Etiquetas de eje y título}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Variable}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Importancia acumulada}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Importancia acumulada}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{center}
+    	\begin{figure}[H]
+	\centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Decision Tree - Arbol de Decisión/output_113_0.png}
+	\caption{Importancia de los predictores acumulada en Decision Tree}
+	\label{fig:ipadt}
+	\end{figure}
+\end{center}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{67}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Encuentre el número de características para una importancia acumulada del 95\PYZpc{}}
+\PY{c+c1}{\PYZsh{} Agregue 1 porque Python está indexado a cero}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Número de columna para el 95 }\PY{l+s+si}{\PYZpc{} d}\PY{l+s+s1}{e importancia:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{cumulative\PYZus{}importances} \PY{o}{\PYZgt{}} \PY{l+m+mf}{0.95}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Número de columna para el 95 \% de importancia: 4
+    \end{Verbatim}
+
+    En el gráfico \ref{fig:ipadt} de importancia acumulada la curva se dispara con la
+``GLUCOSA\_cat'' y se ratifica con el resultado del 95\% de importancia
+medido anteriormente.
+
+
+    % Add a bibliography block to the postdoc
+

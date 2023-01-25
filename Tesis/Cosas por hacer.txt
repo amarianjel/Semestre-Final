@@ -1,0 +1,42 @@
+carta gant
+planificación
+jupiter
+indice
+carta gant
+informe he implementacion del algoritmo
+algoritmos no supervisados - random forest en salud
+crear carpeta con google drive
+estructura del informe
+
+
+Proxima semana, una de las tecnicas explicaciones libreria SKLEARN
+libreria de python
+googlecolab
+(AD+BAYES+RF) en salud (Google scholar) o Paper with code
+-(escoger 5 papers) y leerlos para el próx lunes
+
+
+
+template ovelift
+generica la primera
+urdoboard tesis
+
+leer 
+preprocesar eliminar o hacer ajustes datos nulos, se eliminan los vacios y los que quedan se normalizan
+missin data - funciones para la normalizacion dadas
+depues algoritmos de machine
+en los objetivos debe tener un PARA.
+Objetivo general falta un a TRAVES DE. Como, para quien.
+
+
+
+\begin{table*}[htb]
+\centering
+\setlength{\tabcolsep}{5pt}
+\resizebox{1.0\textwidth}{!}{
+	
+}
+\caption{}
+\label{tab:my-table}
+\end{table*}
+

@@ -1,0 +1,91 @@
+Logistic Regression
+Decision Tree
+Random Forest
+NIHSS
+Naïve Bayes
+Artificial Neural Networks
+
+
+    \hypertarget{distibuciuxf3n-de-diabetes-e-hipertensiuxf3n}{%
+\subsection{Distibución de Diabetes e
+Hipertensión}\label{distibuciuxf3n-de-diabetes-e-hipertensiuxf3n}}
+
+Las variables de Hipertensión y Diabetes ya poseian un valor binario
+como resultado, en este caso tiene un tercer valor que es el de
+desconocido por que son datos que no se pueden predecir.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{57}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+
+\PY{n}{sns}\PY{o}{.}\PY{n}{violinplot}\PY{p}{(}
+        \PY{n}{x}     \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{DIABETES}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+        \PY{n}{y}     \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NIHSS alta ACV}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+        \PY{n}{data}  \PY{o}{=} \PY{n}{dataset}\PY{p}{,}
+        \PY{c+c1}{\PYZsh{}color = \PYZdq{}white\PYZdq{},}
+        \PY{n}{ax}    \PY{o}{=} \PY{n}{ax}
+    \PY{p}{)}
+
+\PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Distribución Diabetes por NIHSS escala de alta}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{;}
+
+\PY{n}{fig}\PY{p}{,} \PY{n}{ax2} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+
+\PY{n}{sns}\PY{o}{.}\PY{n}{violinplot}\PY{p}{(}
+        \PY{n}{x}     \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{HTA}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+        \PY{n}{y}     \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NIHSS alta ACV}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+        \PY{n}{data}  \PY{o}{=} \PY{n}{dataset}\PY{p}{,}
+        \PY{c+c1}{\PYZsh{}color = \PYZdq{}white\PYZdq{},}
+        \PY{n}{ax}    \PY{o}{=} \PY{n}{ax2}
+    \PY{p}{)}
+
+\PY{n}{ax2}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Distribución Hipertensión por NIHSS escala de alta}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{;}
+
+\PY{n}{fig}\PY{p}{,} \PY{n}{ax2} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+
+\PY{n}{sns}\PY{o}{.}\PY{n}{violinplot}\PY{p}{(}
+        \PY{n}{x}     \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{HTA}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+        \PY{n}{y}     \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{DIABETES}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+        \PY{n}{data}  \PY{o}{=} \PY{n}{dataset}\PY{p}{,}
+        \PY{c+c1}{\PYZsh{}color = \PYZdq{}white\PYZdq{},}
+        \PY{n}{ax}    \PY{o}{=} \PY{n}{ax2}
+    \PY{p}{)}
+
+\PY{n}{ax2}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Distribución Hipertensión por Diabetes}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{center}
+    	\begin{figure}[H]
+	\centering
+    \adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{AplicacionComunMetodo/output_114_0.png}
+	\caption{Escala de Diabetes por escala de NIHSS alta ACV}
+	\label{fig:dNIHSS}
+	\end{figure}
+\end{center}
+    
+ \begin{center}
+    	\begin{figure}[H]
+	\centering
+    \adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{AplicacionComunMetodo/output_114_1.png}
+	\caption{Distribución Hipertensión por escala NIHSS alta ACV}
+	\label{fig:hNISS}
+	\end{figure}
+\end{center}
+    
+\begin{center}
+    	\begin{figure}[H]
+	\centering
+    \adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{AplicacionComunMetodo/output_114_2.png}
+	\caption{Distribución de Hipertensión sobre Diabetes}
+	\label{fig:dhd}
+	\end{figure}
+\end{center}
+    
+    La distribución de la Diabetes e Hipertensión es inversa en la escala de
+alta de los pacientes. El gráfico \ref{fig:dNIHSS} y \ref{fig:hNISS} muestra que en su mayoría los
+pacientes que poseen diabetes tienen un pronóstico al alta más
+favorable, en cambio los que poseen hipertensión tienen un pronóstico
+menos favorable. Sin embargo, en el gráfico \ref{fig:dhd} la distribución de pacientes es muy
+pronunciada hacía que los pacientes poseen las dos enfermedades en
+conjunto.

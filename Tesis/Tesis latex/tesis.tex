@@ -1,0 +1,74 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage[spanish,es-tabla]{babel}% Cambia el idioma de ingles a español
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,hmargin={3cm,2.5cm},vmargin={2.5cm,2.5cm}]{geometry}
+\usepackage{amsfonts} % if you want blackboard bold symbols e.g. for real numbers
+\usepackage{graphicx} % if you want to include jpeg or pdf pictures
+%-------letra grande-----------------------
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+\usepackage{lettrine}
+%-----------------------------
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{lipsum}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{blindtext}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{eso-pic}
+\usepackage{lipsum}
+\usepackage{longtable}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{lipsum}
+
+\include{paquetes}
+
+
+\date{\today}	
+%-------Bibliografia-----------------------
+%\usepackage{natbib}
+%-------Formato----------------------------
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\leftmark} % En las p\'{a}ginas impares, parte izquierda del encabezado, aparecer\'{a} el nombre de cap\'{\i}tulo
+\fancyhead[RE]{\rightmark} % En las p\'{a}ginas pares, parte derecha del encabezado, aparecer\'{a} el nombre de secci\'{o}n
+\fancyfoot[C]{\thepage} % N\'{u}meros de p\'{a}gina en el centro
+
+
+\begin{document}
+	%Portada
+	\include{caratula}
+	
+	\include{agradecimientos-frase-resumen-indices}
+
+	% Introducción
+	\include{chapter1}
+	
+	% Marco Teórico
+	\include{chapter2}
+
+	% Trabajos Relacionados
+	\include{chapter3}
+	
+	% Estudio Empírico
+	\include{chapter4}
+	
+	% Resultados
+	\include{chapter5}
+
+	% Discusiones y Conclusiones
+	\include{chapter6}
+	
+	% Bibliografia
+	\include{bibliografia}
+	
+
+\end{document} 

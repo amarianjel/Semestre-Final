@@ -1,0 +1,6 @@
+primer avance:
+3 bases de datos.
+lenguaje R
+metodo empirico:
+missing data:  Perdida de información, con una funcion de data, revision bibliografica para la perdida de información
+Evaluar más de un dataset y hacer una comparativa, documentarla el contexto y la fuente con la info que se maneja.

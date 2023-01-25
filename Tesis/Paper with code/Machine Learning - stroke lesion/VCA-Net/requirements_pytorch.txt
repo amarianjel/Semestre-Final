@@ -1,0 +1,13 @@
+coremltools
+torch
+torchvision
+torchsummary
+tensorboard
+nibabel
+simpleitk
+scikit-learn
+scikit-image
+h5py
+pandas
+matplotlib
+medpy

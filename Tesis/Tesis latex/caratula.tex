@@ -1,0 +1,97 @@
+%========================================================= %
+%================begin of title page====================== %
+% The frontmatter environment for everything that comes with roman numbering\
+%============================================= %
+\newenvironment{frontmatter}{}{}
+\begin{frontmatter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{titlepage}
+%\AddToShipoutPictureBG{%  es para poner un pdf
+		\begin{tikzpicture}[overlay,remember picture]
+			\draw[line width=4pt]
+			($ (current page.north west) + (1cm,-1cm) $)
+    		rectangle
+    		($ (current page.south east) + (-1cm,1cm) $);
+			\draw[line width=1.5pt]
+    		($ (current page.north west) + (1.2cm,-1.2cm) $)
+    		rectangle
+    		($ (current page.south east) + (-1.2cm,1.2cm) $);
+		\end{tikzpicture}
+%}
+		\begin{center}
+
+%--------------------Logo Portada------------------------
+			\begin{center}
+				\begin{figure}[h]  %h means here other options t , b, p, etc.
+					\centering
+					\includegraphics[scale=0.5]{img/logosimbologia.png} 
+				\end{figure}
+				\large UNIVERSIDAD DEL BIO BIO\\ \vspace{0.2cm}
+				FACULTAD DE CIENCIAS EMPRESARIALES\\ \vspace{0.2cm}
+				DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN Y TECNOLOGÍAS DE LA INFORMACIÓN
+			\end{center} \vspace{1cm}
+
+%--------------------Titulo------------------------------
+			\begin{center}
+				\begin{Huge}
+				
+					{\textbf{"{ANÁLISIS} DE DATOS EN PACIENTES POST ACV-ISQUÉMICO, USANDO TÉCNICAS CLÁSICAS DE MACHINE LEARNING"}}
+					
+				\end{Huge}
+			\end{center}
+
+			\vspace{3cm}
+			\textit{\large AUTOR}\\[0.5cm]
+			\begin{large}
+				\textbf{\large ABRAHAM MARIANJEL SEPÚLVEDA}\\[1.5cm]
+			\end{large}
+				\textbf{AÑO ACADÉMICO 2022}\\[0.5cm]	
+				{\large \today}
+			
+				\vfill
+		\end{center}
+	\end{titlepage}
+%-----------------------------------
+	\newpage{\ }
+	\thispagestyle{empty}
+%--------Profesores---------------------------------------
+	\begin{flushleft}
+	%\renewcommand{\arraystretch}{1.8}
+	\doublespacing %para que las dos columnas queden iguales
+	%\scalebox{1.5}[2]{}
+		\begin{tabular}{ l | l l l}
+			\multirow{2}{2.8cm}{\textbf{\large Profesora Guía}} & {\textbf{\large Dr. Carola Andrea Figueroa Flores}}\\
+			& {Doctor en Informática con Mención Cum Loude}\\
+			& {Dpto. Ciencias de la Computación y Tecnologías de la Información}\\
+			\vspace{1.5cm}
+			& {Universidad del Bio Bio}\\
+			
+			\multirow{4}{2.8cm}{\textbf{\large Profesores Co-Guía}} & {\textbf{\large Dr. Carlos Alonso Escudero Orozco}}\\
+			& {Doctor en Ciencias Médicas}\\
+			& {Dpto. Ciencias Básicas}\\
+			& {Universidad del Bio Bio}\\
+			\\
+			&{\textbf{\large Dr. Andrés Ignacio Rodríguez Morales}}\\
+			& {Doctor en Ciencias Biológicas}\\
+			& {Dpto. Ciencias Básicas}\\
+			\vspace{1.5cm}
+			& {Universidad del Bio Bio}\\
+
+			\multirow{3}{3.4cm}{\textbf{\large Comité Proyecto de Título}} & {\textbf{\large Mg. Marlene Elena Muñoz Sepúlveda}}\\
+			& {Magíster en Informática Educativa}\\
+			& {Dpto. Ciencias de la Computación y Tecnologías de la Información}\\
+			& {Universidad del Bio Bio}\\
+
+		\end{tabular}\par
+	\end{flushleft}
+	
+
+	\vspace{1cm}
+	\begin{minipage}[t]{15cm}
+		Este documento esta elavorado por el autor usando \LaTeX. 				\includegraphics[scale=0.19]{img/logo-face.png}  \\
+		El trabajo en este documento se llevo a cabo para obtener el título de Ingeniero Civil en Informática de la Universidad del Bio Bio, sede Chillán.\\
+	\par Copyright © 2023 por \textit{Abraham Marianjel Sepúlveda}.
+	\end{minipage}
+	
+% The frontmatter environment for everything that comes with roman numbering %
+\end{frontmatter}

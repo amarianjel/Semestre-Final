@@ -1,0 +1,196 @@
+    \hypertarget{nauxefve-bayes---testeo-del-algoritmo}{%
+\section{Naïve Bayes - Testeo del
+algoritmo}\label{nauxefve-bayes---testeo-del-algoritmo}}
+
+El testing tiene la finalidad de llevar a cabo la prueba si el modelo
+funciona correctamente, identificando riesgos o erros que se produjeron
+en los datos. No se realizará ajustes posteriores al testing para poder
+comparar los algoritmos en la sección de resultados.
+
+    \hypertarget{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}{%
+\subsection{Predicciones sobre los datos del testing y métricas de
+rendimiento}\label{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}}
+
+Ahora es momento de evaluar los datos ya entrenados con el testing. Las
+métricas de rendimiento nos ofrecerán información de cómo se comportó el
+algoritmo durante el entrenamiento, dando a conocer valores importantes
+como lo son la precisión, exhaustividad, valor-F.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{59}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Tests \PYZhy{} Precisión :}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{metrics}\PY{o}{.}\PY{n}{accuracy\PYZus{}score}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{prediccionTests}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Tests \PYZhy{} Reporte de clasificación:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{metrics}\PY{o}{.}\PY{n}{classification\PYZus{}report}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{prediccionTests}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Tests - Precisión : 0.5833333333333334
+Tests - Reporte de clasificación:
+               precision    recall  f1-score   support
+
+           0       0.55      1.00      0.71         6
+           1       1.00      0.17      0.29         6
+
+    accuracy                           0.58        12
+   macro avg       0.77      0.58      0.50        12
+weighted avg       0.77      0.58      0.50        12
+
+    \end{Verbatim}
+
+    La precisión de los datos del testing en el modelo tiene un valor de 55\% de predicción y 100\% de presicción respectivamente, la exhaustividad en el estado 0 alcanza el 100\% de los datos y en el estado 1 alcanza el 17\%.  Por otra parte, el F1 combina los valores de precisión y exhaustividad obteniéndose un 71\% en el estado 0 y un 29\% en el estado 1. 
+
+Lo que se busca es la precisión del modelo, por consecuencia, el Algoritmo de ML Naïve Bayes tiene una precisión del 58.3\% de predicción.
+
+    \hypertarget{matriz-de-confusiuxf3n}{%
+\subsection{Matriz de Confusión}\label{matriz-de-confusiuxf3n}}
+
+Evaluaremos la matriz de confusión que se elaboró con los datos del
+testing.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{60}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{matriz} \PY{o}{=} \PY{n}{confusion\PYZus{}matrix}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{prediccionTests}\PY{p}{)}
+
+\PY{n}{plot\PYZus{}confusion\PYZus{}matrix}\PY{p}{(}\PY{n}{conf\PYZus{}mat}\PY{o}{=}\PY{n}{matriz}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{,} \PY{n}{show\PYZus{}normed}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{center}
+    	\begin{figure}[H]
+	\centering
+    \adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{Naive Bayes/output_98_0.png}
+	\caption{Matriz de confusión de testing Naive Bayes}
+	\label{fig:mctnb}
+	\end{figure}
+\end{center}
+    
+    En la matriz de confusión \ref{fig:mctnb} (1 , 1) podemos observar el resultado en el
+que el modelo predice correctamente la clase positiva y en el (2, 2) el
+resultado donde el modelo predice correctamente la clase negativa. En el
+elemento (1, 2) el modelo predice incorrectamente la clase positiva
+cuando en realidad es negativa con un valor bajo y en el elemento (2 ,
+1) el modelo predice incorrectamente la clase negativa cuando en
+realidad es positiva.
+
+Las afirmaciones anteriores sugieren que la las predicciones son altas,
+pero también existen errores en la predicción.
+
+    \hypertarget{nauxefve-bayes---uso-del-algoritmo}{%
+\section{Naïve Bayes - Uso del
+algoritmo}\label{nauxefve-bayes---uso-del-algoritmo}}
+
+El último paso de la metodología es el uso del algoritmo, nosotros lo
+utilizaremos para desarrollar probabilidades en los predictores. No
+todos los modelos poseen los mismos métodos ni atributos, por ende, se
+tratará de realizar comparaciones con métodos similares entre sí.
+
+    \hypertarget{importancia-de-los-predictores}{%
+\subsection{Importancia de los
+predictores}\label{importancia-de-los-predictores}}
+
+Por experiencia previa y contemplando los gráficos producidos en el paso
+3, sabemos que algunas características no son útiles para nuestro
+problema de predicción. Reducir la cantidad de funciones será la mejor
+alternativa, lo que acotará el tiempo de ejecución, con suerte sin
+comprometer significativamente el rendimiento, asi podemos examinar la
+importancia de las funciones de nuestro modelo. La importancia de cada
+predictor en el modelo se calcula como la reducción total (normalizada)
+en el criterio de división. Si un predictor no ha sido seleccionado en
+ninguna división, no se ha incluido en el modelo y por lo tanto su
+importancia es 0.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{61}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Predicciones probabilísticas}
+\PY{c+c1}{\PYZsh{} =============================}
+\PY{c+c1}{\PYZsh{} Con .predict\PYZus{}proba() se obtiene, para cada observación, la probabilidad predicha}
+\PY{c+c1}{\PYZsh{} de pertenecer a cada una de las dos clases.}
+\PY{n}{predicciones} \PY{o}{=} \PY{n}{nb}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}
+\PY{n}{predicciones} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{predicciones}\PY{p}{,} \PY{n}{columns} \PY{o}{=} \PY{n}{nb}\PY{o}{.}\PY{n}{classes\PYZus{}}\PY{p}{)}
+\PY{n}{predicciones}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{table}[H]
+\centering
+\setlength{\tabcolsep}{5pt}
+\resizebox{0.3\textwidth}{!}{
+\begin{tabular}{|c|l|l|}
+\hline
+\multicolumn{1}{|l|}{} & \multicolumn{1}{c|}{\textbf{0}} & \multicolumn{1}{c|}{\textbf{1}} \\ \hline \hline
+\textbf{0} & 0,999617 & 0,000383 \\ \hline
+\textbf{1} & 0,999992 & 8,06E-06 \\ \hline
+\textbf{2} & 1 & 9,05E-08 \\ \hline
+\textbf{3} & 0,999997 & 2,93E-06 \\ \hline
+\textbf{4} & 1 & 4,81E-07 \\ \hline
+\textbf{5} & 1 & 3,42E-07 \\ \hline
+\textbf{6} & 0,999105 & 0,000895 \\ \hline
+\textbf{7} & 0,999973 & 2,69E-05 \\ \hline
+\textbf{8} & 0,999798 & 0,000202 \\ \hline
+\textbf{9} & 9E-176 & 1 \\ \hline
+\textbf{10} & 1 & 3,4E-08 \\ \hline
+\textbf{11} & 1 & 0 \\ \hline
+\end{tabular}%
+}
+\caption{Predicciones probabilísticas para cada observación Bayes}
+\label{tab:probabilistica Bayes}
+\end{table}
+        
+    Este método acepta un solo argumentos que corresponde a los datos sobre
+los cuales se calculan las probabilidades y devuelve una matriz de
+listas que contienen las probabilidades de clase para los puntos de
+datos de entrada. En este caso la tabla \ref{tab:probabilistica Bayes} se observa los
+estados de la variable predictora tienen un valor de porcentaje
+predictor, por ejemplo la tupla 0 posee un 99\% y fracción de precisión
+para el estado 0 y un 0,11\% y fracción para el estado 1.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{62}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Predicciones con clasificación final}
+\PY{c+c1}{\PYZsh{} ===============================}
+\PY{c+c1}{\PYZsh{} Con .predict() se obtiene, para cada observación, la clasificación predicha por}
+\PY{c+c1}{\PYZsh{} el modelo. Esta clasificación se corresponde con la clase con mayor probabilidad.}
+\PY{n}{predicciones} \PY{o}{=} \PY{n}{nb}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}
+\PY{n}{predicciones} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{predicciones}\PY{p}{)}
+\PY{n}{predicciones}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{table}[H]
+\centering
+\setlength{\tabcolsep}{10pt}
+\resizebox{0.15\textwidth}{!}{
+\begin{tabular}{|c|l|}
+\hline
+\multicolumn{1}{|l|}{} & \multicolumn{1}{c|}{\textbf{0}} \\ \hline \hline
+\textbf{0} & 0 \\ \hline
+\textbf{1} & 0 \\ \hline
+\textbf{2} & 0 \\ \hline
+\textbf{3} & 0 \\ \hline
+\textbf{4} & 0 \\ \hline
+\textbf{5} & 0 \\ \hline
+\textbf{6} & 0 \\ \hline
+\textbf{7} & 0 \\ \hline
+\textbf{8} & 0 \\ \hline
+\textbf{9} & 1 \\ \hline
+\textbf{10} & 0 \\ \hline
+\textbf{11} & 0 \\ \hline
+\end{tabular}%
+}
+\caption{Predicciones probabilísticas con clasificación final Bayes}
+\label{tab:clasificacion bayes}
+\end{table}
+        
+    Se observa en la tabla \ref{tab:clasificacion bayes} un valor binario de 0 o 1, donde se muestra cada variable
+desarrollada en el modelo puede tomar dicho valor. El valor 0 demuestra
+que la tupla no logra predecir el estado 0 de la variable predictora, y
+por el contrario, el estado 1 es que logra la predicción del estado en
+esa tupla.
+
+
+    % Add a bibliography block to the postdoc

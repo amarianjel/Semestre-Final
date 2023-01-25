@@ -1,0 +1,221 @@
+    \hypertarget{decision-tree---entrenamiento-del-algoritmo}{%
+\section{Decision Tree - Entrenamiento del
+algoritmo}\label{decision-tree---entrenamiento-del-algoritmo}}
+
+Este algoritmo es utilizado pdecisiones te permite evaluar resultados,
+costos y consecuencias de una decisión compleja en grandes volúmenes
+datos y solventar problemas \cite{Sulla-Torres}.
+
+En el entrenamiento del algoritmo el programa de ML
+adquiere la información que trabajamos en los métodos anteriores. Es
+aquí donde se obtendrá el conocimiento para futuras decisiones, es
+importante asegurarse que las decisiones que sean tomadas posteriormente
+al proceso de entrenamiento se añadan a la base de conocimiento del
+algoritmo para futuras ejecuciones de este.
+
+La BDD trabajada actualmente cuenta con:
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{53}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Existen }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{ pacientes con }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{ variables.}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{n}{dataset}\PY{o}{.}\PY{n}{shape}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Existen}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{dataset}\PY{o}{.}\PY{n}{size}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{elementos}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Existen 46 pacientes con 26 variables.
+Existen 1196 elementos
+    \end{Verbatim}
+
+    \hypertarget{variable-categuxf3rica}{%
+\subsection{Variable categórica}\label{variable-categuxf3rica}}
+
+En el paso de la preparación de los datos de entrada, propusimos la
+variable ``NIHSS alta ACV'' que podía poseer 42 valores diferentes, la
+cual se clasificó y se transformó en ``NIHSS\_alta\_cat'' que contenía 6
+categorías las que fueron reducidas a 1 variable con dos estados. Asi el
+paciente tendrá un buen pronóstico o no con el nombre de la variable
+``NIHSS\_alta\_ESTABLE\_O\_GRAVE''. Los estudios de ML no
+sugieren tener variables binarias para nuestro estudio.
+
+Las variables dependientes representan el rendimiento o conclusión que
+se está estudiando. Las variables independientes, además conocidas en
+una relación estadística como regresores, representan insumos o causas,
+donde se encuentran las razones potenciales de alteración.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{54}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} variables objetivo e independientes:}
+\PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{model\PYZus{}selection} \PY{k+kn}{import} \PY{n}{train\PYZus{}test\PYZus{}split}
+
+\PY{c+c1}{\PYZsh{} X son nuestras variables independientes}
+\PY{n}{X} \PY{o}{=} \PY{n}{dataset}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NIHSS\PYZus{}alta\PYZus{}ESTABLE\PYZus{}O\PYZus{}GRAVE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} y es nuestra variable dependiente}
+\PY{n}{y} \PY{o}{=} \PY{n}{dataset}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NIHSS\PYZus{}alta\PYZus{}ESTABLE\PYZus{}O\PYZus{}GRAVE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+
+\PY{c+c1}{\PYZsh{} Uso de Skicit\PYZhy{}learn para dividir datos en conjuntos de entrenamiento y prueba }
+\PY{c+c1}{\PYZsh{} División 75\PYZpc{} de datos para entrenamiento, 25\PYZpc{} de datos para test}
+\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}test} \PY{o}{=} \PY{n}{train\PYZus{}test\PYZus{}split}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{creaciuxf3n-del-modelo-y-entrenamiento}{%
+\subsection{Creación del modelo y
+entrenamiento}\label{creaciuxf3n-del-modelo-y-entrenamiento}}
+
+Para la creación del modelo se utilizará el modelo en la forma más
+estándar posible, siendo que los modelos, antes del entrenamiento,
+pueden recibir ajustes para manejar los datos de entrada, de una forma u
+otra. Para que sea lo más parejo posible entre modelos se dejará de
+forma estándar.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{55}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{tree} \PY{k+kn}{import} \PY{n}{DecisionTreeClassifier}
+
+\PY{c+c1}{\PYZsh{} Creamos el modelo de Arbol de Decisión (y configuramos el número máximo de nodos\PYZhy{}hoja)}
+\PY{n}{dtc} \PY{o}{=} \PY{n}{DecisionTreeClassifier}\PY{p}{(}\PY{n}{criterion} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gini}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+\PY{n}{dtc}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{55}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+DecisionTreeClassifier(random\_state=0)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{estructura-del-uxe1rbol-creado}{%
+\subsubsection{Estructura del árbol
+creado}\label{estructura-del-uxe1rbol-creado}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{56}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Estructura del árbol creado}
+\PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{tree} \PY{k+kn}{import} \PY{n}{plot\PYZus{}tree}
+
+\PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{13}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Profundidad del árbol: }\PY{l+s+si}{\PYZob{}}\PY{n}{dtc}\PY{o}{.}\PY{n}{get\PYZus{}depth}\PY{p}{(}\PY{p}{)}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Número de nodos terminales: }\PY{l+s+si}{\PYZob{}}\PY{n}{dtc}\PY{o}{.}\PY{n}{get\PYZus{}n\PYZus{}leaves}\PY{p}{(}\PY{p}{)}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{plot} \PY{o}{=} \PY{n}{plot\PYZus{}tree}\PY{p}{(}
+            \PY{n}{decision\PYZus{}tree} \PY{o}{=} \PY{n}{dtc}\PY{p}{,}
+            \PY{n}{feature\PYZus{}names} \PY{o}{=} \PY{n}{feature\PYZus{}list}\PY{p}{,}
+            \PY{n}{class\PYZus{}names}   \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NIHSS\PYZus{}alta\PYZus{}ESTABLE\PYZus{}O\PYZus{}GRAVE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+            \PY{n}{filled}        \PY{o}{=} \PY{k+kc}{True}\PY{p}{,}
+            \PY{n}{impurity}      \PY{o}{=} \PY{k+kc}{False}\PY{p}{,}
+            \PY{n}{fontsize}      \PY{o}{=} \PY{l+m+mi}{10}\PY{p}{,}
+            \PY{n}{ax}            \PY{o}{=} \PY{n}{ax}
+       \PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Profundidad del árbol: 3
+Número de nodos terminales: 5
+    \end{Verbatim}
+
+\begin{center}
+    	\begin{figure}[h!]
+	\centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Decision Tree - Arbol de Decisión/output_88_1.png}
+	\caption{Árbol de decisión}
+	\label{fig:ad}
+	\end{figure}
+\end{center}
+    
+    \hypertarget{predicciones-sobre-los-datos-de-prueba-y-muxe9tricas-de-rendimiento}{%
+\subsection{Predicciones sobre los datos de prueba y métricas de
+rendimiento}\label{predicciones-sobre-los-datos-de-prueba-y-muxe9tricas-de-rendimiento}}
+
+Para llevar una forma más ordenada, es necesario crear las variables de
+predicciones, para asi sacar las métricas de rendimiento más fácilmente.
+Las métricas de rendimiento nos ofrecerán información de cómo se
+comportó el algoritmo durante el entrenamiento, dando a conocer valores
+importantes como lo son la precisión, exhaustividad, valor-F.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{57}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Predicción Entrenamiento }
+\PY{n}{prediccionEntreno} \PY{o}{=} \PY{n}{dtc}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Predicción Tests}
+\PY{n}{prediccionTests} \PY{o}{=} \PY{n}{dtc}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{58}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{sklearn} \PY{k+kn}{import} \PY{n}{metrics}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Entrenamiento \PYZhy{} Presición :}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{metrics}\PY{o}{.}\PY{n}{accuracy\PYZus{}score}\PY{p}{(}\PY{n}{y\PYZus{}train}\PY{p}{,} \PY{n}{prediccionEntreno}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Entrenamiento \PYZhy{} Reporte de clasificación:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{metrics}\PY{o}{.}\PY{n}{classification\PYZus{}report}\PY{p}{(}\PY{n}{y\PYZus{}train}\PY{p}{,} \PY{n}{prediccionEntreno}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Entrenamiento - Presición : 1.0
+Entrenamiento - Reporte de clasificación:
+               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        20
+           1       1.00      1.00      1.00        14
+
+    accuracy                           1.00        34
+   macro avg       1.00      1.00      1.00        34
+weighted avg       1.00      1.00      1.00        34
+
+    \end{Verbatim}
+
+    La precisión de los datos de entrenamiento en el modelo tiene un valor
+excelente de 100\% de predicción, la exhaustividad informa la cantidad
+de datos capaz de identificar y en este caso es de un 100\% de los datos
+y finalmente el F1 combina los valores de precisión y exhaustividad
+obteniéndose un 100\% igual. Todos los valores mencionados aplican para
+los estados de la variable predictora.
+
+    \hypertarget{matriz-de-confusiuxf3n}{%
+\subsection{Matriz de Confusión}\label{matriz-de-confusiuxf3n}}
+
+En el campo de la IA y en especial en el problema
+de la clasificación estadística, una matriz de confusión es una
+herramienta que permite la visualización del desempeño de un algoritmo
+que se emplea en aprendizaje supervisado.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{59}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k+kn}{import} \PY{n}{pyplot} \PY{k}{as} \PY{n}{plot}
+\PY{k+kn}{from} \PY{n+nn}{mlxtend}\PY{n+nn}{.}\PY{n+nn}{plotting} \PY{k+kn}{import} \PY{n}{plot\PYZus{}confusion\PYZus{}matrix}
+\PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{metrics} \PY{k+kn}{import} \PY{n}{confusion\PYZus{}matrix}
+
+\PY{n}{matriz} \PY{o}{=} \PY{n}{confusion\PYZus{}matrix}\PY{p}{(}\PY{n}{y\PYZus{}train}\PY{p}{,} \PY{n}{prediccionEntreno}\PY{p}{)}
+
+\PY{n}{plot\PYZus{}confusion\PYZus{}matrix}\PY{p}{(}\PY{n}{conf\PYZus{}mat}\PY{o}{=}\PY{n}{matriz}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{,} \PY{n}{show\PYZus{}normed}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+\PY{n}{plot}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{center}
+    	\begin{figure}[H]
+	\centering
+    \adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{Decision Tree - Arbol de Decisión/output_94_0.png}
+	\caption{Matriz de confusión de entrenamiento Decision Tree}
+	\label{fig:mcedt}
+	\end{figure}
+\end{center}
+    
+    En la matriz de confusión \ref{fig:mcedt} (1 , 1) podemos observar el resultado en el
+que el modelo predice correctamente la clase positiva y en el (2, 2) el
+resultado donde el modelo predice correctamente la clase negativa. Los
+demás elementos de la matriz contiene valor nulo o 0, estos son los
+errores de la predicción.

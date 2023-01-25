@@ -1,0 +1,46 @@
+\doublespacing
+\chapter{ESTUDIO EMPÍRICO}
+\spacing{1.5}
+
+\lettrine[lines=4, slope=0.2em, findent=0.2em, nindent=0.6em]{E}
+n la era de la información, la mayoría de las organizaciones están aprovechando la capacidad de la IA para lograr ventajas competitivas, es por eso por lo que la ciencia de datos que resulta difícil notar el camino para llegar allí. Así, la forma de tener éxito con proyectos orientados a ciencia de datos es utilizar el ciclo de vida y las metodologías adecuadas. El marco de procesos OSEMN comprende el flujo de trabajo del proyecto y garantiza que todos en el equipo estén en la misma página y no distraídos \cite{Kumar2022}.\\
+\par El presente capítulo tiene como finalidad el análisis de la documentación del trabajo realizado y la implementación del método utilizado.  Para lograr un resultado óptimo primero se define que método se siguió. En la sección posterior se implementará los pasos comunes para los algoritmos, puesto que estos pasos serán frecuentes en los algoritmos que se utilizarán. Al finalizar, se presentarán nuevas secciones con los nombres de los algoritmos y los pasos no comunes del método dentro de estos.\\
+
+\doublespacing
+\section{Enfoque de la investigación}
+\spacing{1.5}
+La investigación cuenta con un enfoque cuantitativo por los resultados que se quieren llegar a obtener, donde primará el análisis matemático de la base de datos y entre los algoritmos a comparar. El tipo de investigación será de carácter experimental, ya que medirá tendencias en los resultados arrojados por los algoritmos.\\
+\par La población será todas las personas que salen registradas en la base de datos a trabajar. En este caso específico, son los pacientes post ACV Isquémico del Hospital Herminda Martin de Chillán. La muestra serán los pacientes post ACV Isquémico registrados en la base de datos y que cumplan con algunos criterios médicos para su análisis.\\
+
+
+\doublespacing
+\section{Metodología}
+\spacing{1.5}
+El diseño metodológico dará una guía con los pasos a seguir a grande escala para la obtención de la finalización del proyecto. Se tendrá en cuenta el tipo, el enfoque, la población y la muestra para iniciar el trabajo. Siguiendo con estrategia, utilizaremos el libro de \emph{Machine Leaning in Action} \cite{Harrington2012}, utilizando el procedimiento de la sección \emph{“Steps in developing a machine learning application”} que consta de 6 pasos para la implementación de una aplicación que utiliza técnicas de ML. 
+\begin{enumerate}
+	\item \textbf{Colección de los datos de entrada:} El primer paso para implementar una aplicación que trabaje utilizando técnicas de ML es coleccionar los datos que serán analizados, hay muchas formas en las que se pueden obtener grandes cantidades de datos a través de internet y de manera local, este paso se refiere a esas opciones y al esfuerzo aplicado para obtener dichos datos pudiendo ahorrar algo de tiempo y esfuerzo en adquirir datos públicos. 
+	\item \textbf{Preparación de datos de entrada:} Una vez que ya se obtienen los datos, es necesario asegurarse que estén en el formato correcto para ser procesados por el algoritmo de ML seleccionado. El formato que usaremos en este estudio es la lista de Python El beneficio de tener este formato estándar es que puede mezclar, combinar algoritmos y fuentes de datos. Es posible que deba hacer algún formato específico del algoritmo aquí.
+\par Por lo que este paso involucra, si fuera necesario, formatear los datos para adaptarlos a la necesidad de cada algoritmo.
+
+	\item \textbf{Analizar los datos de entrada:} Este podría ser tan simple como mirar los datos que ha analizado en un editor de texto para hacer Asegúrese de que los pasos 1 y 2 realmente funcionen y no tenga un montón de valores vacíos. También puede mirar los datos para ver si puede reconocer algún patrón o si hay algo obvio, como algunos puntos de datos que son muy diferentes del resto del conjunto. Si se trabaja con un sistema de producción o se sabe como se deben ver los datos o se confía en la fuente, este paso se puede omitir
+
+	\item \textbf{Entrenamiento del algoritmo:} Aquí es donde tiene lugar el aprendizaje automático. Este paso y el siguiente paso es donde se encuentran los algoritmos "básicos", según el algoritmo. Alimentas el algoritmo con buenos datos limpios de los primeros dos pasos y extraer conocimiento o información. Este conocimiento que a menudo almacena en un formato eso es fácilmente utilizable por una máquina para los siguientes dos pasos.
+
+\item \textbf{Testeo del algoritmo (Pruebe el algoritmo):} Aquí es donde la información aprendida por el algoritmo es testeada, es decir, se mide el nivel de acierto que tiene nuestro algoritmo, utilizando los datos de entrenamiento podremos establecer el grado de eficacia de nuestra implementación de la técnica seleccionada, si los resultados no son los esperados es probable que haya que volver a etapas previas para intentar identificar el error, que tal vez sea en los datos de entrada o en el algoritmo en sí, y tratar de solucionarlo. Una vez realizado los cambios hará falta volver a pasar por todos los pasos anteriores una vez más.
+\item \textbf{Uso del algoritmo:} Una vez se han consumado todos los pasos, no queda
+más que usar el algoritmo, esta etapa implica tener que volver a ejecutar los pasos 1, 2, 3 y 5.
+\end{enumerate}
+
+\par Sabemos que el proceso de programación podemos desarrollarlo óptimamente en los leguajes más usados para el ML que son Java, R o Python. Par este proyecto se escogió Python por su simpleza y múltiple documentación para el desarrollo de las técnicas de ML.\\
+
+
+\input{AplicacionComunMetodo/AplicacionComunMetodo}
+
+\input{Naive Bayes/Entrenamiento}
+
+\input{Logistic Regression - Regresión Logistica/Entrenamiento}
+
+\input{Decision Tree - Arbol de Decisión/Entrenamiento}
+
+\input{Random Forest - Bosque Aleatorio/Entrenamiento}
+
