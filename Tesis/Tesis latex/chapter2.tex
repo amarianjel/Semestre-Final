@@ -2,130 +2,172 @@
 \chapter{MARCO TEÓRICO}
 \spacing{1.5}
 \lettrine[lines=4, slope=0.2em, findent=0.2em, nindent=0.6em]{E}l presente capitulo tiene como propósito presentar al lector algunas investigaciones y conceptos relacionados con IA, específicamente ML y en salud particularmente de ACV Isquémico, conceptos claves para esta investigación. \\
-\par La organización del capítulo se encuentra de la siguiente manera, inicialmente, veremos ML y sus técnicas clásicas, pues consideramos estas podrían ser la respuesta a nuestra problemática junto a Deep Learning (DL), posteriormente nos enfocaremos en algunos términos de salud que nos ayudaran a resolver y entender de mejor forma la raíz del problema. 
+\par La organización del capítulo se encuentra de la siguiente manera, inicialmente, veremos ML y sus técnicas clásicas, pues consideramos estas podrían ser la respuesta a nuestra problemática junto a Deep Learning (DL), posteriormente nos enfocaremos en algunos términos de salud que nos ayudarán a entender de mejor forma el problema. 
 \\
 
 \doublespacing
 \section{Inteligencia Artificial}
 \spacing{1.5}
-Las matemáticas nos han ayudado a interpretar y entender nuestro medio ambiente y poder ser capaz de predecir algunos sucesos en áreas como la cosmología o naturaleza o problemas incomprendidos por los humanos \cite{Grazia2022}. Hoy en día contamos con el área de las ciencias de la computación que fue creada hace solo un par de décadas atrás, siendo una de las ciencias más nuevas y que tiene gran valoración en la actualidad. En las ciencias de la computación podemos encontrar varias áreas aplicadas, de las cuales la IA es una de las más cotizadas, porque involucra en su relación la matemática con filosofía, biología, lingüística, entre otras, pudiendo resolver los problemas con distintos tipos de algoritmos \cite{Grazia2022}.\\
-\par La IA llegó para resolver tareas que el ser humano realiza como tareas cotidianas básicas y complejas. Los algoritmos de IA, se basan en el aprendizaje automático, siendo que cada vez las máquinas pueden aprender por ellas mismas algunas cosas, es así que los humanos dejaremos de perder nuestro tiempo programando reglas para lidiar con muchas combinaciones de datos y situaciones que aparecen en nuestro mundo. Pues es así, que aprender los algoritmos, es fijarse como aprender desde pequeños, como el aprendizaje por refuerzos, que involucra una serie de técnicas de aprendizaje automático que las máquinas usan en sistemas artificiales \cite{Carola}.\\
+Las matemáticas nos han ayudado a interpretar y entender nuestro medio ambiente y ser capaz de predecir algunos sucesos en áreas como la cosmología o naturaleza o problemas incomprendidos por los humanos \cite{Grazia2022}. Hoy en día contamos con el área de las ciencias de la computación que fue creada hace solo un par de décadas atrás, siendo una de las ciencias más nuevas y que tiene gran valoración en la actualidad. En las ciencias de la computación podemos encontrar varias áreas aplicadas, de las cuales la IA destaca por su relación con la matemática, biología, lingüística, entre otras. \cite{Grazia2022}.\\
+\par La IA llegó para resolver tareas que el ser humano realiza como tareas cotidianas básicas y complejas. Los algoritmos de IA se basan en el aprendizaje automático, siendo que cada vez las máquinas pueden aprender por ellas mismas algunas cosas, es así que los humanos dejaremos de perder nuestro tiempo programando reglas para lidiar con muchas combinaciones de datos y situaciones que se presentan a diario. Pues es así, que el aprendizaje de los propios algoritmos mejora el rendimiento de estos sin la necesidad de programación adicional por parte humana. Esto es logrado a través del uso de técnicas de aprendizaje automático, en las que el algoritmo es entrenado con un conjunto de datos y luego se ajusta a medida que recibe nuevos datos y realiza más tareas. \cite{Carola}.\\
 \par En la IA, para que los modelos funcionen existen modelos neuronales y estos son los que determinan cómo se conectan los datos predictores con los objetivos a través de capas ocultas, y estas a su vez contienen unidades no observables \cite{IBM}. Dentro de la IA, convive un sub conjunto llamada ML y su vez, dentro de ML vive un subconjunto llamado DL. Estos sub conjuntos interactúan con lo que es el Data Science y el Big Data, haciendo de las aplicaciones una variada gama de aplicaciones \cite{moreno2021diseno}.\\
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.51]{img/Marco Teorico/Expertiz.png} 
-	\caption{Diagrama de Venn con los subcojuntos de la IA}
+	\caption{Diagrama de Venn con las subáreas de la IA}
 \end{figure}
 
 
 \doublespacing
 \section{Machine Learning}
 \spacing{1.5}
-Los problemas por computadora siempre son solucionado con un algoritmo que le indica a la maquina los pasos a seguir para dar solución a dicho problema, en un ejemplo clásico podemos usar un algoritmo de búsqueda, donde el dato a buscar seria la entrada y su salida seria la respuesta a que si se encontró o no y en cuanto tiempo, es bien conocido que para resolver el problema de búsqueda existen variados algoritmos, algunos más eficientes que otros, aplicables a un contexto u otro de mejor forma, solucionando el mismo problema.\\
-\par Asimismo, existen tareas cotidianas como lo son la publicidad en el celular, como muestra cosas que me gustan o que he estado pensando en comprar, esto es gracias a algoritmos de ML que captan la información de navegación de nuestro celular y nos muestra lo que nosotros estamos deseando o es de nuestro interés.\\
-\par En el año 1959, Arthur Samuel, definió el concepto de ML como:
+Los problemas por computadora se solucionan con un algoritmo que le indica a la máquina los pasos a seguir. En un ejemplo clásico podemos usar un algoritmo de búsqueda, donde el dato a buscar sería la entrada y su salida sería si se encontró o no y en cuánto tiempo. Es bien conocido que para resolver el problema de búsqueda existen variados algoritmos, algunos más eficientes que otros, aplicables a un contexto u otro de mejor forma, solucionando el mismo problema.\\
+\par Asimismo, la publicidad en el celular es un ejemplo de cómo los algoritmos de ML están aplicándose en la vida cotidiana. Estos algoritmos utilizan técnicas de análisis de datos y aprendizaje automático para comprender los patrones de comportamiento y preferencias de los usuarios a partir de la información de navegación y otros datos recopilados en sus dispositivos móviles. Además de la publicidad en el celular, los algoritmos de ML también están siendo utilizados en una variedad de aplicaciones, como la recomendación de productos y servicios, la detección de fraudes, la mejora de la eficiencia en la toma de decisiones y la optimización de la experiencia del usuario.\\
+\par En el año 1959, Arthur Samuel \cite{samuel1959machine}, definió el concepto de ML como:
 
 \begin{quote}
-	\emph{"Un campo de estudio que le entrega a los computadores la habilidad de aprender sin haber sido explícitamente programado para eso"}
+	"\emph{Un campo de estudio que le entrega a los computadores la habilidad de aprender sin haber sido explícitamente programado para eso}"
 \end{quote}
 
 
-Tom M. Mitchell define el ML en uno de sus libros como:
+Tom M. Mitchell y McGraw Hill en 1977 \cite{mitchell1997machine}, define el ML en uno de sus libros como 
 \begin{quote}
 	\emph{“El estudio de algoritmos de computación que mejoran automáticamente su rendimiento gracias a la experiencia. Se dice que un programa informático aprende sobre un conjunto de tareas, gracias a la experiencia y usando una medida de rendimiento, si su desempeño en estas tareas mejora con la experiencia”}
 \end{quote}
 
-\par Es decir, estos algoritmos aprenden y mejoran solos gracias a la experiencias pasadas a diferencia de modelos que un experto puede asignar reglas y modela gracias a sus conocimientos.\\
-\par El ML es el subconjunto de la IA, utilizándose para que las máquinas aprendan de grandes volúmenes de datos. Una vez adquirido el conocimiento, este puede ser empleado a otro conjunto de datos, recibiendo una atención cada vez mayor de un modelo que es capaz de interpretar los datos con mejor capacidad cada vez \cite{murdoch2019interpretable}.\\
+\par Es decir, estos algoritmos aprenden y mejoran solos gracias a las experiencias pasadas, a diferencia de modelos en los que un experto puede asignar reglas y modela gracias a sus conocimientos.\\
+\par EL ML utiliza algoritmos para analizar grandes cantidades de datos y descubrir patrones y relaciones en ellos. Una vez que el algoritmo ha aprendido de estos datos, puede aplicar lo que ha aprendido a un nuevo conjunto de datos y utilizarlo para tomar decisiones o hacer predicciones. \cite{murdoch2019interpretable}.\\
+\par En este sentido, el ML permite a las máquinas aprender de los datos y utilizar ese conocimiento para mejorar sus decisiones y predicciones. Esto es una gran ventaja en comparación con los enfoques tradicionales, en los que un programador humano debe escribir una serie de reglas y lógica para tomar decisiones. Con el aprendizaje automático, las máquinas pueden aprender por sí mismas y mejorar con el tiempo sin la necesidad de programación adicional\\
 
 \doublespacing
 \subsection{Machine Learning: Tipos de Aprendizajes}
 \spacing{1.5}
-Para ML existen algunos enfoques para trabajar, los cuales son los más usados el aprendizaje supervisado y el aprendizaje no supervisado.\\
+ML contempla dos enfoques o tipos de aprendizaje bastante usados, el aprendizaje supervisado y el aprendizaje no supervisado.\\
 
 
 \doublespacing
 \subsubsection{Aprendizaje Supervisado}
 \spacing{1.5}
-Este enfoque es un método de análisis de datos que necesita de algoritmos que aprendan a través de entrenamiento, en el cual el programa es alimentado con datos etiquetados tanto con los atributos como la variable objetivo de cada iteración.\\
-\par En el aprendizaje supervisado del algoritmo existen dos tareas comunes que son la clasificación y regresión. En las tareas de clasificación las variables objetivo, son valores etiquetados de manera nominal, mientras que en las tareas de regresión la variable objetivo tiene un dominio dentro de los números reales y por lo tanto pueden tomar infinitos valores \cite{murdoch2019interpretable}. \\
+Este enfoque es un método de análisis de datos que necesita de algoritmos que aprendan a través de entrenamiento, en el cual el algoritmo es alimentado con datos etiquetados, atributos y la variable objetivo en cada iteración.\\
+\par El aprendizaje supervizado se divide en dos tareas comunes: clasificación y regresión.\\
+\par La tarea de clasificación se utiliza para predecir una categoría o clase para un nuevo conjunto de datos. Por ejemplo, un algoritmo de clasificación puede ser entrenado con datos sobre diferentes tipos de frutas y sus características para predecir si una nueva fruta es una manzana o una pera.\\
+\par La tarea de regresión se utiliza para predecir un número o valor continuo. Por ejemplo, un algoritmo de regresión puede ser entrenado con datos sobre la relación entre la edad de una persona y su salario para predecir el salario de una persona en función de su edad.\\
+\par En resumen, el aprendizaje supervizado es una técnica muy útil y ampliamente utilizada en el ML para hacer predicciones precisas sobre nuevos datos. A través de la tarea de clasificación y regresión, se pueden solucionar una amplia variedad de problemas y aplicaciones en una amplia gama de industrias \cite{murdoch2019interpretable}. \\
 
 
 \doublespacing
 \subsubsection{Aprendizaje No Supervisado}
 \spacing{1.5}
-El aprendizaje no supervisado tiene datos sin etiquetar que el algoritmo tiene que entender por si mismo, el propósito es descubrir patrones ocultos en ellos. Si nosotros le pedimos a nuestro programa \textit{"predecir Y para nuestros datos A"} nosotros deberíamos \textit{“pedirle que nos provea de la información de nuestros datos A"} \cite{murdoch2019interpretable}.\\
-\par Las tareas más comunes dentro del aprendizaje no supervisado son el \emph{clustering} y \emph{dimensión reduction}, los cuales no son objeto de nuestro estudio por lo que sólo son mencionados en esta parte del documento.\\
+El aprendizaje no supervisado tiene datos sin etiquetar que el algoritmo tiene que entender por si mismo, el propósito es descubrir patrones ocultos en ellos. Si nosotros le pedimos a nuestro programa \textit{"predecir \textbf{Y} para nuestros datos \textbf{A}"},  nosotros deberíamos \textit{“pedirle que nos provea de la información de nuestros datos \textbf{A}"} \cite{murdoch2019interpretable}.\\
+\par Las tareas más comunes dentro del aprendizaje no supervisado son el \emph{clustering} y \emph{dimension reduction}, los cuales no son objeto de nuestro estudio por lo que solo son mencionados en esta parte del documento.\\
 
 
 \doublespacing
 \subsection{Técnicas de Clasificación}
 \spacing{1.5}
 Para que nuestro modelo de ML funcione, debemos categorizar los datos de entrada y salida, reconociendo atributos del elemento a clasificar y utilizando el conocimiento adquirido durante el entrenamiento del algoritmo para asignar un valor a la variable objetivo de dicho elemento.\\
-\par La clasificación de datos es un proceso que posee dos etapas:\\
-\par La \textit{primera} es la etapa de aprendizaje, la cual los datos ingresan al modelo son entrenados con una serie de datos que sirven de base del algoritmo, logrando que se entrene con un set de entrenamiento que no son mas que tuplas de datos etiquetados tanto en sus atributos como en su variable objetivo.\\
-\par La \textit{segunda} etapa, el algoritmo ya ha sido entrenado con los datos de entrenamiento y esta listo para su clasificación de una variable cualquera, siendo capaz de tomar algunos atributos de la variable, analizarlos y tomar una decisión basándose en los datos que fueron entregados anteriormente.\\
-\par En la clasificación veremos algunas de las técnicas clásicas de ML, pertenecientes al enfoque de los algoritmos de aprendizaje supervisado, definiendo brevemente cada una de ellas \cite{murdoch2019interpretable}.\\
+\par La clasificación de datos es un proceso que consta de dos etapas, la etapa de aprendizaje donde es construido el modelo, y la etapa de clasificación donde el modelo es usado para predecir las etiquetas de clases de los datos dados \cite{han2012data}.\\
+\par En la \textit{primera} etapa de aprendizaje o entrenamiento del algoritmo, se construye el modelo utilizando una serie de datos que sirven de base para el conocimiento del algoritmo, para lograr esto, es que se le entrena utilizando un set de entrenamiento, que no son más que tuplas de datos etiquetados tanto en sus atributos como en su variable objetivo. Una tupla X, generalmente es representada por un vector n-dimensional llamado vector de atributos $ X = (x_{1}, x_{2}, ..., x_{n}) $.\\
+\par En la \textit{segunda} etapa, el algoritmo ya ha sido entrenado con los datos de entrenamiento y esta listo para su clasificación de una variable $ x $, el algoritmo implementado
+será capaz de tomar los atributos de dicha variable, analizarlos y tomar una decisión en los resultados, basándose en los datos que fueron entregados anteriormente.\\
+\par En la clasificación veremos algunas de las técnicas clásicas de ML, pertenecientes al enfoque de los algoritmos de aprendizaje supervisado, definiendo brevemente cada una de ellas.\\
 
 
 \doublespacing
 \subsection{Decision Tree (Árbol de Decisión)}
 \spacing{1.5}
-Este algoritmo que se utiliza como herramienta de apoyo gráfico o modelo de decisiones con sus posibles consecuencias, también a veces son representados los costos y su posible utilidad (CART, Classification and Regression Trees). Este método se crea particionando la entrada recursivamente en distintas ramas, siendo que la idea es crear un camino desde la raíz hasta las hojas, donde cada nodo podría ser una condición, así si se cumple la condición se sigue por el camino de decisión o por la otra rama si no se llegará a cumplir la condición \cite{Teknomo2015}.\\
-\par La creación del modelo se puede representar con la siguiente ecuación:\\
+Este algoritmo que se utiliza como herramienta de apoyo gráfico o modelo de decisiones con sus posibles consecuencias, también a veces son representados los costos y su posible utilidad (CART, Classification and Regression Trees). Este método se crea particionando la entrada recursivamente en distintas ramas, siendo que la idea es crear un camino desde la raíz hasta las hojas, donde cada nodo podría ser una condición así, si se cumple la condición se sigue por el camino de decisión, o por la otra rama si no se llegará a cumplir la condición \cite{Harrington2012}.\\
+\par La creación del modelo se puede representar en la ecuación \ref{eq:Ecuación del Modelo Decision Tree}:\\
 
 \begin{Large}
 	\begin{equation}
 		f(x)=E[y|x]=\sum_{m=1}^{M}w_{m}I(x \in R_{m})=\sum_{m=1}^{M}w_{m}\phi(x;v_{m})
+		\label{eq:Ecuación del Modelo Decision Tree}
 	\end{equation}
 \end{Large}
 \par $R_{m}$ representa la región de $m$.
 \par $w_{m}$ es respuesta media a esa región.
 \par $v_{m}$ codifica la elección de la variable por la que dividir y el valor límite de la división.\\
-\par  La forma gráfica del modelo se puede representar de la siguiente forma en condiciones:\\
+\par A modo de ejemplo del modelo, se puede representar de la siguiente forma en condiciones \ref{fig:Problema aplicando Árbol de Decisiones}:\\
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
-	\includegraphics[scale=1]{img/Marco Teorico/arbol de desicion.png} 
-	\caption{Forma Gráfica de un Árbol de Desiciones}
+	\includegraphics[scale=1.2]{img/Marco Teorico/arbol de desicion.png} 
+	\label{fig:Problema aplicando Árbol de Decisiones}
+	\caption{Ejemplo de un problema aplicando Árbol de Decisiones}
 \end{figure}
 \par Las condiciones se dan como alternativas de caminos a seguir.\\
 
 \doublespacing
 \subsubsection{Usos para los Decision Tree}
 \spacing{1.5}
-Al ser de fácil implementación, los Decision Tree son usados en diversas áreas, siendo las instituciones financieras las más comunes, ayudando a clasificar clientes, estableciendo sus riesgos o posibilidades financieras.\\
-\par En el área de la salud son empleados para diagnósticos de infecciones a la sangre o predicción de ataque al corazón en pacientes de alto riesgo.\\
-\par En el área de entretenimiento son ampliamente usados como métodos de seguimiento de movimiento y a su vez como método de reconocimiento facial.
+Al ser de fácil implementación, los Decision Tree son usados en diversas áreas, siendo las instituciones financieras las más comunes, ayudando a clasificar clientes, estableciendo sus riesgos o posibilidades financieras \cite{Harrington2012}.\\
+\par En el área de la salud son empleados para diagnósticos de infecciones a la sangre o predicción de ataque al corazón en pacientes de alto riesgo \cite{Harrington2012}.\\
+\par En el seguimiento de movimiento, los árboles de decisión se utilizan para analizar los movimientos de un objeto en un video y predecir su ubicación en el siguiente cuadro. Esto se logra mediante la creación de un modelo de decisión que tome en cuenta factores como la velocidad, la dirección y el tamaño del objeto. \cite{Harrington2012}.\\
+\par En el reconocimiento facial, los árboles de decisión se utilizan para identificar a una persona en un video o imagen. Esto se logra mediante la creación de un modelo de decisión que tome en cuenta características como la forma de la cara, el tamaño de la nariz y la distancia entre los ojos \cite{Harrington2012}.\\
 
 \doublespacing
 \subsubsection{Ventajas y Desventajas}
 \spacing{1.5}
-Principalmente las ventajas de esta técnica de ML es su bajo costo computacional y simple interpretación de resultados. \\
+Las ventajas de esta técnica de ML es su bajo costo computacional y simple interpretación de resultados. \\
 \par La mayor desventaja es que la técnica es propensa a caer en el sobreajuste, siendo a veces manipulada por quien lo implemente \cite{Harrington2012}.\\
 
+\doublespacing
+\subsection{Random Forest (Bosque Aleatorio)}
+\spacing{1.5}
+El algoritmo de Random Forest es una técnica de aprendizaje supervisado que genera múltiples árboles de decisión sobre un conjunto de datos de entrenamiento: los resultados obtenidos se combinan para obtener un modelo único más robusto en comparación con los resultados de cada árbol por separado \cite{breiman2001random}.\\
+\par Cada árbol se obtiene mediante un proceso de dos etapas:
+
+\begin{itemize}
+	\item[1-.] Se genera un número considerable de árboles de decisión con el conjunto de datos. Cada árbol contiene un subconjunto aleatorio de variables $m$ (predictores) de forma que $m < M$ (donde M = total de predictores).
+	\item[2-.] Cada árbol crece hasta su máxima extensión.
+\end{itemize}
+
+\par En la figura \ref{fig:Random Forest} se muestra las etapas mencionadas anteriromente:
+
+\begin{center}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{img/Marco Teorico/random-forest-1.png} 
+		\label{fig:Random Forest}
+		\caption{Random Forest}
+	\end{figure}
+\end{center}
+
+
+\doublespacing
+\subsubsection{Ventajas y Desventajas}
+\spacing{1.5}
+
+Las principales ventajas de Random Forest son su simpleza al entrenar el modelo, desempeño muy eficiente, certera en base de datos grandes, mantiene su precisión con proporciones grandes de datos perdidos \cite{canovas2017modification}.\\
+\par Algunas desventajas son la visualización gráfica donde los resultados pueden ser difíciles de interpretar, tiene poco control sobre lo que hace el modelo (en cierto sentido es como una caja negra) \cite{canovas2017modification}.\\
 
 \doublespacing
 \subsection{Naïve Bayes (Redes de Bayes)}
 \spacing{1.5}
-La clasificación de Naïve Bayes es un algoritmo probabilístico basados en la probabilidad condicional y teorema de Bayes con atributos fuertes y de independencia entre características \cite{Shafe}. Este modelo es de fácil construcción y funciona bien en comparación a los métodos más sofisticados de clasificación, lo que lo hace particularmente útil en los diferentes campos investigativos \cite{Vembandasamy2015}.\\
-\par La fórmula condicional se expresa:\\
+Naïve Bayes es un algoritmo de clasificación probabilístico que utiliza la teoría de probabilidad y estadística para realizar clasificaciones. Es llamado "Naive" porque supone que todas las características son independientes entre sí, lo que en la mayoría de los casos no es verdad. Este teorema calcula la probabilidad de una clase dada un conjunto de características. La probabilidad se calcula multiplicando la probabilidad a priori de cada clase con la probabilidad condicional de cada característica dada esa clase\cite{Vembandasamy2015}. \\
+\par Este algoritmo es muy eficiente y rápido que se utiliza en una amplia gama de aplicaciones, incluyendo la detección de spam, la categorización de documentos y la clasificación de texto. Además, es uno de los algoritmos más simples y fáciles de implementar en Machine Learning \cite{Vembandasamy2015}.\\
+
+\par La fórmula condicional se expresa en la ecuación \ref{eq:Probabilidad condicional}:\\
 \begin{Large}
 	\begin{equation}
 		P(A|B)=\frac{P(A \cap B)}{P(B)}= \frac{(\frac{\#casos favorables A \cap B}{\#casos posibles})}{(\frac{\#casos favorables B}{\#casos posibles})}
+		\label{eq:Probabilidad condicional}
 	\end{equation}
 \end{Large}\\
-\par Desarrollando la ecuación nos queda:\\
+\par Desarrollando la ecuación nos queda en la ecuación \ref{eq:Probabilidad condicional resumida}\\
 \begin{Large}
 	\begin{equation}
 		P(A|B)=\frac{P(B|A)*P(A)}{P(B)}
+		\label{eq:Probabilidad condicional resumida}
 	\end{equation}
 \end{Large}\\
-\par Donde cada evento es tomado como:\\
+\par Donde cada evento es tomado como se demuestra en la ecuación \ref{eq:Probabilidadn del evento}\\
 \begin{large}
 	\begin{equation}
 		P(A|B)= P(B_{1}|A) \times P(B_{2}|A) \times … \times P(B_{n}|A) \times P(A)
+		\label{eq:Probabilidadn del evento}
 	\end{equation}
 \end{large}\\
 \par $P(A|B)$ es la probabilidad posterior de la clase (objetivo) dado el predictor (atributo).
@@ -133,32 +175,41 @@ La clasificación de Naïve Bayes es un algoritmo probabilístico basados en la 
 \par $P(B|A)$ es la probabilidad, que es la probabilidad de la clase dada del predictor.
 \par  $P(x)$ es la probabilidad previa del predictor.\\
 
-\par Las Redes de Bayes se generan de reglas de decisión donde participan activamente las probabilidades que ocurren referente a eventos, siendo que en base a esas probabilidades y resultados obtenidos, se toman decisiones sobre cual arco de red moverse, al final del proceso, el resultado será dado por el valor del nodo final de la red.\\
+\par Las Redes de Bayes se generan de reglas de decisión donde participan activamente las probabilidades que ocurren referente a eventos, siendo que en base a esas probabilidades y resultados obtenidos, se toman decisiones sobre cual arco de red moverse, al final del proceso, el resultado será dado por el valor del nodo final de la red \cite{Bell15}.\\
+\par Considerando el gráfo mostrado en la figura \ref{fig:Red Bayes}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.3]{img/Marco Teorico/Redes Bayes.png}  
+	\label{fig:Red Bayes}
+	\caption{Básica Red Bayes}
+\end{figure}
 
 \doublespacing
 \subsubsection{Ventajas y Desventajas}
 \spacing{1.5}
-La gran sencilles para enfrentar problemas lo hace ser una de las técnicas clásicas de ML más fácil de interpretar al momento de los resultados, además debemos agregar al valor que son fáciles de construir y toma evidencia de muchos atributos para realizar la predicción final.\\
-
+Las ventajas de esta técnica de ML son su fácilidad para implementarla, eficiencia y rápidez de tiempo de entrenamiento, buen rendimiento en textos y documentos, además no requiere mucha información para ser entrenado.\\
+\par Las desventajas son la suposición a la independencia de las variables (siendo que en muchos casos las características no son independientes), vulnerable al ruido, no es óptimo para características no correlacionadas \cite{Bell15}.
 
 \doublespacing
 \subsection{Logistic Regression (Regresión Logística)}
 \spacing{1.5}
 El algoritmo Logistic Regression modela la relación entre distintas variables utilizando una medida de error que se intentará minimizar en un proceso iterativo para poder realizar predicciones acertadas, llevando a cabo una clasificación binaria con una distribución Bernoulli en vez de Gaussian y después realiza una combinación lineal de las variables en un rango de 0 a 1 \cite{ Stoltzfus2011}.\\
-\par La ecuación lineal se debe ajustar:\\
+\par La ecuación lineal \ref{eq:Ecuación Lineal} se debe ajustar:\\
 \begin{Large}
 	\begin{equation}
 		y(X)=W^{T}X + \epsilon = \sum_{j=1}^{D}w_{j}x_{j} + \epsilon
+		\label{eq:Ecuación Lineal}
 	\end{equation}
 \end{Large}\\ 
 \par $W^{T}X$ representa el producto escalar de entrada X.
 \par $W$ e $Y$ son vectores de pesos $\in$ $\lbrace 0,1 \rbrace$.\\
 
-\par Ahora mostrando la distribución de Bernoulli:\\
+\par Ahora mostrando la ecuación \ref{eq:Distribución de Bernoulli} la distribución de Bernoulli:\\
 \begin{Large}
 	\begin{equation}
 		p(y|x,w) = Ber(y|u(x))
+		\label{eq:Distribución de Bernoulli}
 	\end{equation}
 \end{Large}
 \begin{center}
@@ -169,81 +220,78 @@ El algoritmo Logistic Regression modela la relación entre distintas variables u
 \doublespacing
 \subsubsection{Ventajas y Desventajas}
 \spacing{1.5}
-La Regresión Logística al igual que las técnicas anteriores es fácil de implementar, interpretar y muy eficiente al momento de entrenar, incluyendo que no hace suposiciones sobre distribuciones de clases en el espacio de características y es muy rápido para clasificar registros desconocidos.\\
-\par Las principales desventajas de esta técnica radican en si el número de observaciones es menor que el número de características, no se debe utilizar la regresión logística; de lo contrario, puede provocar un sobreajuste y la difícil obtención de relaciones complejas.  Además de los algoritmos más potentes y compactos, como lo son las redes neuronales, las cuales pueden superar fácilmente este algoritmo. \\
+Logistic Regression al igual que las técnicas anteriores es fácil de implementar, interpretar y muy eficiente al momento de entrenar, incluyendo que no hace suposiciones sobre distribuciones de clases en el espacio de características y es muy rápido para clasificar registros desconocidos.\\
+\par Las principales desventajas de esta técnica radican en si el número de observaciones es menor que el número de características, no se debe utilizar la regresión logística; de lo contrario, puede provocar un sobreajuste y la difícil obtención de relaciones complejas.  Para trabajos más potentes y compactos existen la Artificial Neural Networks, las cuales pueden superar fácilmente este algoritmo. \cite{Harrington2012}. \\
 
 
 \doublespacing
 \subsection{Support Vector Machine (Máquina de Vectores de Soportes)}
 \spacing{1.5}
-Si bien es cierto que los algoritmos para dar un resultado de aprendizaje automático deben ser capaces de aprender de su pasado y así poder predecir su futuro, de manera que las Support Vector Machine (SVM), están para ayudarnos a la regresión a base de un conjunto de muestras, donde existen dos valores generales, uno lo compone una matriz con variables explicativas de la muestra y el otro valor general está con el valor que se espera de la muestra. En este método, una función elige la predicción del valor esperado del caso mediante una entrada de datos  \cite{Dantas2021}.\\
+Esta técnica no será parte de los algoritmos que se analizarán en este trabajo, sin embargo se explicará en que consiste su proceso, debido a que es una las técnicas clásicas de ML.\\ 
+\par El algoritmo Support Vector Machine (SVM, por sus siglas en inglés) pertenece al ML supervisado que se utiliza para clasificación y regresión. Es un algoritmo de aprendizaje de máquina basado en el aprendizaje de modelos. El objetivo de SVM es encontrar un hiperplano que separe los datos en dos clases, de manera que los datos de una clase se encuentren en un lado del hiperplano y los datos de la otra clase se encuentren en el otro lado. El hiperplano es elegido de tal manera que maximice la margin, es decir, la distancia entre el hiperplano y los datos más cercanos. Estos datos más cercanos son conocidos como vectores de soporte. En este método, una función elige la predicción del valor esperado del caso mediante una entrada de datos \cite{Dantas2021}.\\
+
 
 \doublespacing
 \subsection{Artificial Neural Networks (Redes Neuronales Artificiales)}
 \spacing{1.5}
-Aunque no será parte de las técnicas para análizar los datos, se considera importante para este trabajo poder mencionarla. La Artificial Neural Networks (ANN), se caracteriza por su aprendizaje supervisado y no supervisado, eso quiere decir que es un modelo que trabaja con ML en su forma base, aunque de igual forma se ocupa para DL, posee una arquitectura de procesadores múltiples interconectados \cite{salas2004redes}. Mediante la técnica señalada para el aprendizaje de una ANN, podemos guiarnos de dos formas de organizar las capas ocultas, la cuales son los perceptores multicapa (PMC) \cite{Borracci2021}, encargado de las relaciones más complejas vía mayor coste de tiempo de entrenamiento, y la función de base radial (RBF) con una potencia de predicción reducida. De este modo, los métodos de aprendizaje que se emplean por lo regular son arquitecturas de redes neuronales tradicionales, donde solo se contienen dos o tres capas ocultas, imitando la operación que realiza el cerebro (Azath et al., 2020), en cambio, el DL aprenden sobre la marcha y su arquitectura puede llegar a tener 150 capas ocultas. \\
+Esta técnica no será parte de los algoritmos que se analizarán en este trabajo, sin embargo se explicará en que consiste su proceso, debido a que es una las técnicas clásicas de ML. \\
+\par La Artificial Neural Networks (ANN, por sus siglas en inglés) son un tipo de modelo de aprendizaje automático que simula la estructura y función de las redes neuronales en el cerebro humano. Una ANN está compuesta por nodos o "neuronas" que están conectados entre sí y transmiten información a través de las conexiones. Posee posee una arquitectura de procesadores múltiples interconectados para simular la estructura humana \cite{salas2004redes}. Las ANN se utilizan para realizar tareas como la clasificación, la regresión, la traducción de idiomas, la generación de texto y la identificación de patrones en grandes conjuntos de datos.\\
+\par Los métodos de aprendizaje que se emplean por lo regular son arquitecturas de redes neuronales tradicionales, donde solo se tienen dos o tres capas ocultas, imitando la operación que realiza el cerebro (Azath et al., 2020), en cambio, el DL aprenden sobre la marcha y su arquitectura puede llegar a tener 150 capas ocultas. \\
 
 \doublespacing
 \subsection{Deep Belief Network (Red de creencias profundas)}
 \spacing{1.5}
-Aunque no será parte de las técnicas para análizar los datos, importante conocer esta técnica. Esta red conlleva a un método de ML que nos ayuda con el rol probabilístico, que se ejecuta en los múltiples niveles de capas y variables ocultas, conectándose entre las capas visibles y ocultas, pero no en las capas visibles – visible u oculta – oculta \cite{PuertaBarrera2015}.\\
+Esta técnica no será parte de los algoritmos que se analizarán en este trabajo, sin embargo se explicará en que consiste su proceso, debido a que es una las técnicas clásicas de ML. \\
+\par La Deep Belief Network (DBN, por sus siglas en inglés) son un tipo de ANN que se utiliza para modelar relaciones complejas entre variables. Una DBN es una combinación de varias redes neuronales artificiales y se entrena de forma no supervisada para aprender patrones y relaciones en los datos.  La DBN tiene múltiples niveles de capas y variables ocultas, ellas están conectadas entre las capas visibles y ocultas, pero no en las capas visibles – visible u oculta – oculta \cite{PuertaBarrera2015}.\\
+\par Las DBN se utilizan en aplicaciones como la clasificación de imágenes, la detección de fraudes, la recomendación de productos y la identificación de tendencias en los datos. \\
 
 \doublespacing
 \subsection{Feedforward Artificial Neural Network (Red Neuronal de Retroalimentación)}
 \spacing{1.5}
-Aunque no será parte de las técnicas para análizar los datos, importante conocer esta técnica. Las Feedforward Artificial Neural Network (FANN) es la sucesora de ANN, trabajándose en diversos campos y aplicándose más a lo que es el DL. La diferencia de la FANN en contraste con su predecesora es su arquitectura con un conjunto de neuronas organizadas por capas y su algoritmo de entrenamiento que se ajusta a la muestra, ejecutando el proceso de aprendizaje que la hace crecer más \cite{salas2004redes}.\\
+Esta técnica no será parte de los algoritmos que se analizarán en este trabajo, sin embargo se explicará en que consiste su proceso, debido a que es una las técnicas clásicas de ML. \\ \par Las Feedforward Artificial Neural Network (FANN) es la sucesora de ANN, trabajándose en diversos campos y aplicándose más en DL. Este algoritmo se caracteriza por tener una estructura en la que los datos fluyen en una dirección, desde las entradas hasta las salidas, sin retroalimentación o retroalimentación en ciclo. En la FANN, los datos se introducen en la red en la capa de entrada y se procesan a través de varias capas intermedias, cada una compuesta por una serie de nodos o neurones. Los nodos realizan cálculos simples en base a las entradas recibidas y generan una salida, que a su vez es procesada por la capa siguiente. La salida final de la red se produce en la capa de salida \cite{salas2004redes}.\\ 
+\par La FANN utiliza en una amplia variedad de aplicaciones, incluyendo la clasificación de imágenes, la detección de fraudes, la recomendación de productos y la identificación de tendencias en los datos.\\
 
 \doublespacing
 \subsection{Recurrent Neural Networks (Redes Neuronales Recurrentes)}
 \spacing{1.5}
-Aunque no será parte de las técnicas para analizar los datos, es importante que conozcamos esta técnica. Las Recurrent Neural Networks (RNN), son reconocidas por obtener información de datos secuenciales como lo son el procesamiento del lenguaje natural, videos y subtitulación de imágenes. Las RNN su modelo asigna parámetros únicos para representar a cada dato en una secuencia \cite{arana2021redes}, para poder tener el control y no sufrir interrupciones sobre la secuencia. Su arquitectura es multicapa que comparte pasos entre los datos espaciados secuencialmente, para poder unir la información.\\
-\par Su arquitectura se va incrementando con la conexión de nodos adyacentes a través de la adición de ciclos dentro de la red.\\
+Esta técnica no será parte de los algoritmos que se analizarán en este trabajo, sin embargo se explicará en que consiste su proceso, debido a que es una las técnicas clásicas de ML. \\
+\par La Recurrent Neural Networks (RNN, por sus siglas en inglés) son un tipo de red neuronal artificial que se utiliza en el ML. A diferencia de la FANN, las RNN tienen una estructura que permite la retroalimentación, lo que les permite tomar en cuenta la secuencia temporal de los datos. Las RNN asigna parámetros únicos para representar a cada dato en una secuencia \cite{arana2021redes}, para poder tener el control y no sufrir interrupciones sobre la secuencia. Su arquitectura es multicapa que comparte pasos entre los datos espaciados secuencialmente, para poder unir la información. Su arquitectura se va incrementando con la conexión de nodos adyacentes a través de la adición de ciclos dentro de la red.\\
+\par Las RNN son reconocidas por obtener información de datos secuenciales como lo son el procesamiento del lenguaje natural, videos y subtitulación de imágenes.\\
 
 
 \doublespacing
 \section{Deep Learning (Aprendizaje Profundo)}
 \spacing{1.5}
-Las técnicas de ML, están limitadas en el procesamiento de los datos naturales en forma cruda y para dar solución a la problemática se creó el aprendizaje profundo. La comprensión de la IA y como puede llegar a igual a los comportamientos humanos, inclusive en el aprendizaje, a veces superándonos, fue un gran acontecimiento que se debe a la gran contribución de Alan Turing \cite{Carola}. El DL como subconjunto del ML entra en acción cuando los datos tienen demasiadas características, son enormes, se requiere de un nivel de precisión altísima y el ML no puede ofrecer completamente los resultados deseados.\\
+Las técnicas de ML están limitadas en el procesamiento de los datos naturales en forma cruda y para dar solución a la problemática se creó el aprendizaje profundo. La comprensión de la IA y cómo puede llegar a igualar los comportamientos humanos, inclusive en el aprendizaje, a veces superándonos, fue un gran acontecimiento que se debe a la gran contribución de Alan Turing \cite{Carola}. El DL como subárea del ML entra en acción cuando los datos tienen demasiadas características, son enormes, se requiere de un nivel de precisión altísima y el ML no puede ofrecer completamente los resultados deseados.\\
 
-\doublespacing
-\subsection{Entrenamiento de Redes Neuronales del Deep Learning}
-\spacing{1.5}
-La forma para poder crear y entrenar los modelos de DL depende del método a implementar, para ello, al mismo tiempo, existen concepciones de procesos similares que son para los modelos basados en este tipo de aprendizaje.\\
-\par En primera instancia, se inicia con el entrenamiento desde cero, tomando un conjunto amplio de datos etiquetados, diseñando la red arquitectónica que aprenda \cite{Pang2017}, de igual modo se determina la transferencia de aprendizaje, donde implica el ajuste detallado de un modelo previamente que ya fue entrenado, como puede ser GoogleLeNet que es un sistema que está relacionado con el DL. \\
-\par En segunda instancia, para trabajar con cantidades masivas de datos se requiere una extracción de características que será un enfoque más especializado, en vista de que las capas con sus tareas asignadas gozan de ciertas características de aprendizaje, estas características se pueden extraer en cualquier momento para darle mayor flexibilidad, clasificación y posible capacidad de regresión, como lo es el ejemplo de las máquinas de vectores de soporte (SVM) \cite{Dong2018}.\\
-Por último, lo relacionado respecto al tiempo es fundamental, dado que los principales problemas que enfrenta la tecnología es el tiempo, siendo que hay algoritmos que quizás se pueden demorar hasta semanas con los datos. Para esto, el uso de recursos de cómputo mediante GPU, reduce el tiempo para entrenar una red y acota el tiempo de entrenamiento para resolver un problema, perfeccionando el modelo de DL \cite{Pang2017}.\\
 
 \doublespacing
 \subsection{Convolutional Neural Networks (Redes Neuronales Convolucionales)}
 \spacing{1.5}
-El DL ha demostrado muy buenos resultados para la resolución de problemas, en cambio, las limitaciones, sobre todo en el campo de la imagenología, ha hecho que se elabore un método diferente para que exista un análisis más preciso al momento de analizar la imagen. Este método se llama Convolutional Neural Networks (CNN), que tiene una arquitectura con mejor rendimiento para las tareas complejas relacionales \cite{Pena-Torres}. \\
+El DL ha demostrado muy buenos resultados para la resolución de problemas, en cambio, las limitaciones, sobre todo en el campo de la imagenología, ha hecho que se elabore un método diferente para que exista un análisis más preciso al momento de analizar una imagen. Este método se llama Convolutional Neural Networks (CNN), que tiene una arquitectura con mejor rendimiento para las tareas de relaciones complejas \cite{Pena-Torres}. \\
 \par Desde el año 2012, las arquitecturas basadas en CNN para visión artificial han crecido muchísimo; sin embargo, no todas han sido eficientes para ocuparse en tareas de visión artificial (Figueroa Flores, 2021), siendo el Grupo de Geometría Visual (VGG) de la Universidad de Oxford \cite{Simonyan2015} una de las arquitecturas más utilizadas para las tareas de procesamiento de visión artificial. \\
-\par Las CNN se forman usando tres tipos de capas, los cuales son las capas convolucionales, capas de pooling y capas totalmente conectadas.\\
+\par Las CNN se forman usando tres tipos de capas, los cuales son capas convolucionales, capas de pooling y capas totalmente conectadas, como se muestra en la figura \ref{fig:CNN}.\\
 
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.7]{img/Marco Teorico/convulcioinales.png}  
-\caption{Descripción del funcionamiento de una red neuronal convolucional (CNN) }
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{img/Marco Teorico/convulcioinales.png}  
+	\label{fig:CNN}
+	\caption{Descripción del funcionamiento de una CNN}
 \end{figure}
 
-\par Para la CNN existen dos arquitecturas básicas de CNN, la cuales son CNN que entrega una salida para toda la imagen, como en la figura anterior y la Fully Convolutional networks que posee un codificador y decodificador, entrega una compresión de la información y su salida es por pixel. En las arquitecturas CNN exiten varios ejemplos, como lo son AlexNet, entrenado con ImageNet, GoogLeNet donde posee 22 capas y sus neuronas son más complejas, entre otras \cite{NIPS2012_c399862d}.\\
+\par Para la CNN existen dos arquitecturas básicas, las cuales son CNN que entrega una salida para toda la imagen, como en la figura anterior y la Fully Convolutional networks que posee un codificador y decodificador, entrega una compresión de la información y su salida es por pixel. En las arquitecturas CNN exiten varios ejemplos, como lo son AlexNet, entrenado con ImageNet, GoogLeNet donde posee 22 capas y sus neuronas son más complejas, entre otras \cite{NIPS2012_c399862d}.\\
 
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.8]{img/Marco Teorico/rnn.PNG}  
-\caption{Diagrama de grafo ciclico de una red neuronal recurrente (RNN) }
-\end{figure}
 
 \doublespacing
 \subsection{Neural Networks for Scarce Data Domains  (Redes neuronales para dominios de datos escasos)}
 \spacing{1.5}
-En algunos casos, los modelos no contemplan con demasiados datos y por ende no se puede ser preciso con total certeza de la predicción de los resultados de la tarea. Por tanto, esto que se apunta a crear modelos que existan pocas muestras etiquetadas disponibles \cite{Carola}. Fei-Fei et al. \cite{Fei-Fei2006} demostraron que es posible aprender nuevas categorías, una o pocas muestras por clase, aprovechando las categorías aprendidas anteriormente. \\
+Las redes neuronales pueden ser muy efectivas para abordar problemas en los que los datos son escasos \cite{Carola}. Sin embargo, cuando los datos son escasos, es esencial utilizar un enfoque diferente para entrenar las redes neuronales. Fei-Fei et al. \cite{Fei-Fei2006} demostraron que es posible aprender nuevas categorías, una o pocas muestras por clase, aprovechando las categorías aprendidas anteriormente. \\
 
 \doublespacing
 \section{Dataset}
 \spacing{1.5}
-\par Los Dataset están relacionados con el Big Data y con el procesamiento de datos, porque son datos tabulados, donde cada columna representa una variable y las filas datos, en consecuencia, el Dataset es una base de datos que se puede obtener de plataformas \cite{Astudillo2021}. Los Datasets, nos ayudan a trabajar con volúmenes de datos más pequeños, ya que la principal función de los Datasets es que hacen referencia a una única base de datos de origen. Estos Datasets se clasifican según su origen y formato, que son utilizados según las necesidades de su modelo, existiendo tipos de archivo, carpeta, bases de datos y web, cada uno con su formato. Se pueden encontrar con grandes voleumnes de información con fuentes privadas como gratuitas, siendo una de ellas Google Dataset Seach.\\
-
+Un Dataset se refiere a una colección de datos que generalmente tiene la misma forma que una tabla de base de datos o una hoja de cálculo \cite{Astudillo2021}. Un conjunto de datos consiste en un conjunto de ejemplos o casos. Una instancia también se denomina fila en una tabla de base de datos o, a veces, como un caso en estadística. Las funciones (columnas de la tabla) también tienen muchos nombres diferentes. Los estadísticos llaman atributos a las variables independientes o predictoras que se proporcionan como entradas. En la investigación de operaciones, también se habla de variables explicativas. La variable objetivo cuyo valor se va a predecir generalmente se denomina variable dependiente en estadística. La terminología puede ser un poco confusa; las variables independientes pueden no ser independientes entre sí (o de nada), y las variables dependientes no necesariamente dependen de todas las variables independientes. Es importante ser claro: la variable objetivo no se utiliza para predecirse a sí misma. Sin embargo, los valores anteriores de la variable objetivo pueden ser útiles para predecir valores futuros, por lo que estos valores pasados pueden incluirse como función \cite{provost2013data}.\\
+\par En el Dataset la reducción de datos es importante y éste intenta tomar un gran conjunto de datos y reemplazarlo con un conjunto de datos más pequeño que contiene la mayor parte de la información importante en el conjunto más grande. Los conjuntos de datos más pequeños pueden ser más fáciles de manejar o manejar. Cuanto más pequeño sea el conjunto de datos, mejor información podrá descubrir. Por ejemplo, grandes conjuntos de datos sobre los consumidores de las preferencias de visualización de películas, estos se pueden reducir a un conjunto de datos más pequeño, que revela las preferencias de gustos del consumidor ocultas en los datos de visualización (como las preferencias de género de la audiencia). La reducción de datos a menudo se asocia con la pérdida de información \cite{provost2013data}.\\
 
 \doublespacing
 \section{Aspectos de la salud y la enfermedad}

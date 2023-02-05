@@ -1,0 +1,125 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{AGRADECIMIENTOS}{\es@scroman {i}}{figure.caption.1}%
+\contentsline {chapter}{RESUMEN}{\es@scroman {ii}}{chapter*.2}%
+\contentsline {chapter}{ABSTRACT}{\es@scroman {iii}}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}INTRODUCCIÓN}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Descripción del Problema}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Descripción del proyecto}{4}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Hipótesis}{4}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Objetivo General}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Objetivos Específicos}{4}{subsection.1.2.3}%
+\contentsline {chapter}{\numberline {2}MARCO TEÓRICO}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Inteligencia Artificial}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Machine Learning}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Machine Learning: Tipos de Aprendizajes}{9}{subsection.2.2.1}%
+\contentsline {subsubsection}{Aprendizaje Supervisado}{10}{section*.9}%
+\contentsline {subsubsection}{Aprendizaje No Supervisado}{10}{section*.10}%
+\contentsline {subsection}{\numberline {2.2.2}Técnicas de Clasificación}{11}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Decision Tree (Árbol de Decisión)}{12}{subsection.2.2.3}%
+\contentsline {subsubsection}{Usos para los Decision Tree}{13}{section*.12}%
+\contentsline {subsubsection}{Ventajas y Desventajas}{14}{section*.13}%
+\contentsline {subsection}{\numberline {2.2.4}Random Forest (Bosque Aleatorio)}{14}{subsection.2.2.4}%
+\contentsline {subsubsection}{Ventajas y Desventajas}{15}{section*.15}%
+\contentsline {subsection}{\numberline {2.2.5}Naïve Bayes (Redes de Bayes)}{15}{subsection.2.2.5}%
+\contentsline {subsubsection}{Ventajas y Desventajas}{17}{section*.17}%
+\contentsline {subsection}{\numberline {2.2.6}Logistic Regression (Regresión Logística)}{18}{subsection.2.2.6}%
+\contentsline {subsubsection}{Ventajas y Desventajas}{19}{section*.18}%
+\contentsline {subsection}{\numberline {2.2.7}Support Vector Machine (Máquina de Vectores de Soportes)}{19}{subsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.2.8}Artificial Neural Networks (Redes Neuronales Artificiales)}{20}{subsection.2.2.8}%
+\contentsline {subsection}{\numberline {2.2.9}Deep Belief Network (Red de creencias profundas)}{20}{subsection.2.2.9}%
+\contentsline {subsection}{\numberline {2.2.10}Feedforward Artificial Neural Network (Red Neuronal de Retroalimentación)}{21}{subsection.2.2.10}%
+\contentsline {subsection}{\numberline {2.2.11}Recurrent Neural Networks (Redes Neuronales Recurrentes)}{22}{subsection.2.2.11}%
+\contentsline {section}{\numberline {2.3}Deep Learning (Aprendizaje Profundo)}{22}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Convolutional Neural Networks (Redes Neuronales Convolucionales)}{23}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Neural Networks for Scarce Data Domains (Redes neuronales para dominios de datos escasos)}{24}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Dataset}{24}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Aspectos de la salud y la enfermedad}{25}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Accidente Cerebro Vascular}{25}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Accidente Cerebro Vascular Isquémico}{26}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Síntomas ACV Isquémico}{26}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}Categorías de los ACV}{26}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.5}Tratamiento y Actualizaciones en los ACV}{27}{subsection.2.5.5}%
+\contentsline {chapter}{\numberline {3}TRABAJOS RELACIONADOS}{28}{chapter.3}%
+\contentsline {chapter}{\numberline {4}ESTUDIO EMPÍRICO}{36}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Enfoque de la investigación}{36}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Metodología}{37}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Aplicación}{39}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Colección de datos de entrada}{39}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Diseño del instrumento}{41}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.5}Preparación de los datos de entrada}{42}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Eliminación valores nulos}{42}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Variables significativas para la investigación}{43}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Descripción general de los datos}{44}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Missing data o perdida de información}{48}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}Preprocesamiento de los datos y clasificación}{50}{subsection.4.5.5}%
+\contentsline {subsubsection}{Análisis de variable Objetivo}{50}{section*.25}%
+\contentsline {paragraph}{Crear columna para NIHSS\_alta\_cat}{51}{section*.27}%
+\contentsline {paragraph}{Crear columna para NIHSS\_alta\_ESTABLE\_O\_GRAVE}{52}{section*.30}%
+\contentsline {subsubsection}{Análisis de las las escalas de INICIO del ACV}{53}{section*.33}%
+\contentsline {paragraph}{NIHSS INICO ACV}{53}{section*.34}%
+\contentsline {paragraph}{GLASGOW AL INICO ACV}{55}{section*.36}%
+\contentsline {subsubsection}{Análisis de otas variables de médicas}{57}{section*.38}%
+\contentsline {paragraph}{Conteo de Glóbulos Blancos}{57}{section*.39}%
+\contentsline {paragraph}{INR}{59}{section*.41}%
+\contentsline {paragraph}{Triglicéridos}{61}{section*.43}%
+\contentsline {paragraph}{Colesterol Total}{62}{section*.45}%
+\contentsline {paragraph}{Glucosa}{64}{section*.47}%
+\contentsline {paragraph}{Edad}{65}{section*.49}%
+\contentsline {paragraph}{Diabetes}{67}{section*.51}%
+\contentsline {paragraph}{Hipertensión}{68}{section*.53}%
+\contentsline {subsection}{\numberline {4.5.6}Binary Encoding (Codificación binaria)}{69}{subsection.4.5.6}%
+\contentsline {subsection}{\numberline {4.5.7}Label Encoding (Codificación de etiquetas)}{71}{subsection.4.5.7}%
+\contentsline {subsection}{\numberline {4.5.8}One-Hot Encoding:}{72}{subsection.4.5.8}%
+\contentsline {section}{\numberline {4.6}Análisis de datos de entrada}{72}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Análisis de densidad y estimación por variable}{75}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Análisis por conteo de variables categóricas}{78}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Mapa de calor de variables}{81}{subsection.4.6.3}%
+\contentsline {section}{\numberline {4.7}Naïve Bayes - Entrenamiento del algoritmo}{82}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Variable categórica}{83}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Creación del modelo y entrenamiento}{84}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Predicciones sobre los datos de prueba y métricas de rendimiento}{84}{subsection.4.7.3}%
+\contentsline {subsection}{\numberline {4.7.4}Matriz de Confusión}{86}{subsection.4.7.4}%
+\contentsline {section}{\numberline {4.8}Logistic Regression - Entrenamiento del algoritmo}{87}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Variable categórica}{87}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Creación del modelo y entrenamiento}{88}{subsection.4.8.2}%
+\contentsline {subsection}{\numberline {4.8.3}Predicciones sobre los datos de prueba y métricas de rendimiento}{89}{subsection.4.8.3}%
+\contentsline {subsection}{\numberline {4.8.4}Matriz de Confusión}{90}{subsection.4.8.4}%
+\contentsline {section}{\numberline {4.9}Decision Tree - Entrenamiento del algoritmo}{91}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Variable categórica}{91}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Creación del modelo y entrenamiento}{92}{subsection.4.9.2}%
+\contentsline {subsubsection}{Estructura del árbol creado}{93}{section*.68}%
+\contentsline {subsection}{\numberline {4.9.3}Predicciones sobre los datos de prueba y métricas de rendimiento}{94}{subsection.4.9.3}%
+\contentsline {subsection}{\numberline {4.9.4}Matriz de Confusión}{95}{subsection.4.9.4}%
+\contentsline {section}{\numberline {4.10}Random Forest - Entrenamiento del algoritmo}{96}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Variable categórica}{97}{subsection.4.10.1}%
+\contentsline {subsection}{\numberline {4.10.2}Creación del modelo y entrenamiento}{98}{subsection.4.10.2}%
+\contentsline {subsubsection}{Estructura del árbol creado}{98}{section*.71}%
+\contentsline {subsection}{\numberline {4.10.3}Predicciones sobre los datos de prueba y métricas de rendimiento}{99}{subsection.4.10.3}%
+\contentsline {subsection}{\numberline {4.10.4}Matriz de Confusión}{100}{subsection.4.10.4}%
+\contentsline {chapter}{\numberline {5}RESULTADOS}{102}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Naïve Bayes - Testeo del algoritmo}{102}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Predicciones sobre los datos del testing y métricas de rendimiento}{102}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Matriz de Confusión}{103}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Naïve Bayes - Uso del algoritmo}{104}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Importancia de los predictores}{105}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}Logistic Regression - Testeo del algoritmo}{107}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Predicciones sobre los datos del testing y métricas de rendimiento}{107}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Matriz de Confusión}{108}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Logistic Regression - Uso del algoritmo}{109}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Importancia de los predictores}{109}{subsection.5.4.1}%
+\contentsline {section}{\numberline {5.5}Decision Tree - Testeo del algoritmo}{113}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Predicciones sobre los datos del testing y métricas de rendimiento}{113}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Matriz de Confusión}{114}{subsection.5.5.2}%
+\contentsline {section}{\numberline {5.6}Decision Tree - Uso del algoritmo}{115}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Importancia de los predictores}{115}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Importancia acumulada}{121}{subsection.5.6.2}%
+\contentsline {section}{\numberline {5.7}Random Forest - Testeo del algoritmo}{123}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Predicciones sobre los datos del testing y métricas de rendimiento}{123}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Matriz de Confusión}{124}{subsection.5.7.2}%
+\contentsline {subsection}{\numberline {5.7.3}Importancia de los predictores}{125}{subsection.5.7.3}%
+\contentsline {subsection}{\numberline {5.7.4}Importancia acumulada}{133}{subsection.5.7.4}%
+\contentsline {section}{\numberline {5.8}Comparativa de pronósticos}{135}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Pronóstico favorable post ACV}{135}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Pronóstico menos favorable post ACV}{139}{subsection.5.8.2}%
+\contentsline {section}{\numberline {5.9}Comparación Final}{141}{section.5.9}%
+\contentsline {chapter}{\numberline {6}DISCUSIONES, CONCLUSIONES Y RECOMENDACIONES}{144}{chapter.6}%

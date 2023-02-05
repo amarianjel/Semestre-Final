@@ -1,0 +1,32 @@
+\babel@toc {spanish}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Base de datos de pacientes post ACV Isquémico del Hospital Herminda Martin\relax }}{39}{table.caption.20}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Eliminación de pacientes que no aportan en la investigación\relax }}{43}{table.caption.21}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Dataset de variables para la investigación\relax }}{44}{table.caption.22}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Missing data de variables\relax }}{48}{table.caption.23}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Missing data finalizado\relax }}{49}{table.caption.24}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Cantidad de pacientes en la escala NIHSS en alta\relax }}{51}{table.caption.26}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Cantidad de pacientes en la clasificación NIHSS de alta\relax }}{52}{table.caption.28}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Actualización del dataset incorporando variable NIHSS\_alta\_cat\relax }}{52}{table.caption.29}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Clasificación binaria para la variable NIHSS\_alta\_:cat\relax }}{53}{table.caption.31}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces Actualización dataset con clsificación binaria\relax }}{53}{table.caption.32}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces Binary Encoding con las variables que actualmente poseen dos estados activos\relax }}{70}{table.caption.55}%
+\contentsline {table}{\numberline {4.12}{\ignorespaces Label Encoding con las variables que actualmente poseen alguna etiqueta\relax }}{71}{table.caption.56}%
+\contentsline {table}{\numberline {4.13}{\ignorespaces One-Hot Encoding con las variables para clasificación\relax }}{72}{table.caption.57}%
+\contentsline {table}{\numberline {4.14}{\ignorespaces Variables originales\relax }}{74}{table.caption.58}%
+\contentsline {table}{\numberline {4.15}{\ignorespaces Variables agregadas por los métodos anteriores\relax }}{74}{table.caption.59}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Predicciones probabilísticas para cada observación Bayes\relax }}{105}{table.caption.75}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Predicciones probabilísticas con clasificación final Bayes\relax }}{106}{table.caption.76}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Predicciones probabilísticas para cada observación Logistic Regression\relax }}{110}{table.caption.78}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Predicciones probabilísticas con clasificación final Logistic Regression\relax }}{112}{table.caption.79}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Predicciones probabilísticas para cada observación Decision Tree \relax }}{116}{table.caption.81}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Predicciones probabilísticas con clasificación final Decision Tree\relax }}{117}{table.caption.82}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Importancia de los predictores Decision Tree\relax }}{118}{table.caption.83}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Predicciones probabilísticas para cada observación Random Forest\relax }}{127}{table.caption.87}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Predicciones probabilísticas con clasificación final Random Forest\relax }}{129}{table.caption.88}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Importancia de los predictores Random Forest\relax }}{130}{table.caption.89}%
+\addvspace {10\p@ }
