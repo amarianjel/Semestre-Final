@@ -1,20 +1,12 @@
     \hypertarget{random-forest---testeo-del-algoritmo}{%
-\section{Random Forest - Testeo del
-algoritmo}\label{random-forest---testeo-del-algoritmo}}
+\section{Random Forest - Testeo del algoritmo}\label{random-forest---testeo-del-algoritmo}}
 
-El testing tiene la finalidad de llevar a cabo la prueba si el modelo
-funciona correctamente, identificando riesgos o erros que se produjeron
-en los datos. No se realizará ajustes posteriores al testing para poder
-comparar los algoritmos en la sección de resultados.
+	En esta sección se ralizará el Testing del algoritmo Random Forest como en la sección \ref{nauxefve-bayes---testeo-del-algoritmo}.\\
 
     \hypertarget{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}{%
-\subsection{Predicciones sobre los datos del testing y métricas de
-rendimiento}\label{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}}
+\subsection{Predicciones sobre los datos del testing y métricas de rendimiento}\label{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}}
 
-Ahora es momento de evaluar los datos ya entrenados con el testing. Las
-métricas de rendimiento nos ofrecerán información de cómo se comportó el
-algoritmo durante el entrenamiento, dando a conocer valores importantes
-como lo son la precisión, exhaustividad, valor-F.
+	Tal como, la sección \ref{NBT:predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento} se realizará la evaluación de métricas del Testing.\\
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{60}{\boxspacing}
@@ -25,35 +17,26 @@ como lo son la precisión, exhaustividad, valor-F.
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-Tests - Presición : 0.6216216216216216
+Tests - Presición : 0.6666666666666666
 Tests - Reporte de clasificación:
                precision    recall  f1-score   support
 
-           0       0.61      0.85      0.71        20
-           1       0.67      0.35      0.46        17
+           0       0.60      1.00      0.75         6
+           1       1.00      0.33      0.50         6
 
-    accuracy                           0.62        37
-   macro avg       0.64      0.60      0.58        37
-weighted avg       0.63      0.62      0.59        37
+    accuracy                           0.67        12
+   macro avg       0.80      0.67      0.62        12
+weighted avg       0.80      0.67      0.62        12
 
     \end{Verbatim}
 
-    La precisión de los datos del testing en el modelo tiene un valor de
-61\% de predicción para el estado 0 y un 67\% de predicción para el
-estado 1. La exhaustividad en el estado 0 alcanza el 85\% de los datos y
-en el estado 1 alcanza solo el 35\%. Por otra parte, el F1 combina los
-valores de precisión y exhaustividad obteniéndose un 71\% en el estado 0
-y un 46\% en el estado 1.
-
-Lo que se busca es la precisión del modelo, por consecuencia, el
-Algoritmo de ML Random Forest tiene una precisión del
-62,1\% de predicción.
+	Por cada estado (0 y 1) la precisión de los datos del testing en el modelo tiene un valor de 60\%  y 100\% para cada estado respectivo en predicción. La exhaustividad informa la cantidad de datos capaz de identificar y, en este caso, es de un 100\% y 33\% para cada estado respectivo y, finalmente, el F1 combina los valores de precisión y exhaustividad obteniéndose un 75\% y 50\% en los estados respectivos. 
+\par Lo que se busca es la precisión del modelo, por consecuencia, el algoritmo de ML Logistic Regression tiene una precisión del 66,66\% de predicción en los 12 pacientes de muestra del testing.\\
 
     \hypertarget{matriz-de-confusiuxf3n}{%
 \subsection{Matriz de Confusión}\label{matriz-de-confusiuxf3n}}
 
-Evaluaremos la matriz de confusión que se elaboró con los datos del
-testing.
+Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{61}{\boxspacing}
@@ -74,30 +57,19 @@ testing.
 	\end{figure}
 \end{center}
     
-    En la matriz de confusión \ref{fig:mctrf} (1, 1) podemos observar el resultado en el que
-el modelo predice correctamente la clase positiva con un alto valor y en
-el (2, 2) el resultado donde el modelo predice correctamente la clase
-negativa también con un alto valor, acercándose a la misma de la clase
-positiva. Los demás elementos de la matriz contienen valor pequeño,
-estos son los errores de la predicción.
+   	En la matriz de confusión \ref{fig:mctrf}, los valores de la diagonal principal (0,0) = 6 y (1,1) = 2 corresponden con los valores estimados de forma correcta por el modelo, tanto los TN, como los TP. La otra diagonal, representa los casos en los que el modelo \textit{"se ha equivocado"}, según la matriz de confusión \ref{fig:mcenb} son (0,1) = 0 FP y (1,0) = 4 FN.
+\par Las afirmaciones anteriores sugieren que la las predicciones son altas, pero también existen algunos errores en la predicción.
+\par Respecto al ACV, el modelo identificó a 6 pacientes que posee un buen pronóstico (estable) y 2 paciente que posee un pronóstico no tan favorable, según la variable objetivo detallada en \ref{crear-columna-para-nihss_alta_estable_o_grave}. Así mismo, el modelo identifica a 4 pacientes que poseen buen pronóstico, pero en realidad poseen mal pronóstico.\\
 
-Las afirmaciones anteriores sugieren que la las predicciones son altas,
-pero también existen errores en la predicción.
+    \hypertarget{random-forest---uso-del-algoritmo}{%
+\section{Random Forest - Uso del algoritmo}\label{random-forest---uso-del-algoritmo}}
+	
+	Al igual que en la sección \ref{nauxefve-bayes---uso-del-algoritmo}, realizaremos comparaciones de predicción y probabilidad. Además se incorporará métricas especiales para árboles de su libreria en esta sección.
 
     \hypertarget{importancia-de-los-predictores}{%
-\subsection{Importancia de los
-predictores}\label{importancia-de-los-predictores}}
+\subsection{Importancia de los predictores}\label{importancia-de-los-predictores}}
 
-Por experiencia previa y contemplando los gráficos producidos en el paso
-3, sabemos que algunas características no son útiles para nuestro
-problema de predicción. Reducir la cantidad de funciones será la mejor
-alternativa, lo que acotará el tiempo de ejecución, con suerte sin
-comprometer significativamente el rendimiento, asi podemos examinar la
-importancia de las funciones de nuestro modelo. La importancia de cada
-predictor en el modelo se calcula como la reducción total (normalizada)
-en el criterio de división. Si un predictor no ha sido seleccionado en
-ninguna división, no se ha incluido en el modelo y por lo tanto su
-importancia es 0.
+	 Al igual que la sub sección \ref{NBT:importancia-de-los-predictores}, realizaremos los procedimientos.\\
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{62}{\boxspacing}
@@ -119,59 +91,25 @@ importancia es 0.
 \begin{tabular}{|c|l|l|}
 \hline
 \multicolumn{1}{|l|}{} & \multicolumn{1}{c|}{\textbf{0}} & \multicolumn{1}{c|}{\textbf{1}} \\ \hline
-\textbf{0} & 0,64 & 0,36 \\ \hline
-\textbf{1} & 0,74 & 0,26 \\ \hline
-\textbf{2} & 0,76 & 0,24 \\ \hline
-\textbf{3} & 0,74 & 0,26 \\ \hline
-\textbf{4} & 0,57 & 0,43 \\ \hline
-\textbf{5} & 0,62 & 0,38 \\ \hline
-\textbf{6} & 0,52 & 0,48 \\ \hline
-\textbf{7} & 0,65 & 0,35 \\ \hline
-\textbf{8} & 0,46 & 0,54 \\ \hline
-\textbf{9} & 0,32 & 0,68 \\ \hline
-\textbf{10} & 0,71 & 0,29 \\ \hline
-\textbf{11} & 0,75 & 0,25 \\ \hline
-\textbf{12} & 0,77 & 0,23 \\ \hline
-\textbf{13} & 0,67 & 0,33 \\ \hline
-\textbf{14} & 0,68 & 0,32 \\ \hline
-\textbf{15} & 0,7 & 0,3 \\ \hline
-\textbf{16} & 0,56 & 0,44 \\ \hline
-\textbf{17} & 0,37 & 0,63 \\ \hline
-\textbf{18} & 0,36 & 0,64 \\ \hline
-\textbf{19} & 0,57 & 0,43 \\ \hline
-\textbf{20} & 0,72 & 0,28 \\ \hline
-\textbf{21} & 0,57 & 0,43 \\ \hline
-\textbf{22} & 0,6 & 0,4 \\ \hline
-\textbf{23} & 0,64 & 0,36 \\ \hline
-\textbf{24} & 0,62 & 0,38 \\ \hline
-\textbf{25} & 0,5 & 0,5 \\ \hline
-\textbf{26} & 0,48 & 0,52 \\ \hline
-\textbf{27} & 0,43 & 0,57 \\ \hline
-\textbf{28} & 0,63 & 0,37 \\ \hline
-\textbf{29} & 0,52 & 0,48 \\ \hline
-\textbf{30} & 0,74 & 0,26 \\ \hline
-\textbf{31} & 0,48 & 0,52 \\ \hline
-\textbf{32} & 0,68 & 0,32 \\ \hline
-\textbf{33} & 0,61 & 0,39 \\ \hline
-\textbf{34} & 0,49 & 0,51 \\ \hline
-\textbf{35} & 0,57 & 0,43 \\ \hline
-\textbf{36} & 0,4 & 0,6 \\ \hline
+\textbf{0} & 0,53 & 0,47 \\ \hline
+\textbf{1} & 0,81 & 0,19 \\ \hline
+\textbf{2} & 0,86 & 0,14 \\ \hline
+\textbf{3} & 0,85 & 0,15 \\ \hline
+\textbf{4} & 0,60 & 0,40 \\ \hline
+\textbf{5} & 0,52 & 0,48 \\ \hline
+\textbf{6} & 0,29 & 0,71 \\ \hline
+\textbf{7} & 0,62 & 0,38 \\ \hline
+\textbf{8} & 0,51 & 0,49 \\ \hline
+\textbf{9} & 0,28 & 0,72 \\ \hline
+\textbf{10} & 0,97 & 0,03 \\ \hline
+\textbf{11} & 0,95 & 0,05 \\ \hline
 \end{tabular}%
 }
 \caption{Predicciones probabilísticas para cada observación Random Forest}
 \label{tab:clasificacin rf}
 \end{table}
         
-    Este método acepta un solo argumento que corresponde a los datos sobre
-los cuales se calculan las probabilidades y devuelve una matriz de
-listas que contienen las probabilidades de clase para los puntos de
-datos de entrada. En este caso particular podemos observar en la tabla \ref{tab:clasificacin rf} que los
-estados de la variable predictora tienen un valor de porcentaje
-predictor, por ejemplo, la tupla 0 posee un 64\% y fracción de precisión
-para el estado 0 y un 0,36\% y fracción para el estado 1.
-
-En síntesis se observa que cada uno de las variables reaccionan y toma
-valores porcentuales a que estado del predictor pertenece.
+    De acuerdo a lo mostrado en la tabla \ref{tab:probabilistica rf}, se observa como ejemplo, que la tupla 0 posee un 53\% de probabilidad para el estado 0 y un 47\% de probabilidad para el estado 1, en otras palabras, el paciente posee un buen pronóstico con un 53\% de probabilidad para este algoritmo.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{63}{\boxspacing}
@@ -199,48 +137,21 @@ valores porcentuales a que estado del predictor pertenece.
 \textbf{3} & 0 \\ \hline
 \textbf{4} & 0 \\ \hline
 \textbf{5} & 0 \\ \hline
-\textbf{6} & 0 \\ \hline
+\textbf{6} & 1 \\ \hline
 \textbf{7} & 0 \\ \hline
-\textbf{8} & 1 \\ \hline
+\textbf{8} & 0 \\ \hline
 \textbf{9} & 1 \\ \hline
 \textbf{10} & 0 \\ \hline
 \textbf{11} & 0 \\ \hline
 \textbf{12} & 0 \\ \hline
-\textbf{13} & 0 \\ \hline
-\textbf{14} & 0 \\ \hline
-\textbf{15} & 0 \\ \hline
-\textbf{16} & 0 \\ \hline
-\textbf{17} & 1 \\ \hline
-\textbf{18} & 1 \\ \hline
-\textbf{19} & 0 \\ \hline
-\textbf{20} & 0 \\ \hline
-\textbf{21} & 0 \\ \hline
-\textbf{22} & 0 \\ \hline
-\textbf{23} & 0 \\ \hline
-\textbf{24} & 0 \\ \hline
-\textbf{25} & 0 \\ \hline
-\textbf{26} & 1 \\ \hline
-\textbf{27} & 1 \\ \hline
-\textbf{28} & 0 \\ \hline
-\textbf{29} & 0 \\ \hline
-\textbf{30} & 0 \\ \hline
-\textbf{31} & 1 \\ \hline
-\textbf{32} & 0 \\ \hline
-\textbf{33} & 0 \\ \hline
-\textbf{34} & 1 \\ \hline
-\textbf{35} & 0 \\ \hline
-\textbf{36} & 1 \\ \hline
 \end{tabular}%
 }
 \caption{Predicciones probabilísticas con clasificación final Random Forest}
 \label{tab:probabilistica rf}
 \end{table}
         
-    Se observa en la tabla \ref{tab:probabilistica rf} un valor binario de 0 o 1, donde se muestra cada variable
-desarrollada en el modelo puede tomar dicho valor. El valor 0 demuestra
-que la tupla no logra predecir el estado 0 de la variable predictora, y
-por el contrario, el estado 1 es que logra la predicción del estado en
-esa tupla.
+	En la tabla \ref{tab:clasificacion dt}, se observa para interpretación como ejemplo la tupla número 6. Esta tupla no pertence al estado 0, por ende, en términos de ACV, el paciente número 6 no tiene un pronóstico favorable. 
+\par Recordamos que la Matriz de Confusión \ref{fig:mctrf} poseía 2 pacientes que tenian un pronóstico menos favorable, ellos son los que se registran con el valor 1 en la columna 0 de la tabla.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{64}{\boxspacing}
@@ -262,31 +173,31 @@ esa tupla.
 \begin{tabular}{|c|l|l|}
 \hline
 \multicolumn{1}{|l|}{} & \multicolumn{1}{c|}{\textbf{Predictor}} & \multicolumn{1}{c|}{\textbf{importancia}} \\ \hline
-\textbf{5} & TRIGLICERIDOS & 0,149579 \\ \hline
-\textbf{2} & EDAD & 0,098917 \\ \hline
-\textbf{9} & NIHSS INICO ACV & 0,087893 \\ \hline
-\textbf{4} & COL. TOTAL & 0,079422 \\ \hline
-\textbf{3} & GLUCOSA & 0,076047 \\ \hline
-\textbf{17} & GLUCOSA\_cat & 0,06392 \\ \hline
-\textbf{16} & COL. TOTAL\_cat & 0,060227 \\ \hline
-\textbf{10} & NIHSS alta ACV & 0,056171 \\ \hline
-\textbf{6} & INR & 0,054726 \\ \hline
-\textbf{7} & CONTEO G.B. & 0,052931 \\ \hline
-\textbf{13} & CONTEO G.B.\_cat & 0,050685 \\ \hline
-\textbf{1} & DIABETES & 0,050415 \\ \hline
-\textbf{8} & GLASGOW AL INICO ACV & 0,041865 \\ \hline
-\textbf{11} & NIHSS\_alta\_cat & 0,041696 \\ \hline
-\textbf{22} & NIHSS\_INICIO\_cat\_Leve (Trombolisando) & 0,019722 \\ \hline
-\textbf{0} & HTA & 0,010101 \\ \hline
-\textbf{20} & NIHSS\_INICIO\_cat\_Déficit Mínimo & 0,005682 \\ \hline
-\textbf{23} & NIHSS\_INICIO\_cat\_Moderado (Buen Pronostico) & 0 \\ \hline
-\textbf{21} & NIHSS\_INICIO\_cat\_Grave & 0 \\ \hline
-\textbf{12} & GLASGOW\_cat & 0 \\ \hline
-\textbf{19} & NIHSS\_INICIO\_cat\_Déficit Importante & 0 \\ \hline
-\textbf{18} & EDAD\_cat & 0 \\ \hline
-\textbf{15} & TRIGLICERIDOS\_cat & 0 \\ \hline
-\textbf{14} & INR\_cat & 0 \\ \hline
-\textbf{24} & NIHSS\_INICIO\_cat\_Sin Déficit & 0 \\ \hline
+\textbf{11} & NIHSS\_alta\_cat & 0,159261 \\ \hline
+\textbf{2} & EDAD & 0,103086 \\ \hline
+\textbf{9} & NIHSS INICO ACV & 0,080756 \\ \hline
+\textbf{5} & TRIGLICERIDOS & 0,078785 \\ \hline
+\textbf{10} & NIHSS alta ACV & 0,077216 \\ \hline
+\textbf{7} & CONTEO G.B. & 0,066683 \\ \hline
+\textbf{3} & GLUCOSA & 0,056563 \\ \hline
+\textbf{8} & GLASGOW AL INICO ACV & 0,056080 \\ \hline
+\textbf{6} & INR & 0,055534 \\ \hline
+\textbf{1} & DIABETES & 0,054373 \\ \hline
+\textbf{4} & COL. TOTAL & 0,053273 \\ \hline
+\textbf{17} & GLUCOSA\_cat & 0,051421 \\ \hline
+\textbf{15} & TRIGLICERIDOS\_cat & 0,032218 \\ \hline
+\textbf{13} & CONTEO G.B.\_cat & 0,023646 \\ \hline
+\textbf{12} & GLASGOW\_cat & 0,010939 \\ \hline
+\textbf{22} & NIHSS\_INICIO\_cat\_Leve (Trombolisando) & 0,008097 \\ \hline
+\textbf{23} & NIHSS\_INICIO\_cat\_Moderado (Buen Pronostico) & 0,007339 \\ \hline
+\textbf{21} & NIHSS\_INICIO\_cat\_Grave & 0,004856 \\ \hline
+\textbf{16} & COL. TOTAL\_cat & 0,004865 \\ \hline
+\textbf{0} & HTA & 0,004678 \\ \hline
+\textbf{14} & INR\_cat & 0,003802 \\ \hline
+\textbf{20} & NIHSS\_INICIO\_cat\_Déficit Mínimo & 0,002603 \\ \hline
+\textbf{18} & EDAD\_cat & 0,002603 \\ \hline
+\textbf{19} & NIHSS\_INICIO\_cat\_Déficit Importante & 0,001010 \\ \hline
+\textbf{24} & NIHSS\_INICIO\_cat\_Sin Déficit & 0,000000 \\ \hline
 \end{tabular}%
 }
 \caption{Importancia de los predictores Random Forest}
@@ -325,23 +236,17 @@ esa tupla.
 	\centering
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Random Forest - Bosque Aleatorio/output_108_0.png}
 	\caption{Importancia de los predictores en Random Forest}
-	\label{fig:ip}
+	\label{fig:iprf}
 	\end{figure}
 \end{center}
 
+    Las variables que presentan gran importancia al momento de la predicción según la tabla \ref{tab:importancia predictor rf} y la Figura \ref{fig:iprf} son ``NIHSS\_alta\_cat'', ''EDAD'' y ``NIHSS alta ACV'', ``CONTEO G.B.\_cat'' con más del 34\% de importancia en la predicción. El mayor predictor es ``NIHSS\_alta\_cat'' con un 15,92\% de importancia para este modelo.\\
     
-    El cálculo de importancia muestra en la tabla \ref{tab:importancia predictor rf} y en el gráfico \ref{fig:ip} que existen muchas variables con
-importancia al momento de la predicción, siendo la que destaca
-``TRIGLICERIDOS'' con un 14,9\% de importancia. Viendo el grafico, se
-observa que aún hay variables que no son significantes.
 
     \hypertarget{importancia-acumulada}{%
 \subsection{Importancia acumulada}\label{importancia-acumulada}}
 
-Ahora reduciremos la cantidad de funciones en uso por el modelo a solo
-aquellas requeridas para representar el 95\% de la importancia. Se debe
-usar el mismo número de características en los conjuntos de
-entrenamiento y prueba.
+	Al igual que, en la sub sección \ref{DT:importancia-acumulada}, reduciremos al 95\% de los datos.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{66}{\boxspacing}
@@ -390,8 +295,5 @@ entrenamiento y prueba.
 Número de columna para el 95 \% de importancia: 14
     \end{Verbatim}
 
-    En el gráfico \ref{fig:iparf} la curva se dispara con la
-``GLASGOW AL INICO ACV'' y se ratifica con el resultado del 95\% de
-importancia medido anteriormente con el valor cercano del 95\% de
-importancia acumulada de los datos.
+    En la Figura \ref{fig:iparf} de importancia acumulada, la curva se dispara con la ``CONTEO G.B.\_cat'' , ratificandosé con el resultado del 95\% de importancia medido anteriormente.\\
 

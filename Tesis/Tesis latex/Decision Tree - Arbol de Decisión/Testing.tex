@@ -1,20 +1,12 @@
     \hypertarget{decision-tree---testeo-del-algoritmo}{%
-\section{Decision Tree - Testeo del
-algoritmo}\label{decision-tree---testeo-del-algoritmo}}
+\section{Decision Tree - Testeo del algoritmo}\label{decision-tree---testeo-del-algoritmo}}
 
-El testing tiene la finalidad de llevar a cabo la prueba si el modelo
-funciona correctamente, identificando riesgos o erros que se produjeron
-en los datos. No se realizará ajustes posteriores al testing para poder
-comparar los algoritmos en la sección de resultados.
+	En esta sección se ralizará el Testing del algoritmo Decision Tree como en la sección \ref{nauxefve-bayes---testeo-del-algoritmo}.
 
     \hypertarget{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}{%
-\subsection{Predicciones sobre los datos del testing y métricas de
-rendimiento}\label{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}}
+\subsection{Predicciones sobre los datos del testing y métricas de rendimiento}\label{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}}
 
-Ahora es momento de evaluar los datos ya entrenados con el testing. Las
-métricas de rendimiento nos ofrecerán información de cómo se comportó el
-algoritmo durante el entrenamiento, dando a conocer valores importantes
-como lo son la precisión, exhaustividad, valor-F.
+	Tal como, la sección \ref{NBT:predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento} se realizará la evaluación de métricas del Testing.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{60}{\boxspacing}
@@ -38,20 +30,13 @@ weighted avg       0.83      0.83      0.83        12
 
     \end{Verbatim}
 
-    La precisión de los datos del testing en el modelo tiene un valor de
-83\% en ambos estados. La exhaustividad en el estado 0 alcanza un 83\%.
-Por otra parte, el F1 combina los valores de precisión y exhaustividad
-obteniéndose un 83\%.
-
-Lo que se busca es la precisión del modelo, por consecuencia, el
-Algoritmo de ML Decision Tree tiene una precisión del
-83,3\% de predicción.
+	Por cada estado (0 y 1) la precisión de los datos del testing en el modelo tiene un valor de 83\% en ambos estados en predicción. La exhaustividad informa la cantidad de datos capaz de identificar y, en este caso, es de un 83\% para ambos estados, finalmente, el F1 combina los valores de precisión y exhaustividad obteniéndose un 83\% en ambos estados. 
+\par Lo que se busca es la precisión del modelo, por consecuencia, el algoritmo de ML Decision Tree tiene una precisión del 83,33\% de predicción en los 12 pacientes de muestra del testing.\\
 
     \hypertarget{matriz-de-confusiuxf3n}{%
 \subsection{Matriz de Confusión}\label{matriz-de-confusiuxf3n}}
 
-Evaluaremos la matriz de confusión que se elaboró con los datos del
-testing.
+Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{61}{\boxspacing}
@@ -72,39 +57,19 @@ testing.
 	\end{figure}
 \end{center}
     
-    En la matriz de confusión \ref{fig:mctdt} (1, 1) podemos observar el resultado en el que
-el modelo predice correctamente la clase positiva con un alto valor y en
-el (2, 2) el resultado donde el modelo predice correctamente la clase
-negativa también con un alto valor, acercándose a la misma de la clase
-positiva. Los demás elementos de la matriz contienen valor pequeño,
-estos son los errores de la predicción.
-
-Las afirmaciones anteriores sugieren que la las predicciones son altas y
-el error es muy pequeño en la predicción.
+   	En la matriz de confusión \ref{fig:mctdt}, los valores de la diagonal principal (0,0) = 5 y (1,1) = 5 corresponden con los valores estimados de forma correcta por el modelo, tanto los TN, como los TP. La otra diagonal, representa los casos en los que el modelo \textit{"se ha equivocado"}, según la matriz de confusión \ref{fig:mcenb} son (0,1) = 1 FP y (1,0) = 1 FN.
+\par Las afirmaciones anteriores sugieren que la las predicciones son altas, pero también existen algunos errores en la predicción.
+\par Respecto al ACV, el modelo identifico a 5 pacientes que posee un buen pronóstico (estable) y 5 paciente que posee un pronóstico no tan favorable, según la variable objetivo detallada en \ref{crear-columna-para-nihss_alta_estable_o_grave}. Así mismo, el modelo identifica a 1 paciente que poseen buen pronóstico, pero en realidad poseen mal pronóstico, y a su vez, el modelo identifica a 1 paciente que poseen mal pronóstico, pero en realidad poseen buen pronóstico.\\
 
     \hypertarget{decision-tree---uso-del-algoritmo}{%
-\section{Decision Tree - Uso del
-algoritmo}\label{decision-tree---uso-del-algoritmo}}
+\section{Decision Tree - Uso del algoritmo}\label{decision-tree---uso-del-algoritmo}}
 
-El último paso de la metodología es el uso del algoritmo, nosotros lo
-utilizaremos para desarrollar probabilidades en los predictores. No
-todos los modelos poseen los mismos métodos ni atributos, por ende, se
-tratará de realizar comparaciones con métodos similares entre sí.
+	Al igual que en la sección \ref{nauxefve-bayes---uso-del-algoritmo}, realizaremos comparaciones de predicción y probabilidad. Además se incorporará métricas especiales para árboles de su libreria en esta sección.
 
     \hypertarget{importancia-de-los-predictores}{%
-\subsection{Importancia de los
-predictores}\label{importancia-de-los-predictores}}
+\subsection{Importancia de los predictores}\label{importancia-de-los-predictores}}
 
-Por experiencia previa y contemplando los gráficos producidos en el paso
-3, sabemos que algunas características no son útiles para nuestro
-problema de predicción. Reducir la cantidad de funciones será la mejor
-alternativa, lo que acotará el tiempo de ejecución, con suerte sin
-comprometer significativamente el rendimiento, asi podemos examinar la
-importancia de las funciones de nuestro modelo. La importancia de cada
-predictor en el modelo se calcula como la reducción total (normalizada)
-en el criterio de división. Si un predictor no ha sido seleccionado en
-ninguna división, no se ha incluido en el modelo y por lo tanto su
-importancia es 0.
+	Al igual que la sub sección \ref{NBT:importancia-de-los-predictores}, realizaremos los procedimientos.\\
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{62}{\boxspacing}
@@ -142,11 +107,10 @@ importancia es 0.
 }
 \caption{Predicciones probabilísticas para cada observación Decision Tree
 }
-\label{tab:clasificacin dt}
+\label{tab:probabilistica dt}
 \end{table}
-        
-    Según la tabla \ref{tab:clasificacin dt} la predicción probabilistica en los estados 0 y 1 tuvo éxito al momento
-de la desición. Los resultados arrojados son exactos.
+      
+    De acuerdo a lo mostrado en la tabla \ref{tab:probabilistica dt}, se observa como ejemplo, que la tupla 0 posee un 0\% de probabilidad para el estado 0 y un 100\% de probabilidad para el estado 1, en otras palabras, el paciente posee un mal pronóstico con un 100\% de probabilidad para este algoritmo.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{63}{\boxspacing}
@@ -186,11 +150,8 @@ de la desición. Los resultados arrojados son exactos.
 \label{tab:clasificacion dt}
 \end{table}
         
-    Se observa en la tabla \ref{tab:clasificacion dt} un valor binario de 0 o 1, donde se muestra cada variable
-desarrollada en el modelo puede tomar dicho valor. El valor 0 demuestra
-que la tupla no logra predecir el estado 0 de la variable predictora, y
-por el contrario, el estado 1 es que logra la predicción del estado en
-esa tupla. Como reflejo de la tabla, éxiste un gran poder de predicción.
+	En la tabla \ref{tab:clasificacion dt}, se observa para interpretación como ejemplo la tupla número 4. Esta tupla no pertence al estado 0, por ende, en términos de ACV, el paciente número 4 no tiene un pronóstico favorable. 
+\par Recordamos que la Matriz de Confusión \ref{fig:mctdt} poseía 5 pacientes que tenian un pronóstico menos favorable, ellos son los que se registran con el valor 1 en la columna 0 de la tabla.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{64}{\boxspacing}
@@ -280,20 +241,12 @@ esa tupla. Como reflejo de la tabla, éxiste un gran poder de predicción.
 	\end{figure}
 \end{center}
     
-    Las variables que presentan gran importancia al momento de la predicción según la tabla \ref{tab:importancia predictor dt} y el gráfico \ref{fig:ipdt}
-son ``NIHSS\_alta\_cat'', ``NIHSS alta ACV'', ``CONTEO G.B.\_cat'' y
-``GLUCOSA\_cat'' con más del 98\%, siendo que el mayor predictor esta
-con un 41,9\% que es ``NIHSS\_alta\_cat. Se ve reflejado en el grafico
-la gran importancia que representan las variables mencionadas para el
-modelo.
+    Las variables que presentan gran importancia al momento de la predicción según la tabla \ref{tab:importancia predictor dt} y la Figura \ref{fig:ipdt} son ``NIHSS\_alta\_cat'', ``NIHSS alta ACV'', ``CONTEO G.B.\_cat'' y ``GLUCOSA\_cat'' con más del 98\% de importancia en la predicción. El mayor predictor es ``NIHSS\_alta\_cat'' con un 41,98\% de importancia para este modelo.\\
 
     \hypertarget{importancia-acumulada}{%
-\subsection{Importancia acumulada}\label{importancia-acumulada}}
+\subsection{Importancia acumulada}\label{DT:importancia-acumulada}}
 
-Ahora reduciremos la cantidad de funciones en uso por el modelo a solo
-aquellas requeridas para representar el 95\% de la importancia. Se debe
-usar el mismo número de características en los conjuntos de
-entrenamiento y prueba.
+	Ahora reduciremos la cantidad de funciones en uso por el modelo a solo aquellas requeridas para representar el 95\% de la importancia. Se debe usar el mismo número de características en los conjuntos de entrenamiento y testing.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{66}{\boxspacing}
@@ -341,10 +294,4 @@ entrenamiento y prueba.
 Número de columna para el 95 \% de importancia: 4
     \end{Verbatim}
 
-    En el gráfico \ref{fig:ipadt} de importancia acumulada la curva se dispara con la
-``GLUCOSA\_cat'' y se ratifica con el resultado del 95\% de importancia
-medido anteriormente.
-
-
-    % Add a bibliography block to the postdoc
-
+    En la Figura \ref{fig:ipadt} de importancia acumulada, la curva se dispara con la ``GLUCOSA\_cat'' , ratificandosé con el resultado del 95\% de importancia medido anteriormente.\\

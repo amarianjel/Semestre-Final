@@ -1,20 +1,12 @@
     \hypertarget{logistic-regression---testeo-del-algoritmo}{%
-\section{Logistic Regression - Testeo del
-algoritmo}\label{logistic-regression---testeo-del-algoritmo}}
+\section{Logistic Regression - Testeo del algoritmo}\label{logistic-regression---testeo-del-algoritmo}}
 
-El testing tiene la finalidad de llevar a cabo la prueba si el modelo
-funciona correctamente, identificando riesgos o erros que se produjeron
-en los datos. No se realizará ajustes posteriores al testing para poder
-comparar los algoritmos en la sección de resultados.
+	En esta sección se ralizará el Testing del algoritmo Logistic Regression como en la sección \ref{nauxefve-bayes---testeo-del-algoritmo}.
 
     \hypertarget{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}{%
-\subsection{Predicciones sobre los datos del testing y métricas de
-rendimiento}\label{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}}
+\subsection{Predicciones sobre los datos del testing y métricas de rendimiento}\label{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}}
 
-Ahora es momento de evaluar los datos ya entrenados con el testing. Las
-métricas de rendimiento nos ofrecerán información de cómo se comportó el
-algoritmo durante el entrenamiento, dando a conocer valores importantes
-como lo son la precisión, exhaustividad, valor-F.
+	Tal como, la sección \ref{NBT:predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento} se realizará la evaluación de métricas del Testing.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{60}{\boxspacing}
@@ -25,35 +17,26 @@ como lo son la precisión, exhaustividad, valor-F.
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-Tests - Presición : 0.5945945945945946
+Tests - Presición : 0.8333333333333334
 Tests - Reporte de clasificación:
                precision    recall  f1-score   support
 
-           0       0.59      0.80      0.68        20
-           1       0.60      0.35      0.44        17
+           0       0.75      1.00      0.86         6
+           1       1.00      0.67      0.80         6
 
-    accuracy                           0.59        37
-   macro avg       0.60      0.58      0.56        37
-weighted avg       0.60      0.59      0.57        37
+    accuracy                           0.83        12
+   macro avg       0.88      0.83      0.83        12
+weighted avg       0.88      0.83      0.83        12
 
     \end{Verbatim}
-
-    La precisión de los datos del testing en el modelo tiene un valor de
-59\% de predicción para el estado 0 y un 60\% de predicción para el
-estado 1. La exhaustividad en el estado 0 alcanza el 80\% de los datos y
-en el estado 1 alcanza solo el 35\%. Por otra parte, el F1 combina los
-valores de precisión y exhaustividad obteniéndose un 68\% en el estado 0
-y un 44\% en el estado 1.
-
-Lo que se busca es la precisión del modelo, por consecuencia, el
-Algoritmo de ML Logistic Regression tiene una precisión
-del 59,4\% de predicción.
+    
+	Por cada estado (0 y 1) la precisión de los datos del testing en el modelo tiene un valor de 75\%  y 100\% para cada estado respectivo en predicción. La exhaustividad informa la cantidad de datos capaz de identificar y, en este caso, es de un 100\% y 67\% para cada estado respectivo y, finalmente, el F1 combina los valores de precisión y exhaustividad obteniéndose un 86\% y 80\% en los estados respectivos. 
+\par Lo que se busca es la precisión del modelo, por consecuencia, el algoritmo de ML Logistic Regression tiene una precisión del 83,33\% de predicción en los 12 pacientes de muestra del testing.\\
 
     \hypertarget{matriz-de-confusiuxf3n}{%
 \subsection{Matriz de Confusión}\label{matriz-de-confusiuxf3n}}
 
-Evaluaremos la matriz de confusión que se elaboró con los datos del
-testing.
+Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{61}{\boxspacing}
@@ -70,45 +53,24 @@ testing.
 	\centering
     \adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{Logistic Regression - Regresión Logistica/output_97_0.png}
 	\caption{Matriz de confusión de testing Logistic Regression }
-	\label{fig:aNISSh}
+	\label{fig:mctlr}
 	\end{figure}
 \end{center}
-    
-    En la matriz de confusión \ref{fig:aNISSh} (1, 1) podemos observar el resultado en el que
-el modelo predice correctamente la clase positiva con un alto valor y en
-el (2, 2) el resultado donde el modelo predice correctamente la clase
-negativa también con un alto valor, acercándose a la misma de la clase
-positiva. los demás elementos de la matriz contienen valor pequeño,
-estos son los errores de la predicción.
 
-Las afirmaciones anteriores sugieren que la las predicciones son altas,
-pero también existen errores en la predicción y el principal error recae
-en el que el modelo predice erroneamnete la clase negativa cuando en
-realidad es positiva.
+	En la matriz de confusión \ref{fig:mctlr}, los valores de la diagonal principal (0,0) = 6 y (1,1) = 4 corresponden con los valores estimados de forma correcta por el modelo, tanto los TN, como los TP. La otra diagonal, representa los casos en los que el modelo \textit{"se ha equivocado"}, según la matriz de confusión \ref{fig:mcenb} son (0,1) = 0 FP y (1,0) = 2 FN.
+\par Las afirmaciones anteriores sugieren que la las predicciones son altas, pero también existen algunos errores en la predicción.
+\par Respecto al ACV, el modelo identifico a 6 pacientes que posee un buen pronóstico (estable) y 4 paciente que posee un pronóstico no tan favorable, según la variable objetivo detallada en \ref{crear-columna-para-nihss_alta_estable_o_grave}. Así mismo, el modelo identifica a 2 pacientes que poseen buen pronóstico, pero en realidad poseen mal pronóstico.\\
+    
 
     \hypertarget{logistic-regression---uso-del-algoritmo}{%
-\section{Logistic Regression - Uso del
-algoritmo}\label{logistic-regression---uso-del-algoritmo}}
+\section{Logistic Regression - Uso del algoritmo}\label{logistic-regression---uso-del-algoritmo}}
 
-El último paso de la metodología es el uso del algoritmo, nosotros lo
-utilizaremos para desarrollar probabilidades en los predictores. No
-todos los modelos poseen los mismos métodos ni atributos, por ende, se
-tratará de realizar comparaciones con métodos similares entre sí.
+	Al igual que en la sección \ref{nauxefve-bayes---uso-del-algoritmo}, realizaremos comparaciones de predicción y probabilidad.
 
     \hypertarget{importancia-de-los-predictores}{%
-\subsection{Importancia de los
-predictores}\label{importancia-de-los-predictores}}
+\subsection{Importancia de los predictores}\label{importancia-de-los-predictores}}
 
-Por experiencia previa y contemplando los gráficos producidos en el paso
-3, sabemos que algunas características no son útiles para nuestro
-problema de predicción. Reducir la cantidad de funciones será la mejor
-alternativa, lo que acotará el tiempo de ejecución, con suerte sin
-comprometer significativamente el rendimiento, asi podemos examinar la
-importancia de las funciones de nuestro modelo. La importancia de cada
-predictor en el modelo se calcula como la reducción total (normalizada)
-en el criterio de división. Si un predictor no ha sido seleccionado en
-ninguna división, no se ha incluido en el modelo y por lo tanto su
-importancia es 0.
+ Al igual que la sub sección \ref{NBT:importancia-de-los-predictores}, realizaremos los procedimientos.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{62}{\boxspacing}
@@ -130,56 +92,27 @@ importancia es 0.
 \begin{tabular}{|c|l|l|}
 \hline
 \multicolumn{1}{|l|}{} & \multicolumn{1}{c|}{\textbf{0}} & \multicolumn{1}{c|}{\textbf{1}} \\ \hline \hline
-\textbf{0} & 1 & 9,89E-09 \\ \hline
-\textbf{1} & 1 & 1,87E-09 \\ \hline
-\textbf{2} & 0,953234 & 0,046766 \\ \hline
-\textbf{3} & 0,999837 & 0,000163 \\ \hline
-\textbf{4} & 0,81622 & 0,18378 \\ \hline
-\textbf{5} & 0,999932 & 6,77E-05 \\ \hline
-\textbf{6} & 0,024484 & 0,975516 \\ \hline
-\textbf{7} & 0,998096 & 0,001904 \\ \hline
-\textbf{8} & 0,778886 & 0,221114 \\ \hline
-\textbf{9} & 3,58E-05 & 0,999964 \\ \hline
-\textbf{10} & 0,980607 & 0,019393 \\ \hline
-\textbf{11} & 0,996999 & 0,003001 \\ \hline
-\textbf{12} & 0,994224 & 0,005776 \\ \hline
-\textbf{13} & 0,999994 & 6,21E-06 \\ \hline
-\textbf{14} & 1 & 1,53E-15 \\ \hline
-\textbf{15} & 0,14296 & 0,85704 \\ \hline
-\textbf{16} & 0,002332 & 0,997668 \\ \hline
-\textbf{17} & 0,001081 & 0,998919 \\ \hline
-\textbf{18} & 0,005275 & 0,994725 \\ \hline
-\textbf{19} & 0,999973 & 2,7E-05 \\ \hline
-\textbf{20} & 0,99179 & 0,00821 \\ \hline
-\textbf{21} & 0,955307 & 0,044693 \\ \hline
-\textbf{22} & 0,738349 & 0,261651 \\ \hline
-\textbf{23} & 0,998427 & 0,001573 \\ \hline
-\textbf{24} & 0,980207 & 0,019793 \\ \hline
-\textbf{25} & 1 & 2,92E-11 \\ \hline
-\textbf{26} & 0,080143 & 0,919857 \\ \hline
-\textbf{27} & 0,000833 & 0,999167 \\ \hline
-\textbf{28} & 0,999996 & 4,44E-06 \\ \hline
-\textbf{29} & 0,949616 & 0,050384 \\ \hline
-\textbf{30} & 0,99181 & 0,00819 \\ \hline
-\textbf{31} & 0,99011 & 0,00989 \\ \hline
-\textbf{32} & 0,998938 & 0,001062 \\ \hline
-\textbf{33} & 1 & 8,15E-16 \\ \hline
-\textbf{34} & 5,28E-05 & 0,999947 \\ \hline
-\textbf{35} & 0,999998 & 2E-06 \\ \hline
-\textbf{36} & 0,037317 & 0,962683 \\ \hline
+\textbf{0} & 0,769731 & 0,230269 \\ \hline
+\textbf{1} & 0,965470 & 0,034530 \\ \hline
+\textbf{2} & 0,993616 & 0,006384 \\ \hline
+\textbf{3} & 0,998082 & 0,001918 \\ \hline
+\textbf{4} & 0,420635 & 0,579365 \\ \hline
+\textbf{5} & 0,576335 & 0,423665 \\ \hline
+\textbf{6} & 0,197545 & 0,802455 \\ \hline
+\textbf{7} & 0,980097 & 0,019903 \\ \hline
+\textbf{8} & 0,104532 & 0,895468 \\ \hline
+\textbf{9} & 0,008064 & 0,991936 \\ \hline
+\textbf{10} & 0,978317 & 0,021683 \\ \hline
+\textbf{11} & 0,999660 & 0,000340 \\ \hline
+
 \end{tabular}%
 }
 \caption{Predicciones probabilísticas para cada observación Logistic Regression}
-\label{tab:clasificacin lr}
+\label{tab:probabilistica lr}
 \end{table}
-        
-    Este método acepta un solo argumento que corresponde a los datos sobre
-los cuales se calculan las probabilidades y devuelve una matriz de
-listas que contienen las probabilidades de clase para los puntos de
-datos de entrada. En este caso la tabla \ref{tab:clasificacin lr} podemos observar que los
-estados de la variable predictora tienen un valor de porcentaje
-predictor, por ejemplo la tupla 0 posee un 100\% de precisión para el
-estado 0 y un 0,98\% y fracción para el estado 1.
+
+	De acuerdo a lo mostrado en la tabla \ref{tab:probabilistica lr}, se observa como ejemplo, que la tupla 0 posee un 76\% y fracción de precisión para el estado 0 y un 23\% y fracción para el estado 1, en otras palabras, el paciente posee un buen pronóstico con un 76\% de probabilidad para este algoritmo.
+
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{63}{\boxspacing}
@@ -205,48 +138,19 @@ estado 0 y un 0,98\% y fracción para el estado 1.
 \textbf{1} & 0 \\ \hline
 \textbf{2} & 0 \\ \hline
 \textbf{3} & 0 \\ \hline
-\textbf{4} & 0 \\ \hline
+\textbf{4} & 1 \\ \hline
 \textbf{5} & 0 \\ \hline
 \textbf{6} & 1 \\ \hline
 \textbf{7} & 0 \\ \hline
-\textbf{8} & 0 \\ \hline
+\textbf{8} & 1 \\ \hline
 \textbf{9} & 1 \\ \hline
 \textbf{10} & 0 \\ \hline
 \textbf{11} & 0 \\ \hline
-\textbf{12} & 0 \\ \hline
-\textbf{13} & 0 \\ \hline
-\textbf{14} & 0 \\ \hline
-\textbf{15} & 1 \\ \hline
-\textbf{16} & 1 \\ \hline
-\textbf{17} & 1 \\ \hline
-\textbf{18} & 1 \\ \hline
-\textbf{19} & 0 \\ \hline
-\textbf{20} & 0 \\ \hline
-\textbf{21} & 0 \\ \hline
-\textbf{22} & 0 \\ \hline
-\textbf{23} & 0 \\ \hline
-\textbf{24} & 0 \\ \hline
-\textbf{25} & 0 \\ \hline
-\textbf{26} & 1 \\ \hline
-\textbf{27} & 1 \\ \hline
-\textbf{28} & 0 \\ \hline
-\textbf{29} & 0 \\ \hline
-\textbf{30} & 0 \\ \hline
-\textbf{31} & 0 \\ \hline
-\textbf{32} & 0 \\ \hline
-\textbf{33} & 0 \\ \hline
-\textbf{34} & 1 \\ \hline
-\textbf{35} & 0 \\ \hline
-\textbf{36} & 1 \\ \hline
 \end{tabular}%
 }
 \caption{Predicciones probabilísticas con clasificación final Logistic Regression}
 \label{tab:clasificacion lr}
 \end{table}
-        
-    Se observa en la tabla \ref{tab:clasificacion lr} un valor binario de 0 o 1, donde se muestra cada variable
-desarrollada en el modelo puede tomar dicho valor. El valor 0 demuestra
-que la tupla no logra predecir el estado 0 de la variable predictora, y
-por el contrario, el estado 1 es que logra la predicción del estado en
-esa tupla.
 
+	Se observa en la tabla \ref{tab:clasificacion lr}, tomaremos para interpretación como ejemplo la tupla número 4. Esta tupla no pertence al estado 0, por ende, en términos de ACV, el paciente número 4 no tiene un pronóstico favorable. 
+\par Recordamos que la Matriz de Confusión \ref{fig:mctlr} poseía 4 pacientes que tenian un pronóstico menos favorable, ellos son los que se registran con el valor 1 en la columna 0 de la tabla.\\

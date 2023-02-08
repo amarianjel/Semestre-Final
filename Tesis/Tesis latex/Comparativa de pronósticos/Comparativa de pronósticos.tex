@@ -1,41 +1,17 @@
     \hypertarget{comparativa-de-pronuxf3sticos}{%
-\section{Comparativa de
-pronósticos}\label{comparativa-de-pronuxf3sticos}}
+\section{Comparativa de pronósticos}\label{comparativa-de-pronuxf3sticos}}
 
-Para la investigación como se dijo en párrafos anteriores, es de vital
-importancia conocer si los pacientes post ACV presentarán un buen
-pronóstico después de la evaluación con la escala NIHSS de alta. Como
-nuestra variable predictora esta en un formato binario, es útil la
-interpretación para los resultados, es decir, podremos entender si los
-pacientes del hospital Herminda Martin existe un porcentaje predictivo
-que nos haga saber si el paciente tendrá un buen pronóstico o mal
-pronóstico con esa variable como su respaldo, asimismo la variable nos
-dirá el futuro del paciente con un estado 0 de buena predicción o 1 de
-mala predicción.
-
-La exhaustividad, precisión y el F1 son los que serán evaluados para
-tomar la decisión cual algoritmo es más compatible con los datos
+	Para la investigación como se dijo en párrafos anteriores, es de vital importancia conocer si los pacientes post ACV presentarán un buen pronóstico después de la evaluación con la escala NIHSS de alta. Como nuestra variable predictora esta en un formato binario, es útil la interpretación para los resultados, es decir, podremos entender si los pacientes del hospital Herminda Martin existe un porcentaje predictivo que nos haga saber si el paciente tendrá un buen pronóstico o mal pronóstico con esa variable como su respaldo, asimismo la variable nos dirá el futuro del paciente con un estado 0 de buena predicción o 1 de mala predicción.
+	La exhaustividad, precisión y el F1 son los que serán evaluados para tomar la decisión cual algoritmo es más compatible con los datos
 procesados del tests.
 
     \hypertarget{pronuxf3stico-favorable-post-acv}{%
-\subsection{Pronóstico favorable post
-ACV}\label{pronuxf3stico-favorable-post-acv}}
+\subsection{Pronóstico favorable post ACV}\label{pronuxf3stico-favorable-post-acv}}
 
-Desde la preparación de los datos en el paso 2 del método modificamos
-bastante la variable que queríamos predecir inicial, asociando la
-clasificación ``leve'' y ``sin déficit'' son parte de un buen pronóstico
-y su vez el estado 0 es favorable para los pacientes en la variable
-predictora.
+	En la sub sección \ref{crear-columna-para-nihss_alta_estable_o_grave} pudimos visualizar como asociamos las clasificaciones de la escala NIHSS a la variable binaria actual. A continuación, analizaremos el estado 0 de la variable binaria, en donde los pacientes tienen un pronóstico favorable post ACV.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{59}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{total} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{values}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{66}{\boxspacing}
+\prompt{In}{incolor}{7}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd} 
 \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k}{as} \PY{n+nn}{sns} 
@@ -43,10 +19,10 @@ predictora.
 \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
 \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
 
-\PY{n}{data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Precisión}\PY{l+s+s1}{\PYZsq{}} \PY{p}{:} \PY{p}{[}\PY{l+m+mi}{59}\PY{p}{,} \PY{l+m+mi}{55}\PY{p}{,} \PY{l+m+mi}{83}\PY{p}{,} \PY{l+m+mi}{61}\PY{p}{]}\PY{p}{,}
-                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Exahustividad}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{l+m+mi}{80}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{83}\PY{p}{,} \PY{l+m+mi}{85}\PY{p}{]}\PY{p}{,}
-                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{F1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{l+m+mi}{68}\PY{p}{,} \PY{l+m+mi}{71}\PY{p}{,} \PY{l+m+mi}{83}\PY{p}{,} \PY{l+m+mi}{71}\PY{p}{]}\PY{p}{\PYZcb{}}\PY{p}{,}
-                    \PY{n}{index}\PY{o}{=}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Logistic Regression}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Naïve Bayes}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Decision Tree}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Random Forest}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+\PY{n}{data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Precisión}\PY{l+s+s1}{\PYZsq{}} \PY{p}{:} \PY{p}{[}\PY{l+m+mi}{55}\PY{p}{,} \PY{l+m+mi}{75}\PY{p}{,} \PY{l+m+mi}{83}\PY{p}{,} \PY{l+m+mi}{60}\PY{p}{]}\PY{p}{,}
+                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Exahustividad}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{83}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{]}\PY{p}{,}
+                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{F1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{l+m+mi}{71}\PY{p}{,} \PY{l+m+mi}{86}\PY{p}{,} \PY{l+m+mi}{83}\PY{p}{,} \PY{l+m+mi}{75}\PY{p}{]}\PY{p}{\PYZcb{}}\PY{p}{,}
+                    \PY{n}{index}\PY{o}{=}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Naïve Bayes}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Logistic Regression}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Decision Tree}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Random Forest}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
 \PY{n}{total} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
 \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cantidad de Puntos}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
@@ -74,18 +50,13 @@ predictora.
 \begin{center}
     	\begin{figure}[H]
 	\centering
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{E:/Tesis latex/Comparativa de pronósticos/output_3_0.png}
-	\caption{Sumatoria de métricas en pronósticos favorables}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Comparativa de pronósticos/output_3_0.png}
+	\caption{Sumatoria de métricas en pronóstico favorable favorables}
 	\label{fig:smpf}
 	\end{figure}
 \end{center}
     
-    Como se demuestra en el gráfico \ref{fig:smpf}, la suma de los valores de las métricas
-de predicción en porcentaje supera los doscientos, pero no alcanzan los
-300 que es el máximo para todos los valores de las métricas. El peor
-algoritmo en la suma de todas sus métricas es la Logistic Regression con
-207 puntos, en cambio el mejor algoritmo con un total de 249 puntos es
-Decision Tree.
+    Como se demuestra en el Figura \ref{fig:smpf}, la suma de los valores de las métricas de predicción en porcentaje supera los 225, pero no alcanzan los 300 que es el máximo para todos los valores de las métricas. El peor algoritmo en la suma de todas sus métricas es la Naïve Bayes con 226 puntos, en cambio el mejor algoritmo con un total de 261 puntos es Logistic Regression.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{71}{\boxspacing}
@@ -109,38 +80,26 @@ Decision Tree.
 \begin{center}
     	\begin{figure}[H]
 	\centering
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{E:/Tesis latex/Comparativa de pronósticos/output_5_0.png}
-	\caption{Comparativa de métricas en pronósticos favorables}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Comparativa de pronósticos/output_5_0.png}
+	\caption{Comparativa de métrica en pronóstico favorable favorables}
 	\label{fig:cmpf}
 	\end{figure}
 \end{center}
     
-    El gráfico \ref{fig:cmpf} muestra los valores de Predicción, Exhaustividad y F1 en cada
-uno de los algoritmos. Se demuestra con el estado 0 que en el algoritmo
-más preciso fue Decision Tree y el menos preciso fue Naïve Bayes con un
-100 \%. En la Exhaustividad el peor algoritmo fue Logistic Regression y
-el mejor fue Naive Bayes. El F1 peor fue Logistic Regression y el mejor
-fue Decision Tree.
-
-    Como resultado final la respuesta sobre el estado favorable del paciente
-el algoritmo con mejores resultados fue Decision Tree.
+    La Figura \ref{fig:cmpf} muestra los valores de Predicción, Exhaustividad y F1 en cada uno de los algoritmos. Se demuestra con el estado 0 que el algoritmo más preciso fue Decision Tree con un 83\% y el menos preciso fue Naïve Bayes con un 55\%. En la Exhaustividad el peor algoritmo fue Decision Tree con un 83\% y los demás quedaron empatados con un 100\% de exhaustividad. El F1 peor fue para Naïve Bayes y el mejor fue Logistic Regression.
+    Como resultado final, en la comparación del pronóstico favorable del paciente, el mejor algoritmo por una difencia mínima es para Logistic Regression. El resultado se tomó por la suma de su métricas, aunque el algoritmo más estable fue Decisión Tree, siendo destacable en su desempeño.
 
     \hypertarget{pronuxf3stico-menos-favorable-post-acv}{%
-\subsection{Pronóstico menos favorable post
-ACV}\label{pronuxf3stico-menos-favorable-post-acv}}
+\subsection{Pronóstico menos favorable post ACV}\label{pronuxf3stico-menos-favorable-post-acv}}
 
-Desde la preparación de los datos en el paso 2 del método modificamos
-bastante la variable que queríamos predecir inicial, asociando la
-clasificación ``moderado'', ``déficit importante'' y ``grave'' son parte
-de un mal pronóstico y su vez el estado 1 es poco favorable para los
-pacientes en la variable predictora.
+	En la sub sección \ref{crear-columna-para-nihss_alta_estable_o_grave} pudimos visualizar como asociamos las clasificaciones de la escala NIHSS a la variable binaria actual. A continuación, analizaremos el estado 1 de la variable binaria, en donde los pacientes tienen un pronóstico menos favorable post ACV.
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{74}{\boxspacing}
+	\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Precisión}\PY{l+s+s1}{\PYZsq{}} \PY{p}{:} \PY{p}{[}\PY{l+m+mi}{60}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{83}\PY{p}{,} \PY{l+m+mi}{67}\PY{p}{]}\PY{p}{,}
-                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Exahustividad}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{l+m+mi}{35}\PY{p}{,} \PY{l+m+mi}{17}\PY{p}{,} \PY{l+m+mi}{83}\PY{p}{,} \PY{l+m+mi}{35}\PY{p}{]}\PY{p}{,}
-                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{F1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{l+m+mi}{44}\PY{p}{,} \PY{l+m+mi}{29}\PY{p}{,} \PY{l+m+mi}{83}\PY{p}{,} \PY{l+m+mi}{46}\PY{p}{]}\PY{p}{\PYZcb{}}\PY{p}{,}
+\PY{n}{data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Precisión}\PY{l+s+s1}{\PYZsq{}} \PY{p}{:} \PY{p}{[}\PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{83}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{]}\PY{p}{,}
+                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Exahustividad}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{l+m+mi}{17}\PY{p}{,} \PY{l+m+mi}{67}\PY{p}{,} \PY{l+m+mi}{83}\PY{p}{,} \PY{l+m+mi}{33}\PY{p}{]}\PY{p}{,}
+                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{F1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{l+m+mi}{29}\PY{p}{,} \PY{l+m+mi}{80}\PY{p}{,} \PY{l+m+mi}{83}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{]}\PY{p}{\PYZcb{}}\PY{p}{,}
                     \PY{n}{index}\PY{o}{=}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Logistic Regression}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Naïve Bayes}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Decision Tree}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Random Forest}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
 
 \PY{n}{total} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
@@ -155,22 +114,15 @@ pacientes en la variable predictora.
 \end{tcolorbox}
 
 \begin{center}
-    	\begin{figure}[htb]
+    	\begin{figure}[H]
 	\centering
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{E:/Tesis latex/Comparativa de pronósticos/output_9_0.png}
-	\caption{Sumatoria de métricas en pronósticos menos favorables}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Comparativa de pronósticos/output_9_0.png}
+	\caption{Sumatoria de métricas en pronóstico menos favorable}
 	\label{fig:smpmf}
 	\end{figure}
 \end{center}
     
-    Como se demuestra en el gráfico \ref{fig:smpmf}, la suma de los valores del estado 1 de
-las métricas de predicción en porcentaje supera los 130, pero no
-alcanzan los 300 que es el máximo para todos los valores de las
-métricas. El peor algoritmo en la suma de todas sus métricas es la
-Logistic Regression con 139 puntos, en cambio el mejor algoritmo con un
-total de 249 puntos es Decision Tree. En este caso los algoritmos en su
-mayoria fueron menos efectivos al momento de predecir en contraparte con
-el otro estado.
+    Como se demuestra en la Figura \ref{fig:smpmf}, la suma de los valores del estado 1 de las métricas de predicción en porcentaje supera los 145, pero no alcanzan los 300 que es el máximo para todos los valores de las métricas. El peor algoritmo en la suma de todas sus métricas es la Naïve Bayes con 146 puntos, en cambio el mejor algoritmo con un total de 249 puntos es Decision Tree. En este caso los algoritmos en su mayoria fueron menos efectivos al momento de predecir en contraparte con el otro estado.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{83}{\boxspacing}
@@ -194,29 +146,19 @@ el otro estado.
 \begin{center}
     	\begin{figure}[H]
 	\centering
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{E:/Tesis latex/Comparativa de pronósticos/output_11_0.png}
-	\caption{Comparativa de métricas en pronósticos menos favorables}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Comparativa de pronósticos/output_11_0.png}
+	\caption{Comparativa de métricas en pronóstico menos favorable}
 	\label{fig:cmpmf}
 	\end{figure}
 \end{center}
     
-    El gráfico \ref{fig:cmpmf} muestra los valores de Predicción, Exhaustividad y F1 en cada
-uno de los algoritmos. Se demuestra con el estado 1 que en el algoritmo
-más preciso fue Naive Bayes con un 100\% de precisión y el menos preciso
-fue Logistic Regression con un 60\%. En la Exhaustividad el peor
-algoritmo fue Naive Bayes y el mejor fue Decision Tree. El F1 el peor
-fue Naive Bayes y el mejor fue Decision Tree.
-
-    Como resultado final la respuesta sobre el estado favorable del paciente
-el algoritmo con mejores resultados fue Decision Tree.
+   La Figura \ref{fig:cmpmf} muestra los valores de Predicción, Exhaustividad y F1 en cada uno de los algoritmos. Se demuestra con el estado 1 que el algoritmo más preciso fue un triple y el menos preciso fue Decision Tree con un 83\%. En la Exhaustividad el peor algoritmo fue Naïve Bayes con un 17\% y el mejor fue Decision Tree con un 83\%. El F1 peor fue para Naïve Bayes con un 29\% y el mejor fue Decision Tree.
+    Como resultado final, en la comparación del pronóstico favorable del paciente, el mejor algoritmo para el estado 1 es Decision Tree.
 
     \hypertarget{comparaciuxf3n-final}{%
 \section{Comparación Final}\label{comparaciuxf3n-final}}
 
-En la comparación final se evalúa el porcentaje de predicción acumulada
-para la variable predictora en sus dos estados. Se hace incapie que el
-resultado muestra el reflejo de los datos obtenidos y que los resultados
-pueden cambiar dependiendo la BDD.
+	En la comparación final se evalúa el porcentaje de predicción acumulada para la variable predictora en sus dos estados. Se hace incapie que el resultado muestra el reflejo de los datos obtenidos y que los resultados pueden cambiar dependiendo de la BDD.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{82}{\boxspacing}
@@ -237,22 +179,19 @@ pueden cambiar dependiendo la BDD.
 \begin{center}
     	\begin{figure}[H]
 	\centering
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{E:/Tesis latex/Comparativa de pronósticos/output_15_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Comparativa de pronósticos/output_15_0.png}
 	\caption{Predicción Acumulada}
 	\label{fig:pa}
 	\end{figure}
 \end{center}
     
-    Los resultados arrojados por el gráfico \ref{fig:pa} fueron los siguientes:\\
+    Los resultados arrojados por el gráfico \ref{fig:pa} fueron los siguientes:
 \begin{itemize}
-	\item El peor algoritmo con la tasa de predicción más baja con un 58.3\% es Naive Bayes.
-	\item El antepenúltimo puesto con un
-59,4\% de predicción es para Logistic Regression.
-	\item El segundo puesto lo ocupa Random Forest con un 62,1\% de predicción.
-	\item El mejor algoritmo con una ventaja 21,2\% sobre su
-antecesor es para Decision Tree que logra obtener un 83,3\% de
-predicción.
+	\item El peor algoritmo con la tasa de predicción más baja es Naïve Bayes, con un 58.33\%.
+	\item El antepenúltimo puesto es para Random Forest, con un 66,66\% de predicción.
+	\item El segundo puesto lo ocupa Logistic Regression, con un 83,33\% de predicción.
+	\item El mejor algoritmo es Decision Tree, con un 83\% de predicción.
 \end{itemize}   
 
-Decision Tree logro alcanzar estabilidad en sus métricas predictivas y
-lo hicieron el algoritmo más preciso para este sistema de clasificación.
+	Decision Tree y Logistic Regression quedaron empatados en las métricas de precisión general, la diferencia se produjo en el estado de la variable dicotómica. En el estado de pronóstico favorable, Logistic Regression fue superior por poco, aunque Decision Tree fue más estable. Por el contrario, en el estado de pronóstico menos favorable fue Decision Tree y el algoritmo siguió manteniendo la estabilidad presentada en el estado anterior de la variable.
+\par \textbf{Decision Tree logró alcanzar estabilidad en sus métricas y lo hicieron el algoritmo más preciso para este sistema de clasificación.}

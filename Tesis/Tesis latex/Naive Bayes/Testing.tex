@@ -1,20 +1,13 @@
     \hypertarget{nauxefve-bayes---testeo-del-algoritmo}{%
-\section{Naïve Bayes - Testeo del
-algoritmo}\label{nauxefve-bayes---testeo-del-algoritmo}}
+\section{Naïve Bayes - Testeo del algoritmo}\label{nauxefve-bayes---testeo-del-algoritmo}}
 
-El testing tiene la finalidad de llevar a cabo la prueba si el modelo
-funciona correctamente, identificando riesgos o erros que se produjeron
-en los datos. No se realizará ajustes posteriores al testing para poder
+	El testing tiene la finalidad de llevar a cabo la prueba si el modelo funciona correctamente, identificando riesgos o errores que se produjeron en los datos. No se realizará ajustes posteriores al testing para poder
 comparar los algoritmos en la sección de resultados.
 
     \hypertarget{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}{%
-\subsection{Predicciones sobre los datos del testing y métricas de
-rendimiento}\label{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}}
+\subsection{Predicciones sobre los datos del testing y métricas de rendimiento}\label{NBT:predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}}
 
-Ahora es momento de evaluar los datos ya entrenados con el testing. Las
-métricas de rendimiento nos ofrecerán información de cómo se comportó el
-algoritmo durante el entrenamiento, dando a conocer valores importantes
-como lo son la precisión, exhaustividad, valor-F.
+	Ahora es momento de evaluar los datos ya entrenados con el testing. A continuación, se dará a concer las métricas que se evaluarón en el Estudio Empírico del capítulo 4  de la sub sección Predicciones sobre los datos de prueba y métricas de rendimiento \ref{NB:predicciones-sobre-los-datos-de-prueba-y-muxe9tricas-de-rendimiento}.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{59}{\boxspacing}
@@ -38,15 +31,13 @@ weighted avg       0.77      0.58      0.50        12
 
     \end{Verbatim}
 
-    La precisión de los datos del testing en el modelo tiene un valor de 55\% de predicción y 100\% de presicción respectivamente, la exhaustividad en el estado 0 alcanza el 100\% de los datos y en el estado 1 alcanza el 17\%.  Por otra parte, el F1 combina los valores de precisión y exhaustividad obteniéndose un 71\% en el estado 0 y un 29\% en el estado 1. 
-
-Lo que se busca es la precisión del modelo, por consecuencia, el Algoritmo de ML Naïve Bayes tiene una precisión del 58.3\% de predicción.
+	Por cada estado (0 y 1) la precisión de los datos del testing en el modelo tiene un valor de 55\%  y 100\% para cada estado respectivo en predicción. La exhaustividad informa la cantidad de datos capaz de identificar y, en este caso, es de un 100\% y 17\% para cada estado respectivo y, finalmente, el F1 combina los valores de precisión y exhaustividad obteniéndose un 71\% y 29\% en los estados respectivos. 
+\par Lo que se busca es la precisión del modelo, por consecuencia, el algoritmo de ML Naïve Bayes tiene una precisión del 58.3\% de predicción en los 12 pacientes de muestra del testing.\\
 
     \hypertarget{matriz-de-confusiuxf3n}{%
-\subsection{Matriz de Confusión}\label{matriz-de-confusiuxf3n}}
+\subsection{Matriz de Confusión}\label{NBT:matriz-de-confusiuxf3n}}
 
-Evaluaremos la matriz de confusión que se elaboró con los datos del
-testing.
+	Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{60}{\boxspacing}
@@ -67,40 +58,19 @@ testing.
 	\end{figure}
 \end{center}
     
-    En la matriz de confusión \ref{fig:mctnb} (1 , 1) podemos observar el resultado en el
-que el modelo predice correctamente la clase positiva y en el (2, 2) el
-resultado donde el modelo predice correctamente la clase negativa. En el
-elemento (1, 2) el modelo predice incorrectamente la clase positiva
-cuando en realidad es negativa con un valor bajo y en el elemento (2 ,
-1) el modelo predice incorrectamente la clase negativa cuando en
-realidad es positiva.
-
-Las afirmaciones anteriores sugieren que la las predicciones son altas,
-pero también existen errores en la predicción.
+	En la matriz de confusión \ref{fig:mctnb}, los valores de la diagonal principal (0,0) = 6 y (1,1) = 1 corresponden con los valores estimados de forma correcta por el modelo, tanto los TN, como los TP. La otra diagonal, representa los casos en los que el modelo \textit{"se ha equivocado"}, según la matriz de confusión \ref{fig:mcenb} son (0,1) = 0 FP y (1,0) = 5 FN.
+\par Las afirmaciones anteriores sugieren que la las predicciones son altas, pero también existen errores en la predicción.
+\par Respecto al ACV, el modelo identifico a 6 pacientes que posee un buen pronóstico (estable) y solo 1 paciente que posee un pronóstico no tan favorable, según la variable objetivo detallada en \ref{crear-columna-para-nihss_alta_estable_o_grave}. Así mismo, el modelo identifica a 5 pacientes que poseen buen pronóstico, pero en realidad poseen mal pronóstico.\\
 
     \hypertarget{nauxefve-bayes---uso-del-algoritmo}{%
-\section{Naïve Bayes - Uso del
-algoritmo}\label{nauxefve-bayes---uso-del-algoritmo}}
+\section{Naïve Bayes - Uso del algoritmo}\label{nauxefve-bayes---uso-del-algoritmo}}
 
-El último paso de la metodología es el uso del algoritmo, nosotros lo
-utilizaremos para desarrollar probabilidades en los predictores. No
-todos los modelos poseen los mismos métodos ni atributos, por ende, se
-tratará de realizar comparaciones con métodos similares entre sí.
+	El último paso de la metodología es el uso del algoritmo, nosotros lo utilizaremos para desarrollar probabilidades en los predictores. No todos los modelos poseen los mismos métodos ni atributos, por ende, se tratará de realizar comparaciones con métodos similares entre sí.\\
 
     \hypertarget{importancia-de-los-predictores}{%
-\subsection{Importancia de los
-predictores}\label{importancia-de-los-predictores}}
+\subsection{Importancia de los predictores}\label{NBT:importancia-de-los-predictores}}
 
-Por experiencia previa y contemplando los gráficos producidos en el paso
-3, sabemos que algunas características no son útiles para nuestro
-problema de predicción. Reducir la cantidad de funciones será la mejor
-alternativa, lo que acotará el tiempo de ejecución, con suerte sin
-comprometer significativamente el rendimiento, asi podemos examinar la
-importancia de las funciones de nuestro modelo. La importancia de cada
-predictor en el modelo se calcula como la reducción total (normalizada)
-en el criterio de división. Si un predictor no ha sido seleccionado en
-ninguna división, no se ha incluido en el modelo y por lo tanto su
-importancia es 0.
+	Por experiencia previa y contemplando los gráficos producidos en el paso 3, sabemos que algunas características no son útiles para nuestro problema de predicción. Reducir la cantidad de funciones será la mejor alternativa, lo que acotará el tiempo de ejecución, con suerte sin comprometer significativamente el rendimiento, asi podemos examinar la importancia de las funciones de nuestro modelo. La importancia de cada predictor en el modelo se calcula como la reducción total (normalizada) en el criterio de división. Si un predictor no ha sido seleccionado en ninguna división, no se ha incluido en el modelo y, por lo tanto, su importancia es 0.\\
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{61}{\boxspacing}
@@ -140,13 +110,8 @@ importancia es 0.
 \label{tab:probabilistica Bayes}
 \end{table}
         
-    Este método acepta un solo argumentos que corresponde a los datos sobre
-los cuales se calculan las probabilidades y devuelve una matriz de
-listas que contienen las probabilidades de clase para los puntos de
-datos de entrada. En este caso la tabla \ref{tab:probabilistica Bayes} se observa los
-estados de la variable predictora tienen un valor de porcentaje
-predictor, por ejemplo la tupla 0 posee un 99\% y fracción de precisión
-para el estado 0 y un 0,11\% y fracción para el estado 1.
+    Este método acepta un solo argumento que corresponde a los datos sobre los cuales se calculan las probabilidades y devuelve una matriz de listas que contienen las probabilidades de clase para los puntos de datos de entrada. 
+\par En este caso, en la tabla \ref{tab:probabilistica Bayes} se observa los estados de la variable predictora (0 y 1) y el porcenteje por tupla o paciente a predecir. Por ejemplo la tupla 0 posee un 99\% y fracción de precisión para el estado 0 y un 3,83\% x $10^{-4}$ para el estado 1, en otras palabras, el paciente posee un buen pronóstico con un 99\% de probabilidad para este algoritmo.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{62}{\boxspacing}
@@ -186,11 +151,7 @@ para el estado 0 y un 0,11\% y fracción para el estado 1.
 \label{tab:clasificacion bayes}
 \end{table}
         
-    Se observa en la tabla \ref{tab:clasificacion bayes} un valor binario de 0 o 1, donde se muestra cada variable
-desarrollada en el modelo puede tomar dicho valor. El valor 0 demuestra
-que la tupla no logra predecir el estado 0 de la variable predictora, y
-por el contrario, el estado 1 es que logra la predicción del estado en
-esa tupla.
-
-
-    % Add a bibliography block to the postdoc
+    Se observa en la tabla \ref{tab:clasificacion bayes} un valor binario 0 o 1, donde se muestra el valor que toma la variable desarrollada en el modelo. El valor 1 demuestra que la tupla no pertence al estado 0 de la variable predictora, y por el contrario, el estado 0 demuestra que predice el estado en esa tupla. Sin embargo, estos resultaos de clasificación final, son los que el modelo clasifica, si hubiera un error, esté se analiza en la Matriz de Confusión \ref{fig:mctnb}.
+\par Recordemos que Matriz de Confusión \ref{fig:mctnb} poseía solo 1 paciente que pertencía a que tenia un pronóstico menos favorable (estado 1), en este caso, en la tupla o paciente número 9 de la tabla \ref{clatab:clasificacion bayes}, la clasificación predicha por el modelo apunta que es 1, es decir, no alcanza a ser parte de ese estado; por el contrario, las demás tuplas las reconoce que pertencen a ese estado (tienen buen pronóstico en terminos de ACV).\\
+    
+    

@@ -1,23 +1,8 @@
     \hypertarget{random-forest---entrenamiento-del-algoritmo}{%
-\section{Random Forest - Entrenamiento del
-algoritmo}\label{random-forest---entrenamiento-del-algoritmo}}
+\section{Random Forest - Entrenamiento del algoritmo}\label{random-forest---entrenamiento-del-algoritmo}}
 
-Un modelo de bosque aleatorio consta de un conjunto de árboles de
-decisión individuales, cada uno de los cuales se entrena mediante un
-procedimiento de arranque para seleccionar aleatoriamente muestras de
-los datos de entrenamiento originales. Esto significa que cada árbol se
-entrena con datos ligeramente diferentes. En cada árbol individual, las
-observaciones se propagan a través de bifurcaciones (nodos) que generan
-la estructura del árbol hasta llegar a un nodo terminal \cite{cien2001}.
-
-En el entrenamiento del algoritmo el programa de ML
-adquiere la información que trabajamos en los métodos anteriores. Es
-aquí donde se obtendrá el conocimiento para futuras decisiones, es
-importante asegurarse que las decisiones que sean tomadas posteriormente
-al proceso de entrenamiento se añadan a la base de conocimiento del
-algoritmo para futuras ejecuciones de este.
-
-La BDD trabajada actualmente cuenta con:
+	Como se mencionó en el Marco Teórico \ref{sec:RF}, consta de un conjunto de árboles de decisión individuales, cada uno de los cuales se entrena mediante un procedimiento de arranque para seleccionar aleatoriamente muestras de los datos de entrenamiento originales. Esto significa que cada árbol se entrena con datos ligeramente diferentes. En cada árbol individual, las observaciones se propagan a través de bifurcaciones (nodos) que generan la estructura del árbol hasta llegar a un nodo terminal \cite{cien2001}.
+	La BDD trabajada actualmente cuenta con:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{53}{\boxspacing}
@@ -33,21 +18,10 @@ Existen 1196 elementos
     \end{Verbatim}
 
     \hypertarget{variable-categuxf3rica}{%
-\subsection{Variable categórica}\label{variable-categuxf3rica}}
+\subsection{Variable objetivo}\label{variable-categuxf3rica}}
 
-En el paso de la preparación de los datos de entrada, propusimos la
-variable ``NIHSS alta ACV'' que podía poseer 42 valores diferentes, la
-cual se clasificó y se transformó en ``NIHSS\_alta\_cat'' que contenía 6
-categorías las que fueron reducidas a 1 variable con dos estados. Asi el
-paciente tendrá un buen pronóstico o no con el nombre de la variable
-``NIHSS\_alta\_ESTABLE\_O\_GRAVE''. Los estudios de ML no
-sugieren tener variables binarias para nuestro estudio.
-
-Las variables dependientes representan el rendimiento o conclusión que
-se está estudiando. Las variables independientes, además conocidas en
-una relación estadística como regresores, representan insumos o causas,
-donde se encuentran las razones potenciales de alteración.
-
+ Sw igual manera que en la sub sección \ref{NB:variable-categuxf3rica} se tomará la variable ``NIHSS\_alta\_ESTABLE\_O\_GRAVE'' con sus dos estados.
+ 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{54}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -67,14 +41,10 @@ donde se encuentran las razones potenciales de alteración.
 \end{tcolorbox}
 
     \hypertarget{creaciuxf3n-del-modelo-y-entrenamiento}{%
-\subsection{Creación del modelo y
-entrenamiento}\label{creaciuxf3n-del-modelo-y-entrenamiento}}
+\subsection{Creación del modelo y entrenamiento}\label{creaciuxf3n-del-modelo-y-entrenamiento}}
 
-Para la creación del modelo se utilizará el modelo en la forma más
-estándar posible, siendo que los modelos, antes del entrenamiento,
-pueden recibir ajustes para manejar los datos de entrada, de una forma u
-otra. Para que sea lo más parejo posible entre modelos se dejará de
-forma estándar.
+	De la misma manera que en la sub sección \ref{NB:creaciuxf3n-del-modelo-y-entrenamiento} crearemos el modelo.
+	A continuación, entrenamos el modelo, pero sólo con los datos de entrenamiento. 
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{55}{\boxspacing}
@@ -95,8 +65,7 @@ RandomForestClassifier(random\_state=0)
 \end{tcolorbox}
         
     \hypertarget{estructura-del-uxe1rbol-creado}{%
-\subsubsection{Estructura del árbol
-creado}\label{estructura-del-uxe1rbol-creado}}
+\subsubsection{Estructura del árbol creado}\label{estructura-del-uxe1rbol-creado}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{56}{\boxspacing}
@@ -121,24 +90,19 @@ creado}\label{estructura-del-uxe1rbol-creado}}
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-The depth of this tree is: 3
+The depth of this tree is: 4
     \end{Verbatim}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.5]{Random Forest - Bosque Aleatorio/randomForestClassification.png} 
+	\includegraphics[scale=0.6]{Random Forest - Bosque Aleatorio/randomForestClassification.png} 
 	\caption{Random Forest}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \hypertarget{predicciones-sobre-los-datos-de-prueba-y-muxe9tricas-de-rendimiento}{%
-\subsection{Predicciones sobre los datos de prueba y métricas de
-rendimiento}\label{predicciones-sobre-los-datos-de-prueba-y-muxe9tricas-de-rendimiento}}
+\subsection{Predicciones sobre los datos de prueba y métricas de rendimiento}\label{predicciones-sobre-los-datos-de-prueba-y-muxe9tricas-de-rendimiento}}
 
-Para llevar una forma más ordenada, es necesario crear las variables de
-predicciones, para asi sacar las métricas de rendimiento más fácilmente.
-Las métricas de rendimiento nos ofrecerán información de cómo se
-comportó el algoritmo durante el entrenamiento, dando a conocer valores
-importantes como lo son la precisión, exhaustividad, valor-F.
+	Del mismo modo que en la sub sección \ref{NB:predicciones-sobre-los-datos-de-prueba-y-muxe9tricas-de-rendimiento} mostraremos las métricas del modelo en el entrenemiento.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{57}{\boxspacing}
@@ -175,20 +139,12 @@ weighted avg       1.00      1.00      1.00         9
 
     \end{Verbatim}
 
-    La precisión de los datos de entrenamiento en el modelo tiene un valor
-excelente de 100\% de predicción, la exhaustividad informa la cantidad
-de datos capaz de identificar y en este caso es de un 100\% de los datos
-y finalmente el F1 combina los valores de precisión y exhaustividad
-obteniéndose un 100\% igual. Todos los valores mencionados aplican para
-los estados de la variable predictora.
+    Con un total de 34 pacientes, el algoritmo en la fase de entrenamiento predice en forma global un 100\%. Por cada estado (0 y 1) la precisión de los datos de entrenamiento en el modelo tiene un valor de 100\% para ambos estados en predicción. La exhaustividad informa la cantidad de datos capaz de identificar y, en este caso, es de un 100\% en ambos estados, finalmente, el F1 combina los valores de precisión y exhaustividad obteniéndose un 100\% en ambos estados.
 
     \hypertarget{matriz-de-confusiuxf3n}{%
 \subsection{Matriz de Confusión}\label{matriz-de-confusiuxf3n}}
 
-En el campo de la IA y en especial en el problema
-de la clasificación estadística, una matriz de confusión es una
-herramienta que permite la visualización del desempeño de un algoritmo
-que se emplea en aprendizaje supervisado.
+	En el apartado del Marco Teórico \ref{sec:mc} se definio los conceptos y utilización que tenia esta herramienta para medir. Para mayor claridad, visualizaremos la matriz de confusión en forma de mapa de calor.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{59}{\boxspacing}
@@ -213,8 +169,5 @@ que se emplea en aprendizaje supervisado.
 	\end{figure}
 \end{center}
     
-    En la matriz de confusión \ref{fig:mcerf} (1, 1) podemos observar el resultado en el que
-el modelo predice correctamente la clase positiva y en el (2, 2) el
-resultado donde el modelo predice correctamente la clase negativa. Los
-demás elementos de la matriz contienen valor nulo o 0, estos son los
-errores de la predicción.
+    En la matriz de confusión \ref{fig:mcerf}, los valores de la diagonal principal (0,0) = 20 y (1,1) = 14 corresponden con los valores estimados de forma correcta por el modelo, tanto los TP, como los TN. La otra diagonal, representa los casos en los que el modelo \textit{"se ha equivocado"}, según la matriz de confusión \ref{fig:mcelr} son (0,1) = 0 FP y (1,0) = 0 FN.
+\par Respecto al ACV, el modelo identifico a 20 pacientes que posee un buen pronóstico (estable) y 14 paciente que posee un pronóstico no tan favorable, según la variable objetivo detallada en \ref{crear-columna-para-nihss_alta_estable_o_grave}.\\

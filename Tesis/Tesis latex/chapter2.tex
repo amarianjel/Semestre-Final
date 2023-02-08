@@ -1,5 +1,6 @@
 \doublespacing
 \chapter{MARCO TEÓRICO}
+\label{sec:marco teorico}
 \spacing{1.5}
 \lettrine[lines=4, slope=0.2em, findent=0.2em, nindent=0.6em]{E}l presente capitulo tiene como propósito presentar al lector algunas investigaciones y conceptos relacionados con IA, específicamente ML y en salud particularmente de ACV Isquémico, conceptos claves para esta investigación. \\
 \par La organización del capítulo se encuentra de la siguiente manera, inicialmente, veremos ML y sus técnicas clásicas, pues consideramos estas podrían ser la respuesta a nuestra problemática junto a Deep Learning (DL), posteriormente nos enfocaremos en algunos términos de salud que nos ayudarán a entender de mejor forma el problema. 
@@ -76,6 +77,7 @@ será capaz de tomar los atributos de dicha variable, analizarlos y tomar una de
 
 \doublespacing
 \subsection{Decision Tree (Árbol de Decisión)}
+\label{sec:DT}
 \spacing{1.5}
 Este algoritmo que se utiliza como herramienta de apoyo gráfico o modelo de decisiones con sus posibles consecuencias, también a veces son representados los costos y su posible utilidad (CART, Classification and Regression Trees). Este método se crea particionando la entrada recursivamente en distintas ramas, siendo que la idea es crear un camino desde la raíz hasta las hojas, donde cada nodo podría ser una condición así, si se cumple la condición se sigue por el camino de decisión, o por la otra rama si no se llegará a cumplir la condición \cite{Harrington2012}.\\
 \par La creación del modelo se puede representar en la ecuación \ref{eq:Ecuación del Modelo Decision Tree}:\\
@@ -89,15 +91,17 @@ Este algoritmo que se utiliza como herramienta de apoyo gráfico o modelo de dec
 \par $R_{m}$ representa la región de $m$.
 \par $w_{m}$ es respuesta media a esa región.
 \par $v_{m}$ codifica la elección de la variable por la que dividir y el valor límite de la división.\\
-\par A modo de ejemplo del modelo, se puede representar de la siguiente forma en condiciones \ref{fig:Problema aplicando Árbol de Decisiones}:\\
+
+
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1.2]{img/Marco Teorico/arbol de desicion.png} 
-	\label{fig:Problema aplicando Árbol de Decisiones}
+	\label{fig:padt}
 	\caption{Ejemplo de un problema aplicando Árbol de Decisiones}
 \end{figure}
-\par Las condiciones se dan como alternativas de caminos a seguir.\\
+
+\par A modo de ejemplo del modelo, se puede representar de como se observa en la Figura 2.2. Las condiciones se dan como alternativas de caminos a seguir.\\
 
 \doublespacing
 \subsubsection{Usos para los Decision Tree}
@@ -115,6 +119,7 @@ Las ventajas de esta técnica de ML es su bajo costo computacional y simple inte
 
 \doublespacing
 \subsection{Random Forest (Bosque Aleatorio)}
+\label{sec:RF}
 \spacing{1.5}
 El algoritmo de Random Forest es una técnica de aprendizaje supervisado que genera múltiples árboles de decisión sobre un conjunto de datos de entrenamiento: los resultados obtenidos se combinan para obtener un modelo único más robusto en comparación con los resultados de cada árbol por separado \cite{breiman2001random}.\\
 \par Cada árbol se obtiene mediante un proceso de dos etapas:
@@ -124,7 +129,7 @@ El algoritmo de Random Forest es una técnica de aprendizaje supervisado que gen
 	\item[2-.] Cada árbol crece hasta su máxima extensión.
 \end{itemize}
 
-\par En la figura \ref{fig:Random Forest} se muestra las etapas mencionadas anteriromente:
+\par En la Figura 2.3 se muestra las etapas mencionadas anteriromente:
 
 \begin{center}
 	\begin{figure}[H]
@@ -145,6 +150,7 @@ Las principales ventajas de Random Forest son su simpleza al entrenar el modelo,
 
 \doublespacing
 \subsection{Naïve Bayes (Redes de Bayes)}
+\label{sec:NB}
 \spacing{1.5}
 Naïve Bayes es un algoritmo de clasificación probabilístico que utiliza la teoría de probabilidad y estadística para realizar clasificaciones. Es llamado "Naive" porque supone que todas las características son independientes entre sí, lo que en la mayoría de los casos no es verdad. Este teorema calcula la probabilidad de una clase dada un conjunto de características. La probabilidad se calcula multiplicando la probabilidad a priori de cada clase con la probabilidad condicional de cada característica dada esa clase\cite{Vembandasamy2015}. \\
 \par Este algoritmo es muy eficiente y rápido que se utiliza en una amplia gama de aplicaciones, incluyendo la detección de spam, la categorización de documentos y la clasificación de texto. Además, es uno de los algoritmos más simples y fáciles de implementar en Machine Learning \cite{Vembandasamy2015}.\\
@@ -176,9 +182,9 @@ Naïve Bayes es un algoritmo de clasificación probabilístico que utiliza la te
 \par  $P(x)$ es la probabilidad previa del predictor.\\
 
 \par Las Redes de Bayes se generan de reglas de decisión donde participan activamente las probabilidades que ocurren referente a eventos, siendo que en base a esas probabilidades y resultados obtenidos, se toman decisiones sobre cual arco de red moverse, al final del proceso, el resultado será dado por el valor del nodo final de la red \cite{Bell15}.\\
-\par Considerando el gráfo mostrado en la figura \ref{fig:Red Bayes}
+\par Considerando el gráfo mostrado en la Figura 2.4
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.3]{img/Marco Teorico/Redes Bayes.png}  
 	\label{fig:Red Bayes}
@@ -193,6 +199,7 @@ Las ventajas de esta técnica de ML son su fácilidad para implementarla, eficie
 
 \doublespacing
 \subsection{Logistic Regression (Regresión Logística)}
+\label{sec:LR}
 \spacing{1.5}
 El algoritmo Logistic Regression modela la relación entre distintas variables utilizando una medida de error que se intentará minimizar en un proceso iterativo para poder realizar predicciones acertadas, llevando a cabo una clasificación binaria con una distribución Bernoulli en vez de Gaussian y después realiza una combinación lineal de las variables en un rango de 0 a 1 \cite{ Stoltzfus2011}.\\
 \par La ecuación lineal \ref{eq:Ecuación Lineal} se debe ajustar:\\
@@ -270,7 +277,7 @@ Las técnicas de ML están limitadas en el procesamiento de los datos naturales 
 \spacing{1.5}
 El DL ha demostrado muy buenos resultados para la resolución de problemas, en cambio, las limitaciones, sobre todo en el campo de la imagenología, ha hecho que se elabore un método diferente para que exista un análisis más preciso al momento de analizar una imagen. Este método se llama Convolutional Neural Networks (CNN), que tiene una arquitectura con mejor rendimiento para las tareas de relaciones complejas \cite{Pena-Torres}. \\
 \par Desde el año 2012, las arquitecturas basadas en CNN para visión artificial han crecido muchísimo; sin embargo, no todas han sido eficientes para ocuparse en tareas de visión artificial (Figueroa Flores, 2021), siendo el Grupo de Geometría Visual (VGG) de la Universidad de Oxford \cite{Simonyan2015} una de las arquitecturas más utilizadas para las tareas de procesamiento de visión artificial. \\
-\par Las CNN se forman usando tres tipos de capas, los cuales son capas convolucionales, capas de pooling y capas totalmente conectadas, como se muestra en la figura \ref{fig:CNN}.\\
+\par Las CNN se forman usando tres tipos de capas, los cuales son capas convolucionales, capas de pooling y capas totalmente conectadas, como se muestra en la Figura 2.5.\\
 
 \begin{figure}[H]
 	\centering
@@ -279,7 +286,7 @@ El DL ha demostrado muy buenos resultados para la resolución de problemas, en c
 	\caption{Descripción del funcionamiento de una CNN}
 \end{figure}
 
-\par Para la CNN existen dos arquitecturas básicas, las cuales son CNN que entrega una salida para toda la imagen, como en la figura anterior y la Fully Convolutional networks que posee un codificador y decodificador, entrega una compresión de la información y su salida es por pixel. En las arquitecturas CNN exiten varios ejemplos, como lo son AlexNet, entrenado con ImageNet, GoogLeNet donde posee 22 capas y sus neuronas son más complejas, entre otras \cite{NIPS2012_c399862d}.\\
+\par Para la CNN existen dos arquitecturas básicas, las cuales son CNN que entrega una salida para toda la imagen, como en la Figura 2.5 y la Fully Convolutional networks que posee un codificador y decodificador, entrega una compresión de la información y su salida es por pixel. En las arquitecturas CNN exiten varios ejemplos, como lo son AlexNet, entrenado con ImageNet, GoogLeNet donde posee 22 capas y sus neuronas son más complejas, entre otras \cite{NIPS2012_c399862d}.\\
 
 
 \doublespacing
@@ -288,26 +295,50 @@ El DL ha demostrado muy buenos resultados para la resolución de problemas, en c
 Las redes neuronales pueden ser muy efectivas para abordar problemas en los que los datos son escasos \cite{Carola}. Sin embargo, cuando los datos son escasos, es esencial utilizar un enfoque diferente para entrenar las redes neuronales. Fei-Fei et al. \cite{Fei-Fei2006} demostraron que es posible aprender nuevas categorías, una o pocas muestras por clase, aprovechando las categorías aprendidas anteriormente. \\
 
 \doublespacing
-\section{Dataset}
+\section{Otros conceptos importantes para la investigación relacionados con la IA}
+\spacing{1.5}
+Existen muchos conceptos importantes que tienen relación con la IA, en esta sección tomaremos algunos que más adelante aparecerán. Estos conceptos son necesario para saber su utilización y funcionamiento.
+
+\doublespacing
+\subsection{Dataset}
 \spacing{1.5}
 Un Dataset se refiere a una colección de datos que generalmente tiene la misma forma que una tabla de base de datos o una hoja de cálculo \cite{Astudillo2021}. Un conjunto de datos consiste en un conjunto de ejemplos o casos. Una instancia también se denomina fila en una tabla de base de datos o, a veces, como un caso en estadística. Las funciones (columnas de la tabla) también tienen muchos nombres diferentes. Los estadísticos llaman atributos a las variables independientes o predictoras que se proporcionan como entradas. En la investigación de operaciones, también se habla de variables explicativas. La variable objetivo cuyo valor se va a predecir generalmente se denomina variable dependiente en estadística. La terminología puede ser un poco confusa; las variables independientes pueden no ser independientes entre sí (o de nada), y las variables dependientes no necesariamente dependen de todas las variables independientes. Es importante ser claro: la variable objetivo no se utiliza para predecirse a sí misma. Sin embargo, los valores anteriores de la variable objetivo pueden ser útiles para predecir valores futuros, por lo que estos valores pasados pueden incluirse como función \cite{provost2013data}.\\
 \par En el Dataset la reducción de datos es importante y éste intenta tomar un gran conjunto de datos y reemplazarlo con un conjunto de datos más pequeño que contiene la mayor parte de la información importante en el conjunto más grande. Los conjuntos de datos más pequeños pueden ser más fáciles de manejar o manejar. Cuanto más pequeño sea el conjunto de datos, mejor información podrá descubrir. Por ejemplo, grandes conjuntos de datos sobre los consumidores de las preferencias de visualización de películas, estos se pueden reducir a un conjunto de datos más pequeño, que revela las preferencias de gustos del consumidor ocultas en los datos de visualización (como las preferencias de género de la audiencia). La reducción de datos a menudo se asocia con la pérdida de información \cite{provost2013data}.\\
 
 \doublespacing
+\subsection{Matriz de Confusión}
+\label{sec:mc}
+\spacing{1.5}
+En el campo de la IA, en especial en el problema de la clasificación estadística, una matriz de confusión es una herramienta que permite la visualización del desempeño de un algoritmo que se emplea en aprendizaje supervisado .
+\par La estructura de la matriz de confusión 2x2 o más (dependiendo del número de clases), donde cada fila representa una clase real y cada columna representa una clase predicha por el modelo \cite{Harrington2012}:
+
+\begin{itemize}
+	\item \textbf{Positivo (P)}: La observación es positiva (por ejemplo, el paciente \textit{tiene} COVID).
+	\item \textbf{Negativo (N)}: La observación no es positiva (por ejemplo, el paciente \textit{no tiene} Covid).
+	\item \textbf{Verdadero Positivo (TP)}: Resultado en el que el modelo \textit{predice correctamente la clase positiva}.
+	\item \textbf{Verdadero Negativo (TN)}: Resultado donde el modelo \textit{predice correctamente la clase negativa}.
+	\item \textbf{Falso Positivo (FP)}: También llamado error de tipo 1, resultado donde el modelo \textit{predice incorrectamente la clase positiva cuando en realidad es negativa}.
+	\item \textbf{Falso Negativo (FN):} También llamado error de tipo 2, un resultado en el que el modelo \textit{predice incorrectamente la clase negativa cuando en realidad es positiva}.
+\end{itemize}
+
+\par La matriz de confusión se utiliza para calcular métricas de rendimiento como la precisión, la exhustividad y la medida F1.
+
+\doublespacing
 \section{Aspectos de la salud y la enfermedad}
 \spacing{1.5}
-La salud es una de los aspectos más importantes en la vida, muchas veces nuestra salud se ve afectada por factores externos o internos a nuestra persona. “Este concepto involucra un estado completo de bienestar físico, mental y social, y no solamente la ausencia de afecciones o enfermedades” (Wold Health Organization, 1946). Estas palabras son relatadas en la conferencia del 46’ que hacen la referencia a que la persona no solo se compone de un estado físico, sino que hay más aspectos para sentirse saludable, ya que, si uno llegará a fallar, habría un déficit en la persona y poco a poco empezaría a carecer de un estado equilibrado que lo proporciona la salud. \\
+La salud es una de los aspectos más importantes en la vida, muchas veces nuestra salud se ve afectada por factores externos o internos a nuestra persona. “Este concepto involucra un estado completo de bienestar físico, mental y social, y no solamente la ausencia de afecciones o enfermedades” (Wold Health Organization, 1946).  \\
 
 \doublespacing
 \subsection{Accidente Cerebro Vascular}
 \spacing{1.5}
-\par Un Accidente Cerebro Vascular es la detención del flujo de sangre a una parte del cerebro. En ocasiones se le llama como “Ataque Cerebral”, al igual, si el flujo sanguíneo se detiene por más de pocos segundos, el cerebro no recibirá nutrientes ni oxígeno, causando una muerte y un daño permanente en la zona afectada \cite{Garcia2019}.
-\par Existen dos tipos de ACV, los cuales son Isquémicos y Hemorrágicos.\\
+\par Un Accidente Cerebro Vascular es la detención del flujo de sangre a una parte del cerebro. En ocasiones se le llama “Ataque Cerebral”. Si el flujo sanguíneo se detiene por más de pocos segundos, el cerebro no recibirá nutrientes ni oxígeno, causando una muerte y un daño permanente en la zona afectada \cite{Garcia2019}.
+\par Existen dos tipos de ACV, Isquémicos y Hemorrágicos.\\
 
 \doublespacing
 \subsection{Accidente Cerebro Vascular Isquémico}
 \spacing{1.5}
-\par Los isquémicos es el más común, generalmente, es causado por un coagulo sanguíneo (masas que se presentan cuando la sangre se endurece, pasando de liquida a sólida) que bloquea el vaso sanguíneo del cerebro, empezando a morir en cuestión de minutos las células cerebrales. Existen los ACV Isquémicos transitorios y los permanentes \cite{Garcia2019}, diferenciándose en que los transitorios solo es cuando la sangre no llega al cerebro por unos instantes y el permanente es cuando ya tiene un tiempo prolongado el ACV, también conocido como Infarto Cerebral.\\
+\par Los ACV son los más comunes, generalmente, son causados por un coágulo sanguíneo (masas que se presentan cuando la sangre se endurece, pasando de líquida a sólida) que bloquea el vaso sanguíneo del cerebro, lo que provoca la muerte de células cerebrales. Esto puede causar daño cerebral y resultar en una variedad de síntomas y discapacidades, incluyendo debilidad en un lado del cuerpo, problemas de habla, visión doble, pérdida de la capacidad de caminar y, en casos graves, la muerte \cite{Adams1993}.\\
+\par Existen dos tipos de ACV Isquémicos: transitorios y permanentes \cite{Garcia2019}. Los transitorios se producen cuando la sangre no llega al cerebro por unos instantes, en cambio, el permanente es producido cuando la sangre no llega al cerebro por un tiempo prolongado, también este llamado Infarto Cerebral. \\
 
 \doublespacing
 \subsection{Síntomas ACV Isquémico}
@@ -317,19 +348,38 @@ La salud es una de los aspectos más importantes en la vida, muchas veces nuestr
 		\item Entumecimiento o debilidad repentina de la cara, brazo o pierna (especialmente en un lado del cuerpo).
 		\item Confusión repentina, dificultad para hablar o entender el lenguaje.
 		\item Dificultad repentina para ver con uno o ambos ojos.
-		\item Problemas para caminar repentino, mareos, pérdida de equilibrio o coordinación.
 		\item Problemas para caminar repentino, mareos, pérdida de equilibrio o coordinación.\\
 	\end{itemize}
 	
 \doublespacing
 \subsection{Categorías de los ACV}
 \spacing{1.5}
-\par En los ACV para ayudar a optimizar el tratamiento específico, existen categorías que son identificadas por la escala de TOAST \cite{Adams1993}.
-\par La primera categoría es la enfermedad Aterotrombótica aterosclerótica de gran vaso, se basa en la reducción de tejido sanguíneo medio o grande en el cerebro, con ubicación cortical o subcortical, con localización vertebrobasilar o carotídea, donde se encuentra presente una aterosclerosis u obstrucción con estenosis u oclusión de las arterias craneales. También la aterosclerosis sin estenosis con menos factores de riesgo se puede encontrar presente en esta categoría. La segunda categoría es el Cardioembolismo, es una reducción de tejido sanguíneo medio o grande, de localización cortical, en la que existe una cardiopatía embolígena \cite{Molina2018}. La tercera categoría es la enfermedad oclusiva de pequeño vaso infarto lacunar, es una reducción de tejido sanguíneo de tamaño pequeño, en el sector de una arteria de perforante cerebral puede provocar una oclusión en el transporte de nutrientes. La cuarta categoría se debe a otras causas, siendo que son un tamaño o una localización variable que además no están en las tres categorías anteriores, por ello, se pueden producir enfermedades metabólicas, alteraciones de la coagulación, displacía fibromuscular, etc. La quinta categoría hace énfasis a los orígenes desconocidos con estudios incompletos o completos, por más de una etiología \cite{Radu2017}.\\
+\par En los ACV para ayudar a optimizar el tratamiento específico, existen categorías que son identificadas por la escala de TOAST \cite{Adams1993}.\\
+\par La primera categoría es la enfermedad Aterotrombótica aterosclerótica de gran vaso, se basa en la reducción de tejido sanguíneo medio o grande en el cerebro, con ubicación cortical o subcortical, con localización vertebrobasilar o carotídea, donde se encuentra presente una aterosclerosis u obstrucción con estenosis u oclusión de las arterias craneales. También la aterosclerosis sin estenosis con menos factores de riesgo se puede encontrar presente en esta categoría. La segunda categoría es el Cardioembolismo, es una reducción de tejido sanguíneo medio o grande, de localización cortical, en la que existe una cardiopatía embolígena \cite{Molina2018}. La tercera categoría es la enfermedad oclusiva de pequeño vaso infarto lacunar, es una reducción de tejido sanguíneo de tamaño pequeño, en el sector de una arteria perforante cerebral que puede provocar una oclusión en el transporte de nutrientes. La cuarta categoría se debe a otras causas, de tamaño o localización variable que no están en las tres categorías anteriores, y que pueden producir enfermedades metabólicas, alteraciones de la coagulación, displacia fibromuscular, etc. La quinta categoría hace énfasis a los orígenes desconocidos con estudios incompletos o completos, por más de una etiología \cite{Radu2017}.\\
 
 
 \doublespacing
-\subsection{Tratamiento y Actualizaciones en los ACV}
+\subsection{Tratamiento en los ACV}
 \spacing{1.5}
-\par Para los accidentes cerebro vasculares, los factores que pueden influir son muchísimos y hay algunos que influye hasta los fumadores afectando al sistema nervioso central  \cite{Piloto2020}. 
-\par Las ayudas diagnósticas, nos proveen información sobre el grado de lesión y la identificación de la lesión \cite{Wintermark2013} como las imágenes. La recomendación es que la vía aérea y con asistencia ventilatoria en pacientes con ACV, siendo que se deberían lograr saturaciones de oxígeno mayores al 94\%, también la temperatura > 38 grados Celsius y agregando a todo la anterior se debe monitorizar la hiperglucemia, porque si perdura por más de 24 hrs se asocia a un peor desenlace \cite{Garcia2019}.\\
+Las ayudas diagnósticas, proveen información sobre el grado de lesión y la identificación de la lesión  como las imágenes, escogiendo el tratamiento más adecuado para la lesión \cite{Wintermark2013}. En el tratamiento como recomendación general, el soporte de la vía aérea y la asistencia ventilatoria es fundamental, ya que los pacientes pueden presentar alteración en el estado de conciencia o disfunción bulbar que afecte la vía aérea. Además se recomienda lograr saturaciones de oxigeno mayores a 94\% aún si implica oxigeno suplementario. Agregando a lo anterior se debe monitorizar la hiperglicemia, porque si llega a perdurarpor más de 24 horas, el pronóstico se asocia a un peor desenlace \cite{Garcia2019}.\\
+\par El tratamiento específico para un ACV Isquémico depende del tamaño y la ubicación del coágulo, así como de la gravedad de los síntomas. Algunos pacientes pueden requerir terapia médica, como anticoagulantes o medicamentos que disuelvan el coágulo, mientras que otros pueden necesitar cirugía o procedimientos endovasculares para extraer o disolver el coágulo. Además del tratamiento médico, los pacientes que han sufrido un ACV isquémico pueden necesitar rehabilitación para recuperar la función cerebral y física perdida. Esto puede incluir terapia física, terapia ocupacional, terapia de habla y otros tipos de rehabilitación \cite{Garcia2019}.\\
+
+
+\doublespacing
+\subsection{Escala de ACV del National Institute of Health (NIHSS)} 
+\label{sec:NIHSS}
+\spacing{1.5}
+La escala de NIHSS mide el daño neurológico ocasionado en el paciente con ACV. Esta escala se ha convertido en una de las herramientas más útiles para monitozar neurológicamente en Unidades de ACV, tanto en la evaluación inicial del paciente, como para su seguimiento. El seguimiento puede arrojar mejoría o empeoramiento neurológico \cite{cien2001}. \\
+\par La escala contiene 11 items (desarrollada serían 15), que permiten valorar de forma rápida: funciones corticales, pares craneales superiores, función motora, sensibilidad, coordinación y lenguaje \cite{cien2001}. La escala tiene un minimo de 0 puntos y un máximo de 42 puntos.\\
+\par La clasificación de la puntación se presenta de la siguiente manera (Montaner et al, 2006) \cite{montaner2006escala}:
+
+\begin{itemize}
+	\item 0 punto: sin déficit.
+	\item 1 punto: déficit mínimo.
+	\item 2-5 puntos: leve.
+	\item 6-15 puntos: moderado.
+	\item 15-20 puntos: déficit importante.
+	\item > 20 puntos: grave.\\
+\end{itemize}
+
+\par La puntuación inicial tiene buen valor pronóstico \cite{heinemann1997measurement}, considerando que un NIHSS 	$\leq$ 6 corresponde con una excelente recuperación neurológica y cada incremento en un punto empeoraría la evolución \cite{Adams1993}. Pacientes con fibrilación auricular, una NIHSS $\geq$ 16 ya se considera de muy mal pronóstico \cite{frankel2000predicting}.\\

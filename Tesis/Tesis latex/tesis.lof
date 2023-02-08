@@ -8,40 +8,41 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Descripción del funcionamiento de una CNN\relax }}{23}{figure.caption.19}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Análisis de NIHSS estable o grave en la escala NIHSS inicial\relax }}{55}{figure.caption.35}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Análisis de NIHSS en la escala de Glasgow inicial\relax }}{57}{figure.caption.37}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Análisis de NIHSS en el Conteo de Globulos Blancos\relax }}{59}{figure.caption.40}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Análisis de NIHSS en el INR\relax }}{60}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Análisis de NIHSS en los Trigliceridos\relax }}{62}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Análisis de NIHSS en el Colesterol\relax }}{63}{figure.caption.46}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Análisis de NIHSS en la Glucosa\relax }}{65}{figure.caption.48}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Análisis de NIHSS en EDAD\relax }}{66}{figure.caption.50}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Análisis de NIHSS en la en la Diabetes\relax }}{68}{figure.caption.52}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Análisis de NIHSS en la Hipertensión\relax }}{69}{figure.caption.54}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Análisis de densidad de variables originales con escalas\relax }}{75}{figure.caption.60}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Análisis de densidad variables originales\relax }}{77}{figure.caption.61}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Análisis de densidad variables agregadas\relax }}{78}{figure.caption.62}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Análisis por conteo de variables categóricas\relax }}{80}{figure.caption.63}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Mapa de calor de variables originales\relax }}{81}{figure.caption.64}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Mapa de calor de variables agregadas\relax }}{82}{figure.caption.65}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Matriz de confusión de entrenamiento Naive Bayes\relax }}{86}{figure.caption.66}%
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Matriz de confusión de entrenamiento Logistic Regression\relax }}{90}{figure.caption.67}%
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Árbol de decisión\relax }}{94}{figure.caption.69}%
-\contentsline {figure}{\numberline {4.20}{\ignorespaces Matriz de confusión de entrenamiento Decision Tree\relax }}{96}{figure.caption.70}%
-\contentsline {figure}{\numberline {4.21}{\ignorespaces Random Forest\relax }}{99}{figure.caption.72}%
-\contentsline {figure}{\numberline {4.22}{\ignorespaces Matriz de confusión de entrenamiento Random Forest\relax }}{101}{figure.caption.73}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Mapa de secuencia metodológica\relax }}{40}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Análisis de NIHSS estable o grave en la escala NIHSS inicial\relax }}{58}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Análisis de NIHSS en la escala de Glasgow inicial\relax }}{60}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Análisis de NIHSS en el Conteo de Globulos Blancos\relax }}{62}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Análisis de NIHSS en el INR\relax }}{63}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Análisis de NIHSS en los Trigliceridos\relax }}{65}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Análisis de NIHSS en el Colesterol\relax }}{66}{figure.caption.47}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Análisis de NIHSS en la Glucosa\relax }}{68}{figure.caption.49}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Análisis de NIHSS en EDAD\relax }}{69}{figure.caption.51}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Análisis de NIHSS en pacientes en la Diabetes\relax }}{71}{figure.caption.53}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Análisis de NIHSS en la Hipertensión\relax }}{72}{figure.caption.55}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Análisis de densidad de variables originales con escalas\relax }}{79}{figure.caption.61}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Análisis de densidad variables originales\relax }}{80}{figure.caption.62}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Análisis de densidad variables agregadas\relax }}{81}{figure.caption.63}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Análisis por conteo de variables categóricas\relax }}{83}{figure.caption.64}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Mapa de calor de variables originales\relax }}{85}{figure.caption.65}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Mapa de calor de variables agregadas\relax }}{86}{figure.caption.66}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Matriz de confusión de entrenamiento Naive Bayes\relax }}{90}{figure.caption.67}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Matriz de confusión de entrenamiento Logistic Regression\relax }}{94}{figure.caption.68}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Árbol de decisión\relax }}{97}{figure.caption.70}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Matriz de confusión de entrenamiento Decision Tree\relax }}{99}{figure.caption.71}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Random Forest\relax }}{102}{figure.caption.73}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Matriz de confusión de entrenamiento Random Forest\relax }}{104}{figure.caption.74}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Matriz de confusión de testing Naive Bayes\relax }}{104}{figure.caption.74}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Matriz de confusión de testing Logistic Regression \relax }}{108}{figure.caption.77}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Matriz de confusión de testing Decision Tree\relax }}{114}{figure.caption.80}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Importancia de los predictores en Decision Tree\relax }}{120}{figure.caption.84}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Importancia de los predictores acumulada en Decision Tree\relax }}{122}{figure.caption.85}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Matriz de confusión de testing Random Forest\relax }}{125}{figure.caption.86}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Importancia de los predictores en Random Forest\relax }}{132}{figure.caption.90}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Importancia de los predictores acumulada en Random Forest\relax }}{134}{figure.caption.91}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Sumatoria de métricas en pronósticos favorables\relax }}{137}{figure.caption.92}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Comparativa de métricas en pronósticos favorables\relax }}{138}{figure.caption.93}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Sumatoria de métricas en pronósticos menos favorables\relax }}{140}{figure.caption.94}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Comparativa de métricas en pronósticos menos favorables\relax }}{141}{figure.caption.95}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Predicción Acumulada\relax }}{142}{figure.caption.96}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Matriz de confusión de testing Naive Bayes\relax }}{107}{figure.caption.75}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Matriz de confusión de testing Logistic Regression \relax }}{112}{figure.caption.78}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Matriz de confusión de testing Decision Tree\relax }}{116}{figure.caption.81}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Importancia de los predictores en Decision Tree\relax }}{122}{figure.caption.85}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Importancia de los predictores acumulada en Decision Tree\relax }}{124}{figure.caption.86}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Matriz de confusión de testing Random Forest\relax }}{127}{figure.caption.87}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Importancia de los predictores en Random Forest\relax }}{132}{figure.caption.91}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Importancia de los predictores acumulada en Random Forest\relax }}{134}{figure.caption.92}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Sumatoria de métricas en pronóstico favorable favorables\relax }}{137}{figure.caption.93}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Comparativa de métrica en pronóstico favorable favorables\relax }}{138}{figure.caption.94}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Sumatoria de métricas en pronóstico menos favorable\relax }}{140}{figure.caption.95}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Comparativa de métricas en pronóstico menos favorable\relax }}{141}{figure.caption.96}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Predicción Acumulada\relax }}{143}{figure.caption.97}%
 \addvspace {10\p@ }

@@ -1,21 +1,13 @@
      \hypertarget{apliacaciuxf3n-del-muxe9todo}{%
 \section{Aplicación}\label{apliacaciuxf3n-del-muxe9todo}}
 
-Para empezar, debemos implementar los pasos sugeridos en la sección 4.1
-en el mismo orden que se nos presenta. Los pasos 1, 2 y 3 son comunes
-para todos los algoritmos, por ende, solo se mostrará una vez en la
-presente investigación. Al finalizar esta sección se verán los pasos 4,
-5 y 6 en cada Algoritmo presentado.
+Para empezar, debemos implementar los pasos sugeridos en la sección 4.2 en el mismo orden que se nos presenta. Los pasos 1, 2 y 3 son comunes para todos los algoritmos, por ende, solo se mostrará una vez en la presente investigación. Al finalizar esta sección se verán los pasos 4, 5 y 6 en cada Algoritmo presentado.
 
     \hypertarget{colecciuxf3n-de-datos-de-entrada}{%
 \section{Colección de datos de
 entrada}\label{colecciuxf3n-de-datos-de-entrada}}
 
-Para empezar, debemos implementar los pasos sugeridos en la sección 4.1
-en el mismo orden que se nos presenta. Los pasos 1, 2 y 3 son comunes
-para todos los algoritmos, por ende, solo se mostrará una vez en la
-presente investigación. Al finalizar esta sección se verán los pasos 4,
-5 y 6 en cada Algoritmo presentado.
+El primer paso en el método es la Colección de datos de entrada, en este proceso capturaremos los datos provenientes de la BDD del Hospital Herminda Martín de Chillán y luego diseñaremos un nuevo instrumento.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{1}{\boxspacing}
@@ -95,24 +87,12 @@ Existen 75 pacientes con 85 variables.
 Existen 6375 elementos
     \end{Verbatim}
 
-    Se observa que la BDD posee muchas variables y pocos pacientes
-registrados en las tuplas. Esto hará que sea más difícil la predicción
-para los algoritmos, así que necesitamos un nuevo instrumento.
+    Se observa que la BDD posee muchas variables y pocos pacientes registrados en las tuplas. Esto hará que sea más difícil la predicción para los algoritmos, así que necesitamos un nuevo instrumento.
 
     \hypertarget{diseuxf1o-del-instrumento}{%
 \subsection{Diseño del instrumento}\label{diseuxf1o-del-instrumento}}
 
-Desde el punto de vista científico, para que un estudio salga lo más
-certero posible necesitamos variables significativas para la
-investigación y con la menor perdida de datos posible. En la BDD todas
-las variables presentan importancia, algunas son imprescindibles para la
-investigación, otras con pocos datos completados o simplemente las
-variables sujetas a interpretación médica (humana). Debido a lo anterior
-se seleccionaron las variables por dos motivos, el primero fue porque
-eran las que estaban más completas en la BDD y el segundo porque se
-determinó que eran más significativas para la investigación por estudios
-realizados al ACV y dataset presentes en internet. A continuación, se
-mostrarán las variables escogidas y una pequeña descripción de ellas.
+Desde el punto de vista científico, para que un estudio salga lo más certero posible necesitamos variables significativas para la investigación y con la menor pérdida de datos posible. En la BDD todas las variables presentan importancia, algunas son imprescindibles para la investigación, otras con pocos datos completados o simplemente las variables sujetas a interpretación médica (humana). Debido a lo anterior se seleccionaron las variables por dos motivos, el primero fue porque eran las que estaban más completas en la BDD y el segundo porque se determinó que eran más significativas para la investigación por estudios realizados al ACV y dataset presentes en internet. A continuación, se mostrarán las variables escogidas y una pequeña descripción de ellas.
 
     \begin{quote}
 \textbf{HTA}: \texttt{"si"\ o\ "no",\ HIPERTENSIÓN}
@@ -127,7 +107,7 @@ mostrarán las variables escogidas y una pequeña descripción de ellas.
 \end{quote}
 
 \begin{quote}
-\textbf{GLUCOSA}: \texttt{Nivel\ de\ azucar\ en\ la\ sangre}
+\textbf{GLUCOSA}: \texttt{Nivel\ de\ azúcar\ en\ la\ sangre}
 \end{quote}
 
 \begin{quote}
@@ -136,7 +116,7 @@ mostrarán las variables escogidas y una pequeña descripción de ellas.
 
 \begin{quote}
 \textbf{TRIGLICERIDOS}:
-\texttt{Cantidad\ de\ trigliceridos\ en\ la\ sangre}
+\texttt{Cantidad\ de\ triglicéridos\ en\ la\ sangre}
 \end{quote}
 
 \begin{quote}
@@ -146,12 +126,12 @@ mostrarán las variables escogidas y una pequeña descripción de ellas.
 
 \begin{quote}
 \textbf{CONTEO G.B.}:
-\texttt{Conteo\ de\ globulos\ blancos\ en\ la\ sangre}
+\texttt{Conteo\ de\ glóbulos\ blancos\ en\ la\ sangre}
 \end{quote}
 
 \begin{quote}
 \textbf{GLASGOW AL INICO ACV}:
-\texttt{Escala\ de\ 15\ puntos\ medica\ que\ es\ para\ medir\ el\ estado\ de\ conciencia.\ Esta\ pertence\ a\ la\ Inicial}
+\texttt{Escala\ de\ 15\ puntos\ médica\ que\ es\ para\ medir\ el\ estado\ de\ conciencia.\ Esta\ pertence\ a\ la\ Inicial}
 \end{quote}
 
 \begin{quote}
@@ -164,30 +144,18 @@ mostrarán las variables escogidas y una pequeña descripción de ellas.
 \texttt{Pertenece\ cuando\ es\ dado\ de\ alta\ el\ paciente}
 \end{quote}
 
-    La Hipertensión Arterial y la Diabetes son factores de riesgo altos en
-cualquier enfermedad no trasmisible, por esto son de las primeras
-seleccionadas, que además contaremos con las escalas de Glasgow y NIHSS
-que son escalas internacionales para la evaluación del ACV Isquémico.
+    La Hipertensión Arterial y la Diabetes son factores de riesgo altos en cualquier enfermedad no trasmisible, por esto son de las primeras seleccionadas, que además contaremos con las escalas de Glasgow y NIHSS que son escalas internacionales para la evaluación del ACV Isquémico.
 
     \hypertarget{preparaciuxf3n-de-los-datos-de-entrada}{%
 \section{Preparación de los datos de
 entrada}\label{preparaciuxf3n-de-los-datos-de-entrada}}
 
-El segundo paso descrito en la metodología corresponde a la parte más
-larga de la elaboración para la preparación de la utilización de un
-modelo de Machine Learning, debido a que este paso todos los datos serán
-usados como entrada del algoritmo. Aquí se llevará a cabo una
-identificación y corrección de los puntos de datos faltantes/anomalías
-según sea necesario.
+El segundo paso descrito en la metodología  es un paso crítico y uno de los más extensos en el desarrollo de proyectos de ML. Aqui se llevará a cabo una limpieza de datos, como la eliminicaión de registros o rescatar datos nulos; selección de caracteristicas que sean relevantes para la investigación; transformación de caracteristicas, que serán para escalar datos para que se adecuen al modelo de ML.
 
     \hypertarget{eliminaciuxf3n-las-filas-de-los-pacientes-que-se-expulsaron-de-la-bdd}{%
 \subsection{Eliminación valores nulos}\label{eliminaciuxf3n-las-filas-de-los-pacientes-que-se-expulsaron-de-la-bdd}}
 
-Como se indicó anteriormente, se dispone de 75 tuplas con 85 columnas,
-con un total de 6375 elementos, que se planean disminuir por indicación
-del médico que facilitó la base de datos. La indicación fue que había
-pacientes que fueron retirados del programa y estaban marcados con un
-``out'' en la variable de ``diag Elopez''.
+Como se indicó anteriormente, se dispone de 75 tuplas con 85 columnas, con un total de 6375 elementos, que se planean disminuir por indicación del médico que facilitó la base de datos. La indicación fue que había pacientes que fueron retirados del programa y estaban marcados con un ``out'' en la variable de ``diag Elopez''.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{4}{\boxspacing}
@@ -239,10 +207,7 @@ Existen 3910 elementos
 \subsection{Variables significativas para la
 investigación}\label{variables-significativas-para-la-investigaciuxf3n}}
 
-Ahora asignamos las variables significativas, para esto se extrae la
-información del marco de trabajo, identificando las variables
-categóricas para un arreglo completamente nuevo y asi empezar a trabajar
-sobre el nuevo archivo.
+Ahora asignamos las variables significativas, para esto se extrae la información del marco de trabajo, identificando las variables categóricas para un arreglo completamente nuevo y así empezar a trabajar sobre el nuevo archivo.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{6}{\boxspacing}
@@ -278,9 +243,7 @@ si & si & 69 & 217,21 & 202 & 232 & 1,03 & 10,4 & 0 &  &  \\ \hline
 \label{tab:dataset}
 \end{table}
         
-    Mostramos la cantidad de pacientes y variables(columnas) que posee la
-BDD después de la selección de variables significativas para la
-investigación:
+    Mostramos la cantidad de pacientes y variables/columnas que posee la BDD después de la selección de variables significativas para la investigación:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{7}{\boxspacing}
@@ -299,8 +262,7 @@ Existen 506 elementos
 \subsection{Descripción general de los
 datos}\label{descripciuxf3n-general-de-los-datos}}
 
-En la descripción de los datos, se muestran parámetros, perdida de datos
-(Missing Data), forma y su descripción estadística.
+En la descripción de los datos, se muestran parámetros, pérdida de datos (Missing Data), forma y su descripción estadística.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{8}{\boxspacing}
@@ -396,20 +358,12 @@ NIHSS alta ACV         32.0    5.687500  {\ldots}    4.0000   42.00
 [9 rows x 8 columns]
     \end{Verbatim}
 
-    La descripción de los datos nos ayuda a evaluar los casos particulares
-de las variables que serán tratadas en los siguientes titulos.
+    La descripción de los datos nos ayuda a evaluar los casos particulares de las variables que serán tratadas en los siguientes títulos.
 
     \hypertarget{missing-data}{%
-\subsection{Missing data o perdida de información}\label{missing-data}}
+\subsection{Missing data}\label{missing-data}}
 
-Los datos que faltan ocurren cuando no se almacena ningún valor en la
-variable de observación. Aunque el Missing data es una ocurrencia muy
-común, estos pueden tener una presión significativa en los resultados de
-la aplicación del instrumento. Para corregir este problema, existen
-variadas técnicas estadísticas, siendo una de ellas la mediana y el
-redondeo como lo muestra \cite{Bar2017} en algunas variables que
-utilizaremos para llenar las celdas faltantes. Tomaremos la información
-que mostramos anteriormente.
+Los datos que faltan ocurren cuando no se almacena ningún valor en la variable de observación. Aunque el Missing data es una ocurrencia muy común, estos pueden tener una presión significativa en los resultados de la aplicación del instrumento. Para corregir este problema, existen variadas técnicas estadísticas, siendo una de ellas la mediana y el redondeo como lo muestra \cite{Bar2017} en algunas variables que utilizaremos para llenar las celdas faltantes. Tomaremos la información que mostramos anteriormente.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{9}{\boxspacing}
@@ -442,8 +396,7 @@ que mostramos anteriormente.
 \label{tab:missing data}
 \end{table}
         
-    Como se demuestra en la tabla \ref{tab:missing data}, casi todas las variables hay missing data, así que el algoritmo para
-trabajar será el siguiente:
+    Como se demuestra en la tabla \ref{tab:missing data}, casi todas las variables hay missing data, así que el algoritmo para trabajar será el siguiente:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{10}{\boxspacing}
@@ -501,43 +454,15 @@ trabajar será el siguiente:
     Como se ve en la tabla \ref{tab:missing data finalizado}, ya no existe missing data.
 
     \hypertarget{preprocesamiento-de-los-datos-y-clasificaciuxf3n}{%
-\subsection{Preprocesamiento de los datos y
-clasificación}\label{preprocesamiento-de-los-datos-y-clasificaciuxf3n}}
+\subsection{Preprocesamiento de los datos y clasificación}\label{preprocesamiento-de-los-datos-y-clasificaciuxf3n}}
 
-La preparación de los datos para el modelo de aprendizaje automático es
-lo que nos llevará a decidir qué modelo podremos ocupar, ya que trabajar
-para modelos de clasificación no es lo mismo que para los de regresión.
-Los pasos exactos para la preparación de los datos dependerán del modelo
-utilizado y de los datos recopilados, pero requerirá cierta cantidad de
-manipulación de datos para cualquier aplicación de aprendizaje
-automático.
+La preparación de los datos para el modelo de ML es lo que nos llevará a decidir qué modelo podremos utilizar, ya que trabajar con modelos de clasificación no es lo mismo que con los de regresión. Los pasos exactos para la preparación de los datos dependerán del modelo utilizado y de los datos recopilados.Cabe destacar que se requerirá cierta cantidad de manipulación de datos para cualquier aplicación de ML.
 
     \hypertarget{anuxe1lisis-de-variable-objetivo}{%
-\subsubsection{Análisis de variable
-Objetivo}\label{anuxe1lisis-de-variable-objetivo}}
+\subsubsection{Análisis de variable Objetivo}\label{anuxe1lisis-de-variable-objetivo}}
 
-La NIHSS es la escala más utilizada para evaluar la función neurológica
-básica durante la fase aguda del ictus isquémico, tanto en su inicio
-como en su evolución. Consta de 11 ítem que te permiten explorar
-rápidamente \cite{cien2001}.
-Según las puntuaciones obtenidas, podemos dividir la gravedad
-neurológica en varios grupos: 0: sin déficit; 1: déficit mínimo; 2-5:
-leve; 6-15: moderado; 15-20: déficit importante; \textgreater20:
-Gravemente. La puntuación global inicial tiene buen
-valor de pronóstico \cite{Adams1993}, dado que NIHSS $\leq$ 6
-corresponde a una excelente recuperación neurológica y que cada aumento
-de punto empeora la evolución. Para los pacientes con fibrilación
-auricular, se ha considerado que un NIHSS $\geq$ 16 tiene un pronóstico muy
-precario \cite{Meyer2009}. Otra ventaja de esta escala es que puede
-predecir la respuesta a la terapia trombolítica y estimar la gravedad en
-función de la puntuación.
-
-La variable más importante que nos interesa tener en la predicción, es
-la escala NIHSS de alta, esto para poder tener un aseguramiento de la
-predicción del estado de salud del total de pacientes a través del
-camino de salida del hospital, es decir, conoceremos el estado del
-paciente al salir de alta y según las demás variables existe una
-tendencia para la predicción en la escala del alta.
+	En el apartado del Marco Teórico \ref{sec:NIHSS} se hablo de la escala NIHSS y sus niveles de daño neurológico, considerándola como esta es la variable más importante en la predicción. Dentro de nuestro dataset existe la escala NIHSS al iniciar el ACV, la escala NIHSS al alta del paciente y la escala NIHSS en el control de los 6 meses después del ACV.
+\par La escala en la predicción que se utilizará es la escala NIHSS de alta, para poder tener un aseguramiento de la predicción del estado de salud del pacientes a través del camino de salida del hospital, esto quiere decir, conoceremos el estado del paciente al salir de alta y según las demás variables, existe una tendencia para la predicción en la escala NIHSS del alta.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{12}{\boxspacing}
@@ -569,16 +494,12 @@ tendencia para la predicción en la escala del alta.
 \label{tab:nihss alta}
 \end{table}
         
-    En esta escala los valores menores son los que nos ayudan a tener un
-mejor pronóstico para los pacientes, es por eso que se decide crear una
-variable con los resultados que da el test NIHSS.
+    En esta escala los valores menores suponen un mejor pronóstico para los pacientes, es por eso que se decide crear una variable con los resultados que da el test NIHSS.
 
     \hypertarget{crear-columna-para-nihss_alta_cat}{%
-\paragraph{Crear columna para
-NIHSS\_alta\_cat}\label{crear-columna-para-nihss_alta_cat}}
+\paragraph{Crear columna para NIHSS\_alta\_cat}\label{crear-columna-para-nihss_alta_cat}}
 
-Esta columna nos servirá para clasificación de los estados de la
-variable NIHSS.
+	Esta columna nos servirá para la clasificación de los estados de la variable NIHSS.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{13}{\boxspacing}
@@ -648,14 +569,10 @@ variable NIHSS.
 \label{tab:actualizcin nihss_alta_cat}
 \end{table}
         
-    \hypertarget{crear-columna-para-nihss_alta_estable_o_grave}{%
-\paragraph{Crear columna para
-NIHSS\_alta\_ESTABLE\_O\_GRAVE}\label{crear-columna-para-nihss_alta_estable_o_grave}}
+    \hypertarget{crear-columna-para nihss_alta_estable_o_grave}{%
+\paragraph{Crear columna para NIHSS\_alta\_ESTABLE\_O\_GRAVE}\label{crear-columna-para-nihss_alta_estable_o_grave}}
 
-Esta columna nos ayudará a observar si el paciente esta estable o
-crítico. Nos interesa saber el pronóstico del paciente, por eso es
-necesaria una variable binaria sobre el alta del paciente. Luego de
-obtener la nueva columna, se comparará con las otras variables.
+	Esta columna nos ayudará a observar si el paciente está estable o crítico. Nos interesa saber el pronóstico del paciente, por eso es necesaria una variable binaria sobre el alta del paciente. Luego de obtener la nueva columna, se comparará con las otras variables.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{15}{\boxspacing}
@@ -677,13 +594,11 @@ obtener la nueva columna, se comparará con las otras variables.
 1 & 20 \\ \hline
 \end{tabular}%
 }
-\caption{Clasificación binaria para la variable NIHSS\_alta\_:cat}
+\caption{Clasificación binaria para la variable NIHSS\_alta\_cat}
 \label{tab:Nihss estable o grave}
 \end{table}
         
-    Se demuestra en la tabla \ref{tab:Nihss estable o grave tabla} que si en la escala de Nihss el paciente se encuentra con una
-valor leve o sin déficit obtendrá el valor 0 binario, al contrario todos
-los demás obtendrán el valor 1.
+    Existen 26 paciente estables y 20 pacientes no en buen estado medido según la tabla \ref{tab:Nihss estable o grave}. 
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{16}{\boxspacing}
@@ -698,29 +613,30 @@ los demás obtendrán el valor 1.
 \resizebox{1.0\textwidth}{!}{
 	\begin{tabular}{|c|l|l|l|l|l|l|l|}
 \hline
-\multicolumn{1}{|l|}{\textbf{}} & \multicolumn{1}{c|}{\textbf{HTA}} & \multicolumn{1}{c|}{\textbf{DIABETES}} & \multicolumn{1}{c|}{\textbf{EDAD}} & ... & \multicolumn{1}{c|}{\textbf{NIHSS alta   ACV}} & \multicolumn{1}{c|}{\textbf{NIHSS\_alta\_cat}} & \multicolumn{1}{c|}{\textbf{NIHSS\_alta\_ESTABLE\_O\_GRAVE}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{}} & \multicolumn{1}{c|}{\textbf{HTA}} & \multicolumn{1}{c|}{\textbf{DIABETES}} & \multicolumn{1}{c|}{\textbf{EDAD}} & ... & \multicolumn{1}{c|}{\textbf{NIHSS alta   ACV}} & \multicolumn{1}{c|}{\textbf{NIHSS\_alta\_cat}} & \multicolumn{1}{c|}{\textbf{NIHSS\_alta\_ESTABLE\_O\_GRAVE}} \\ \hline \hline
 \textbf{0} & DESCONOCIDO & DESCONOCIDO & 53 & ... & 42 & Grave & 1 \\ \hline \hline
 \textbf{1} & si & si & 54 & ... & 0 & Sin Déficit & 0 \\ \hline
 \textbf{2} & si & si & 78 & ... & 2 & Leve (Trombolisando) & 0 \\ \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}.\\ .\\ .\end{tabular}} & \begin{tabular}[c]{@{}l@{}}.\\ .\\ .\end{tabular} & \begin{tabular}[c]{@{}l@{}}.\\ .\\ .\end{tabular} & \begin{tabular}[c]{@{}l@{}}.\\ .\\ .\end{tabular} & ... & \begin{tabular}[c]{@{}l@{}}.\\ .\\ .\end{tabular} & \begin{tabular}[c]{@{}l@{}}.\\ .\\ .\end{tabular} & \begin{tabular}[c]{@{}l@{}}.\\ .\\ .\end{tabular} \\ \hline
 \textbf{72} & si & si & 79 & ... & 2 & Leve (Trombolisando) & 0 \\ \hline
 \textbf{73} & si & si & 54 & ... & 1 & Déficit Mínimo & 0 \\ \hline
-\textbf{74} & si & si & 69 & ... & 1 & Déficit Mínimo & 1 \\ \hline
+\textbf{74} & si & si & 69 & ... & 1 & Déficit Mínimo & 0 \\ \hline
 \end{tabular}%
 }
-\caption{Actualización dataset con clsificación binaria}
+\caption{Actualización dataset con clasificación binaria}
 \label{tab:Nihss estable o grave tabla}
 \end{table}
+
+	Se demuestra en la tabla \ref{tab:Nihss estable o grave tabla} que si en la escala de Nihss el paciente se encuentra con una valor leve o sin déficit obtendrá el valor 0 binario, al contrario todos los demás obtendrán el valor 1.
         
     \hypertarget{anuxe1lisis-de-las-las-escalas-de-inicio-del-acv}{%
-\subsubsection{Análisis de las las escalas de INICIO del
+\subsubsection{Análisis de las escalas de INICIO del
 ACV}\label{anuxe1lisis-de-las-las-escalas-de-inicio-del-acv}}
 
     \hypertarget{nihss-inico-acv}{%
-\paragraph{NIHSS INICO ACV}\label{nihss-inico-acv}}
+\paragraph{NIHSS INICIO ACV}\label{nihss-inico-acv}}
 
-Esta variable la transformaremos a la categoría que nos ofrece la
-literatura con sus 6 estados.
+Esta variable la transformaremos a la categoría que nos ofrece la literatura con sus 6 estados.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{17}{\boxspacing}
@@ -793,28 +709,15 @@ Name: NIHSS\_INICIO\_cat, dtype: int64
 	\end{figure}
 \end{center}
     
-    La realización de la escala fue acorde a los mismos parámetros que la
-variable objetivo, solo que en este caso dejamos de lado la variable
+    La realización de la escala fue acorde a los mismos parámetros de la variable objetivo, solo que en este caso dejamos de lado la variable
 binaria.
 
-Se observa en el gráfico \ref{fig:aNISSNISS} que el valor mínimo que llego un paciente fue de 0
-encontrándose Sin Déficit neurológico y el máximo con 21 puntos con un
-Déficit importante, además se aprecia gracias al grafico que los
-pronósticos moderado y leve son los que más abundan en la muestra, al
-mismo se demuestra que esos pacientes al salir de alta en su mayoría
-tienen un buen pronóstico según la escala de NIHSS.
+Se observa de la figura \ref{fig:aNISSNISS} que el valor mínimo con el que llegó un paciente fue de 0, encontrándose Sin Déficit neurológico y el máximo fue de 21 puntos con un Déficit importante. Además se aprecia en la figura \ref{fig:aNISSNISS}, que los pronósticos moderado y leve son los que más abundan en la muestra; asi mismo se observa que esos pacientes al salir de alta, en su mayoría, tienen un buen pronóstico según la escala de NIHSS.
 
     \hypertarget{glasgow-al-inico-acv}{%
 \paragraph{GLASGOW AL INICO ACV}\label{glasgow-al-inico-acv}}
 
-La escala de Glasgow se divide en tres grupos puntuables de manera
-independiente que evalúan la apertura de ojos sobre 4 puntos, la
-respuesta verbal sobre 5 y la motora sobre 6, siendo la puntuación
-máxima y normal 15 y la mínima 3 (The status of the Glasgow Coma Scale).
-Se considera traumatismo craneoencefálico leve al que presenta un
-Glasgow de 15 a 13 puntos, moderado de 12 a 9 y grave menor o igual a 8
-(Cién escalas de interés en Neurología. Prous Science,2001). A
-continuación procesaremos la escala.
+La escala de Glasgow se divide en tres grupos puntuables de manera independiente que evalúan la apertura de ojos sobre 4 puntos, la respuesta verbal sobre 5 y la motora sobre 6, siendo la puntuación máxima y normal 15 y la mínima 3 (The status of the Glasgow Coma Scale). Se considera traumatismo craneoencefálico leve al que presenta un Glasgow de 15 a 13 puntos, moderado de 12 a 9 y grave menor o igual a 8 (Cien escalas de interés en Neurología. Prous Science,2001 \ref{cien2001}). A continuación, procesaremos la escala.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{20}{\boxspacing}
@@ -867,18 +770,12 @@ Categories (3, object): ['Grave' < 'Moderado' < 'Leve']
 	\end{figure}
 \end{center}
     
-    Se observa en el gráfico \ref{fig:aNISSG} que el valor mínimo que llego un paciente fue de 0
-encontrándose grave neurológico y el máximo con 15 puntos encontrándose
-leve, además se aprecia gracias al grafico que el pronostico Leve es el
-que abunda en esta variable, al mismo se demuestra que esos pacientes al
-salir de alta en su mayoría tienen un buen pronóstico según la escala de
-NIHSS.
+    Se observa en la Figura \ref{fig:aNISSG} que el valor mínimo con el que llegó un paciente fue de 0, encontrándose grave neurológico, y el máximo con 15 puntos, encontrándose leve. Además se aprecia, en el grafico, que el pronóstico leve es el que abunda en esta variable, al mismo se demuestra que esos pacientes al salir de alta, en su mayoría, tienen un buen pronóstico según la escala de NIHSS.
 
     \hypertarget{anuxe1lisis-de-otas-variables-de-muxe9dicas}{%
-\subsubsection{Análisis de otas variables de
-médicas}\label{anuxe1lisis-de-otas-variables-de-muxe9dicas}}
+\subsubsection{Análisis de otras variables médicas}\label{anuxe1lisis-de-otas-variables-de-muxe9dicas}}
 
-Las siguientes clasificaciones están sacadas de Medline Plus \cite{med}, que es una páginas que poseen escalas para la clasificación de las variables que veremos.
+Las siguientes clasificaciones se obtuvieron de Medline Plus \cite{med}, que es un servicio informaticvo de salud en líniea, el cual posee escalas para la clasificación de las variables que veremos.
 
     \hypertarget{conteo-de-gluxf3bulos-blancos}{%
 \paragraph{Conteo de Glóbulos
@@ -939,15 +836,12 @@ Categories (3, object): ['Bajo' < 'Normal' < 'Alto']
 	\end{figure}
 \end{center}
     
-    Se observa en el gráfico \ref{fig:aNISScg} que la mayoría de los pacientes están en la
-categoría normal y ellos tienen en más del 50 \% un buen pronóstico.
+    Se observa en la Figura \ref{fig:aNISScg} que la mayoría de los pacientes están en la categoría normal y ellos tienen, en más del 50 \%, un buen pronóstico.
 
     \hypertarget{inr}{%
 \paragraph{INR}\label{inr}}
 
-El INR sirve para ver la coagulación de la sangre, siendo que esta
-examen ayuda a saber qué tipo de medicamentos podemos administrar o
-averiguar la causa de los coágulos sanguíneos anormales.
+El INR es el parámetro que indica cuán adecuado es el proceso de coágulación de un individuo. Este examen ayuda a determinar qué tipo de medicamentos se pueden administrar o averiguar la causa de los coágulos sanguíneos anormales.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{26}{\boxspacing}
@@ -999,17 +893,12 @@ Categories (3, object): ['Riesgo' < 'Normal' < 'No Anticoagula']
 	\end{figure}
 \end{center}
     
-    Se observa en el gráfico \ref{fig:aNISSi} que la mayoría de los pacientes están en la
-categoría de Riesgo, aunque un grupo importante tiene un pronostico
-favorable. En la categoría Normal no se sabe si el paciente obtuvo un
-buen o mal pronóstico.
+    Se observa en la Figura \ref{fig:aNISSi} que la mayoría de los pacientes están en la categoría de Riesgo, aunque un grupo importante tiene un pronóstico favorable. En la categoría Normal no se sabe si el paciente obtuvo un buen o mal pronóstico.
 
     \hypertarget{triglicuxe9ridos}{%
 \paragraph{Triglicéridos}\label{triglicuxe9ridos}}
 
-Los triglicéridos son el principal tipo de grasa que se transporta en la
-sangre para obtener energía o se almacena en las células del cuerpo
-según las necesidades energéticas entre comidas.
+Los triglicéridos son el principal tipo de grasa que se transporta en la sangre para obtener energía o se almacena en las células del cuerpo según las necesidades energéticas entre comidas.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{29}{\boxspacing}
@@ -1057,22 +946,16 @@ Categories (4, object): ['Normal' < 'Límite alto' < 'Alto' < 'Muy Alto']
 	\centering
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{AplicacionComunMetodo/output_64_0.png}
 	\caption{Análisis de NIHSS en los Trigliceridos}
-	\label{fig:aNISSh}
+	\label{fig:aNISStri}
 	\end{figure}
 \end{center}
     
-    El gráfico \ref{fig:aNISSh} muestra que la mayoría de los pacientes están en la categoría
-Normal, aunque un grupo importante tiene un pronóstico favorable. En la
-categoría Alta un gran porcentaje tiene un mal pronóstico con el alta
-del ACV.
+    En la figura \ref{fig:aNISStri} muestra que la mayoría de los pacientes están en la categoría Normal, aunque un grupo importante tiene un pronóstico favorable. En la categoría Alto un gran porcentaje tiene un mal pronóstico con el alta del ACV.
 
     \hypertarget{colesterol-total}{%
 \paragraph{Colesterol Total}\label{colesterol-total}}
 
-El colesterol es una grasa natural que se encuentra en todas las células
-del cuerpo y es necesaria para que el cuerpo funcione correctamente. El
-colesterol se produce en el hígado en su mayoría, aunque también se
-puede obtener de algunos alimentos.
+El colesterol es una grasa natural que se encuentra en todas las células del cuerpo y es necesaria para que el cuerpo funcione correctamente. El colesterol se produce en el hígado en su mayoría, aunque también se puede obtener de algunos alimentos.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{32}{\boxspacing}
@@ -1124,17 +1007,12 @@ Categories (4, object): ['Normal' < 'Límite alto' < 'Alto' < 'Muy Alto']
 	\end{figure}
 \end{center}
     
-    El gráfico \ref{fig:aNISSc} muestra que la mayoría de los pacientes están en la categoría
-Limite alto, siendo que un grupo importante tiene un pronóstico
-favorable.
+    La figura \ref{fig:aNISSc} muestra que la mayoría de los pacientes están en la categoría Limite alto, donde un grupo importante tiene un pronóstico favorable.
 
     \hypertarget{glucosa}{%
 \paragraph{Glucosa}\label{glucosa}}
 
-El azúcar en la sangre, es llamada ``glucosa'', siendo el azúcar
-principal en la sangre. Proviene de los alimentos que consume y es la
-principal fuente de energía. Su sangre transporta glucosa a cada célula
-de su cuerpo para obtener energía.
+La glucosa es la principal azúcar en la sangre. Proviene de los alimentos que se consume y es la principal fuente de energía. La sangre transporta glucosa a cada célula del cuerpo para obtener energía.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{35}{\boxspacing}
@@ -1186,17 +1064,12 @@ Categories (4, object): ['Bajo' < 'Normal' < 'Alto' < 'Muy Alto']
 	\end{figure}
 \end{center}
     
-    El gráfico \ref{fig:aNISScg} muestra que la mayoría de los pacientes están en la categoría
-Normal, aunque un grupo importante tiene un pronóstico poco favorable en
-el alta. En la categoría Alta un gran porcentaje importante tiene un
-buen pronóstico con el alta del ACV.
+    En la figura \ref{fig:aNISSg} muestra que la mayoría de los pacientes están en la categoría Normal, aunque un grupo importante tiene un pronóstico poco favorable en el alta. En la categoría Alta un gran porcentaje tiene un buen pronóstico con el alta del ACV.
 
     \hypertarget{edad}{%
 \paragraph{Edad}\label{edad}}
 
-La edad juega un rol importante para determinar el estado que se puede
-encontrar el cuerpo para responder a una enfermedad o tratamiento, es
-por eso que una de las variables que si o si debe estar presente.
+La edad juega un rol importante para determinar el estado en que se puede encontrar el cuerpo para responder a una enfermedad o tratamiento, es por eso que esta es una de las variables que debe estar presente.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{38}{\boxspacing}
@@ -1245,24 +1118,16 @@ Categories (5, object): ['Niño' < 'Adolecente' < 'Adulto Joven' < 'Adulto' <
 	\centering
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{AplicacionComunMetodo/output_79_0.png}
 	\caption{Análisis de NIHSS en EDAD}
-	\label{fig:aNISSh}
+	\label{fig:aNISSEdad}
 	\end{figure}
 \end{center}
     
-    El gráfico \ref{fig:aNISSH} muestra que la mayoría de los pacientes que son ancianos
-pasaron por el ACV, aunque un grupo mayoritario de esa categoría tiene
-un pronóstico favorable en el alta. En la categoría Adulto es la segunda
-más grande y si respuesta hacia el alta es muy pareja en los dos
-pronósticos.
+    En la figura \ref{fig:aNISSEdad} muestra que la mayoría de los pacientes que son ancianos pasaron por un ACV, aunque un grupo mayoritario de esa categoría tiene un pronóstico favorable en el alta. La categoría Adulto es la segunda más grande y su cantidad de resultado pareja en los dos pronósticos.
 
     \hypertarget{diabetes}{%
 \paragraph{Diabetes}\label{diabetes}}
 
-La diabetes es una enfermedad crónica que afecta la forma en que el
-cuerpo convierte los alimentos en energía. El cuerpo descompone la mayor
-parte de los alimentos que ingiere en azúcar (también llamada glucosa) y
-la libera en la sangre. Puede existir exceso de azúcar en la sangre o
-ausencia de azúcar en la sangre.
+La diabetes es una enfermedad crónica que afecta la forma en que el cuerpo convierte los alimentos en energía. El cuerpo descompone la mayor parte de los alimentos que ingiere en azúcar (también llamada glucosa) y la libera en la sangre. Puede existir exceso de azúcar o ausencia de azúcar en la sangre.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{41}{\boxspacing}
@@ -1294,24 +1159,19 @@ DIABETES Variable: 3
     	\begin{figure}[H]
 	\centering
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{AplicacionComunMetodo/output_83_0.png}
-	\caption{Análisis de NIHSS en la en la Diabetes}
+	\caption{Análisis de NIHSS en pacientes en la Diabetes}
 	\label{fig:aNISSd}
 	\end{figure}
 \end{center}
     
-    En este caso en la figura \ref{fig:aNISSd}, solo se tomo si el paciente poseía diabetes y los datos
-desconocidos se tomó como otra variable.
+    Tal como se observa en la Figura \ref{fig:aNISSd}, respecto de esta variable solo se indica si el paciente padecía o no diabetes. Los pacientes que no poseian dato, en este caso, se trabajo con una variable llamada "DESCONOCIDO".
+    \par La Figura \ref{fig:aNISSd} muestra que la mayoria de los pacientes que padecen diabetes tienen un buen pronóstico al alta. El estado DESCONOCIDO posee un pronóstico poco favorable al alta.
 
-El grafico muestra que la mayoría de los pacientes que tienen diabetes
-tienen un buen pronóstico al alta. El estado Desconocido posee un
-pronóstico poco favorable al alta.
 
     \hypertarget{hipertensiuxf3n}{%
 \paragraph{Hipertensión}\label{hipertensiuxf3n}}
 
-La hipertensión es sinónimo de enfermedades cardiacas, siendo que es la
-fuerza de la presión arterial que trasporta los nutrientes con la
-sangre.
+La presión arterial es la fuerza con que la sangre se desplaza y golpea las paredes de las arterias. La hipertensión corresponde a la presión alta y es sinónimo de enfermedades cardiacas.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{43}{\boxspacing}
@@ -1344,20 +1204,18 @@ HTA Variable: 3
 	\centering
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{AplicacionComunMetodo/output_87_0.png}
 	\caption{Análisis de NIHSS en la Hipertensión}
-	\label{fig:aNISSh}
+	\label{fig:aNISSHiper}
 	\end{figure}
 \end{center}
     
-    El gráfico \ref{fig:aNISSh} muestra que los pacientes que poseen hipertensión son muchos
-y su pronóstico es similar a que estado pueden tomar.
+    En la Figura \ref{fig:aNISSHiper} muestra que un número importante de pacientes poseen hipertensión y sufrierón un ACV, en su mayoria, los pacientes tienen un pronóstico favorable.
 
     \hypertarget{binary-encoding-codificaciuxf3n-binaria}{%
-\subsection{Binary Encoding (Codificación
-binaria)}\label{binary-encoding-codificaciuxf3n-binaria}}
+\subsection{Binary Encoding (Codificación binaria)}\label{binary-encoding-codificaciuxf3n-binaria}}
 
-Lo que hace este proceso es la transformación de variables de una
-columna a binario si es posible, esto solo aplica a las viables que
-tiene dos estados, si posee más estados no podrá aplicar \cite{Hancock2020}.
+	La Binary Encoding es un método de codificación de variables cateóricas.  Se utiliza a menudo en el ML porque muchos algoritmos funcionan mejor con variables numéricas y el Binary Encoding permite representar de manera efectiva las variables categóricas como números. 
+\par Su función es representar una variable categórica que posee dos estados con variables de 0 ó 1 (binarias)\cite{Hancock2020}.
+
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{45}{\boxspacing}
@@ -1415,12 +1273,10 @@ tiene dos estados, si posee más estados no podrá aplicar \cite{Hancock2020}.
 \end{table}
         
     \hypertarget{label-encoding-codificaciuxf3n-de-etiquetas}{%
-\subsection{Label Encoding (Codificación de
-etiquetas)}\label{label-encoding-codificaciuxf3n-de-etiquetas}}
+\subsection{Label Encoding (Codificación de etiquetas)}\label{label-encoding-codificaciuxf3n-de-etiquetas}}
 
-Estas son variables ordinales, la codificación consiste en la traducción
-de ese orden en una enumeración, donde cada categoría es asociada con un
-número natural respetando el orden implícito existente entre categorías \cite{Hancock2020}.
+El Label Encoding es un método de codificación de variables categóricas utilizado en ML, porque muchos algoritmos funcionan mejor con variables numéricas y el Label Encoding permite representar de manera efectiva las variables categóricas como números. Aunque este método puede dar luagr a una interpretación errónea en las relaciones entre categorías, en esos casos es mejor utilizar otras técnicas de clasificación como lo son la Binary Encoding.
+\par Su función asigna a cada categoría única de una variable un número entero único y se reemplaza la variable categórica por los números correspondientes \cite{Hancock2020}.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{47}{\boxspacing}
@@ -1465,23 +1321,12 @@ número natural respetando el orden implícito existente entre categorías \cite
 \label{tab:Label encoding}
 \end{table}
         
-    \textbf{En las variables de Diabetes e Hipertensión el estado 2
-representa ``si'' y el ``no'' es represnetado con un estado 1.}
+	En las variables Diabetes e Hipertensión el estado 2 representa ``si'' y el ``no'' es representado con un estado 1.
 
     \hypertarget{one-hot-encoding}{%
-\subsection{One-Hot Encoding:}\label{one-hot-encoding}}
+\subsection{One-Hot Encoding}\label{one-hot-encoding}}
 
-Para las variables categóricas donde no existe tal relación ordinal, la
-codificación de enteros no es suficiente. De hecho, usar esta
-codificación y permitir que el modelo asuma un ordenamiento natural
-entre categorías puede dar como resultado un desempeño deficiente o
-resultados inesperados \cite{Bank1993}. En este caso, se
-puede aplicar una codificación one-hot a la representación de enteros.
-Aquí es donde se elimina la variable codificada entera y se agrega una
-nueva variable binaria para cada valor entero único. En el ejemplo de la
-variable '' color ``, hay 3 categorías y, por lo tanto, se necesitan 3
-variables binarias. Se coloca un valor''1'' en la variable binaria para
-el color y valores ``0'' para los otros colores.
+Para las variables categóricas donde no existe tal relación ordinal, la codificación de enteros no es suficiente. De hecho, usar esta codificación y permitir que el modelo asuma un ordenamiento natural entre categorías puede dar como resultado un desempeño deficiente o resultados inesperados \cite{Bank1993}. En este caso, se puede aplicar una codificación one-hot a la representación de enteros. Aquí es donde se elimina la variable codificada entera y se agrega una nueva variable binaria para cada valor entero único. En el ejemplo de la variable '' color ``, hay 3 categorías y, por lo tanto, se necesitan 3 variables binarias. Se coloca un valor''1'' en la variable binaria para el color y valores ``0'' para los otros colores.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{49}{\boxspacing}
@@ -1501,7 +1346,7 @@ el color y valores ``0'' para los otros colores.
 \begin{table}[H]
 \centering
 \setlength{\tabcolsep}{5pt}
-\resizebox{1.0\textwidth}{!}{
+\resizebox{1.02\textwidth}{!}{
 	\begin{tabular}{|c|c|l|l|l|l|l|l|}
 \hline
 \multicolumn{1}{|l|}{\textbf{}} & \textbf{...} & \multicolumn{1}{c|}{\textbf{NIHSS\_INICIO\_cat\_Déficit   Importante}} & \multicolumn{1}{c|}{\textbf{NIHSS\_INICIO\_cat\_Déficit   Mínimo}} & \multicolumn{1}{c|}{\textbf{NIHSS\_INICIO\_cat\_Grave}} & \multicolumn{1}{c|}{\textbf{NIHSS\_INICIO\_cat\_Leve   (Trombolisando)}} & \multicolumn{1}{c|}{\textbf{NIHSS\_INICIO\_cat\_Moderado   (Buen Pronostico)}} & \multicolumn{1}{c|}{\textbf{NIHSS\_INICIO\_cat\_Sin   Déficit}} \\ \hline \hline
@@ -1519,14 +1364,9 @@ el color y valores ``0'' para los otros colores.
 \end{table}
         
     \hypertarget{anuxe1lisis-de-datos-de-entrada}{%
-\section{Análisis de datos de
-entrada}\label{anuxe1lisis-de-datos-de-entrada}}
+\section{Análisis de datos de entrada}\label{anuxe1lisis-de-datos-de-entrada}}
 
-Ahora pasaremos al punto 3 de la metodología, veremos gráficos y datos
-que interactuaran entre si. Nuestro interés por esta sección radica por
-la observación de alguna tendencia de los datos. Crearemos dos dataset
-auxiliar, para observar los datos que estaban y los que incorporamos en
-la seccion anterior.
+Esta sección corresponde al tercer paso de la metodología, el cual consiste en la construcción de gráficos que permitan, a partir de su visualización, descubrir alguna tendencia en los datos u otro antecedente relevante. Crearemos un dos datasets auxiliar, es para observar los datos originales y los que incorporamos en la sección anterior.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{50}{\boxspacing}
@@ -1617,17 +1457,12 @@ la seccion anterior.
 \label{tab:Variables agregadas}
 \end{table}
         
-    Se observa que ambos dataset tienen un numero de cantidades de variables
-similares y que la última posee datos más cercanos a lo binario.
+    Se observa que ambos datasets tienen un número de variables similares y que la última posee datos más cercanos a lo binario.
 
     \hypertarget{anuxe1lisis-de-densidad-y-estimaciuxf3n-por-variable}{%
-\subsection{Análisis de densidad y estimación por
-variable}\label{anuxe1lisis-de-densidad-y-estimaciuxf3n-por-variable}}
+\subsection{Análisis de densidad y estimación por variable}\label{anuxe1lisis-de-densidad-y-estimaciuxf3n-por-variable}}
 
-La densidad de los datos nos da la probabilidad de que una variable tomé
-un valor determinado por su densidad. La importancia de la densidad
-radica en comprender en que valores los datos están siendo más
-remanentes.
+La densidad de datos es la comprensión y visualización de una variable tome un valor determinado por su distribución.  La distribución de una variable se refiere a la forma en que los valores de la variable se distribuyen a lo largo del rango de valores posibles.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{53}{\boxspacing}
@@ -1647,11 +1482,7 @@ remanentes.
 	\end{figure}
 \end{center}
     
-    Como los datos son variados numéricamente, en el grafico no se alcanza a
-reflejar cada variable. Si fuera necesario deberíamos analizar en este
-caso cada variable por separado, siendo que este no es el caso para la
-mayoría de las variables. A continuación, se mostrará el grafico de
-densidad de los exámenes.
+    Como los datos son variados numéricamente, en la Figura \ref{fig:advoe} no se alcanza a reflejar cada variable. Si fuera necesario deberíamos analizar en este caso cada variable por separado, siendo que este no es el caso para la mayoría de las variables. A continuación, se mostrará el grafico de densidad de los exámenes.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{54}{\boxspacing}
@@ -1682,9 +1513,8 @@ densidad de los exámenes.
 	\end{figure}
 \end{center}
     
-    Las tendencias de los gráficos están orientadas al grupo etario entre
-los 60 y 80 años estos que poseen una densidad en los datos alta, es
-decir que los exámenes se encuentran semejantes a los datos.
+    Las tendencias de los gráficos en la Figura \ref{fig:advo} están orientadas al grupo etario entre
+los 60 y 80 años que poseen una densidad en los datos alta, es decir, los exámenes se encuentran semejantes a los datos.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{55}{\boxspacing}
@@ -1704,23 +1534,13 @@ decir que los exámenes se encuentran semejantes a los datos.
 	\end{figure}
 \end{center}
     
-    Se puede interpretar el grafico de la siguiente forma: En la variable
-``NIHSS\_INICIO\_cat\_Sin Déficit'' la densidad de los datos es alta en
-el valor 0, entendiendo que esta poseía solo dos estados, 0 para
-confirmar que no está presente el valor y 1 para confirmar que está
-presente. Si lo traducimos a palabras normales, los pacientes sin
-déficit al principio medidos por la escala son muy pocos, la mayoría
-presenta déficit. El análisis individual no es necesario en este caso,
-ya que los valores están bien detallados a la vista, aunque estos son
-los valores importantes que dejo el procesado de datos de entrada.
+    En la Figura \ref{fig:adva} se puede interpretar de la siguiente forma: 
+\par En la variable ``NIHSS\_INICIO\_cat\_Sin Déficit'' la densidad de los datos es alta en el valor 0, entendiendo que esta poseía solo dos estados, 0 para confirmar que no está presente el valor y 1 para confirmar que está presente. En otras palabras, inicialmente los pacientes sin déficit son muy pocos, según la escala NIHSS la mayoría presenta déficit. El análisis individual no es necesario en este caso, ya que los valores están bien detallados a la vista.
 
     \hypertarget{anuxe1lisis-por-conteo-de-variables-categuxf3ricas}{%
-\subsection{Análisis por conteo de variables
-categóricas}\label{anuxe1lisis-por-conteo-de-variables-categuxf3ricas}}
+\subsection{Análisis por conteo de variables categóricas}\label{anuxe1lisis-por-conteo-de-variables-categuxf3ricas}}
 
-Para demostrar la cantidad de datos presente en algunas de las variables
-originales que son más agrupables se representará con escalas de
-contador por categoría.
+Para mostrar la cantidad de datos presentes en algunas de las variables originales que son más agrupables, en cada gáfico se representará con escalas de contador por categoría las variables.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{56}{\boxspacing}
@@ -1748,23 +1568,13 @@ contador por categoría.
 	\end{figure}
 \end{center}
     
-    Las tasas de conteo de los pacientes indican una tendencia en algunos
-valores específicos, donde a simple vista en las escalas se encuentran
-en buen estado, pero la gran mayoría contiene enfermedades categóricas
-no transmisibles.
-
-
+    Las tasas de conteo de los pacientes en la Figura \ref{fig:acvc}, indican una tendencia en algunos valores específicos, donde a simple vista las escalas de NIHSS y GLASGOW los pacientes, en su mayoria, se encuetran con un estado con poco daño neurológico. Además los pacientes en su mayoria, tienen Diabetes o Hipertensión.
 
     \hypertarget{mapa-de-calor-de-variables}{%
 \subsection{Mapa de calor de
 variables}\label{mapa-de-calor-de-variables}}
 
-Los mapas de calor pueden ayudar a visualizar el impacto de muchas
-categorías en los valores y son una excelente opción para ver detalles
-cuando se trabaja con conjuntos de datos más grandes. Los mapas de calor
-utilizan una variedad de colores fríos y cálidos para ayudarnos a
-comprender qué elementos de datos generan más interés (áreas calientes)
-y qué elementos se ignoran (áreas frías).
+	Los mapas de calor pueden ayudar a visualizar el impacto de muchas categorías en los valores y son una excelente opción para ver detalles cuando se trabaja con conjuntos de datos más grandes. Los mapas de calor utilizan una variedad de colores fríos y cálidos para ayudarnos a comprender qué elementos de datos generan más interés (áreas calientes) y qué elementos se ignoran (áreas frías).
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{58}{\boxspacing}
@@ -1803,7 +1613,4 @@ y qué elementos se ignoran (áreas frías).
 	\end{figure}
 \end{center}
     
-    El primer dataset muestra un alto interés en casi todas las variables
-tendiendo al rojizo y algunos sectores fríos, en cambio el segundo
-dataset presenta variables más estables con estados más cercanos a la
-neutralidad.
+    El primer dataset en la Figura \ref{fig:mcvo} muestra un alto interés en casi todas las variables tendiendo al rojizo y algunos sectores fríos, en cambio, en la Figura \ref{fig:mcva} el segundo dataset presenta variables más estables con estados más cercanos a la neutralidad.
