@@ -7,7 +7,7 @@ comparar los algoritmos en la sección de resultados.
     \hypertarget{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}{%
 \subsection{Predicciones sobre los datos del testing y métricas de rendimiento}\label{NBT:predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}}
 
-	Ahora es momento de evaluar los datos ya entrenados con el testing. A continuación, se dará a concer las métricas que se evaluarón en el Estudio Empírico del capítulo 4  de la sub sección Predicciones sobre los datos de prueba y métricas de rendimiento \ref{NB:predicciones-sobre-los-datos-de-prueba-y-muxe9tricas-de-rendimiento}.
+	Ahora es momento de evaluar los datos ya entrenados con el testing. A continuación, se dará a conocer las métricas que se evaluaron en el Estudio Empírico del capítulo 4  de la sub sección Predicciones sobre los datos de prueba y métricas de rendimiento \ref{NB:predicciones-sobre-los-datos-de-prueba-y-muxe9tricas-de-rendimiento}.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{59}{\boxspacing}
@@ -59,8 +59,8 @@ weighted avg       0.77      0.58      0.50        12
 \end{center}
     
 	En la matriz de confusión \ref{fig:mctnb}, los valores de la diagonal principal (0,0) = 6 y (1,1) = 1 corresponden con los valores estimados de forma correcta por el modelo, tanto los TN, como los TP. La otra diagonal, representa los casos en los que el modelo \textit{"se ha equivocado"}, según la matriz de confusión \ref{fig:mcenb} son (0,1) = 0 FP y (1,0) = 5 FN.
-\par Las afirmaciones anteriores sugieren que la las predicciones son altas, pero también existen errores en la predicción.
-\par Respecto al ACV, el modelo identifico a 6 pacientes que posee un buen pronóstico (estable) y solo 1 paciente que posee un pronóstico no tan favorable, según la variable objetivo detallada en \ref{crear-columna-para-nihss_alta_estable_o_grave}. Así mismo, el modelo identifica a 5 pacientes que poseen buen pronóstico, pero en realidad poseen mal pronóstico.\\
+\par Las afirmaciones anteriores sugieren que las predicciones son altas, pero también existen errores en la predicción.
+\par Respecto al ACV, el modelo identificó a 6 pacientes que poseen un buen pronóstico (estable) y solo 1 paciente que posee un pronóstico no tan favorable, según la variable objetivo detallada en \ref{crear-columna-para-nihss_alta_estable_o_grave}. Así mismo, el modelo identifica a 5 pacientes que poseen buen pronóstico, pero en realidad poseen mal pronóstico.\\
 
     \hypertarget{nauxefve-bayes---uso-del-algoritmo}{%
 \section{Naïve Bayes - Uso del algoritmo}\label{nauxefve-bayes---uso-del-algoritmo}}
@@ -70,7 +70,7 @@ weighted avg       0.77      0.58      0.50        12
     \hypertarget{importancia-de-los-predictores}{%
 \subsection{Importancia de los predictores}\label{NBT:importancia-de-los-predictores}}
 
-	Por experiencia previa y contemplando los gráficos producidos en el paso 3, sabemos que algunas características no son útiles para nuestro problema de predicción. Reducir la cantidad de funciones será la mejor alternativa, lo que acotará el tiempo de ejecución, con suerte sin comprometer significativamente el rendimiento, asi podemos examinar la importancia de las funciones de nuestro modelo. La importancia de cada predictor en el modelo se calcula como la reducción total (normalizada) en el criterio de división. Si un predictor no ha sido seleccionado en ninguna división, no se ha incluido en el modelo y, por lo tanto, su importancia es 0.\\
+	Por experiencia previa y contemplando los gráficos producidos en el paso 3, sabemos que algunas características no son útiles para nuestro problema de predicción. Reducir la cantidad de funciones será la mejor alternativa, lo que acotará el tiempo de ejecución, con suerte sin comprometer significativamente el rendimiento, así podemos examinar la importancia de las funciones de nuestro modelo. La importancia de cada predictor en el modelo se calcula como la reducción total (normalizada) en el criterio de división. Si un predictor no ha sido seleccionado en ninguna división, no se ha incluido en el modelo y, por lo tanto, su importancia es 0.\\
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{61}{\boxspacing}
@@ -151,7 +151,7 @@ weighted avg       0.77      0.58      0.50        12
 \label{tab:clasificacion bayes}
 \end{table}
         
-    Se observa en la tabla \ref{tab:clasificacion bayes} un valor binario 0 o 1, donde se muestra el valor que toma la variable desarrollada en el modelo. El valor 1 demuestra que la tupla no pertence al estado 0 de la variable predictora, y por el contrario, el estado 0 demuestra que predice el estado en esa tupla. Sin embargo, estos resultaos de clasificación final, son los que el modelo clasifica, si hubiera un error, esté se analiza en la Matriz de Confusión \ref{fig:mctnb}.
-\par Recordemos que Matriz de Confusión \ref{fig:mctnb} poseía solo 1 paciente que pertencía a que tenia un pronóstico menos favorable (estado 1), en este caso, en la tupla o paciente número 9 de la tabla \ref{clatab:clasificacion bayes}, la clasificación predicha por el modelo apunta que es 1, es decir, no alcanza a ser parte de ese estado; por el contrario, las demás tuplas las reconoce que pertencen a ese estado (tienen buen pronóstico en terminos de ACV).\\
+    Se observa en la tabla \ref{tab:clasificacion bayes} un valor binario 0 o 1, donde se muestra el valor que toma la variable desarrollada en el modelo. El valor 1 demuestra que la tupla no pertenece al estado 0 de la variable predictora, y por el contrario, el estado 0 demuestra que predice el estado en esa tupla. Sin embargo, estos resultados de clasificación final, son los que el modelo clasifica, si hubiera un error, este se analiza en la Matriz de Confusión \ref{fig:mctnb}.
+\par Recordemos que Matriz de Confusión \ref{fig:mctnb} casilla (1,1), poseía solo 1 paciente que pertencía a que tenia un pronóstico menos favorable (estado 1), en este caso, en la tupla o paciente número 9 de la tabla \ref{clatab:clasificacion bayes}, la clasificación predicha por el modelo apunta que es 1, es decir, no alcanza a ser parte de ese estado; por el contrario, las demás tuplas las reconoce que pertencen a ese estado (tienen buen pronóstico en términos de ACV).\\
     
     

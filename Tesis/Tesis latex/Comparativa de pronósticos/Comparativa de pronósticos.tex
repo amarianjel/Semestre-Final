@@ -1,14 +1,13 @@
     \hypertarget{comparativa-de-pronuxf3sticos}{%
 \section{Comparativa de pronósticos}\label{comparativa-de-pronuxf3sticos}}
 
-	Para la investigación como se dijo en párrafos anteriores, es de vital importancia conocer si los pacientes post ACV presentarán un buen pronóstico después de la evaluación con la escala NIHSS de alta. Como nuestra variable predictora esta en un formato binario, es útil la interpretación para los resultados, es decir, podremos entender si los pacientes del hospital Herminda Martin existe un porcentaje predictivo que nos haga saber si el paciente tendrá un buen pronóstico o mal pronóstico con esa variable como su respaldo, asimismo la variable nos dirá el futuro del paciente con un estado 0 de buena predicción o 1 de mala predicción.
-	La exhaustividad, precisión y el F1 son los que serán evaluados para tomar la decisión cual algoritmo es más compatible con los datos
-procesados del tests.
+	Para la investigación, como se dijo en párrafos anteriores, es de vital importancia conocer si los pacientes post ACV presentarán un buen pronóstico después de la evaluación con la escala NIHSS de alta. Como nuestra variable predictora está en un formato binario, es útil la interpretación de los resultados, asi podremos entender si los pacientes del hospital Herminda Martin tienen un porcentaje predictivo con un buen pronóstico o mal pronóstico, de esta manera, la variable nos dirá el futuro del paciente con un estado 0 de buen pronóstco o 1 de mal pronóstico.
+	La exhaustividad, precisión y el F1 son los que serán evaluados para decidir cuál algoritmo es más compatible con los datos procesados del tests.
 
     \hypertarget{pronuxf3stico-favorable-post-acv}{%
 \subsection{Pronóstico favorable post ACV}\label{pronuxf3stico-favorable-post-acv}}
 
-	En la sub sección \ref{crear-columna-para-nihss_alta_estable_o_grave} pudimos visualizar como asociamos las clasificaciones de la escala NIHSS a la variable binaria actual. A continuación, analizaremos el estado 0 de la variable binaria, en donde los pacientes tienen un pronóstico favorable post ACV.
+	En la sub sección \ref{crear-columna-para-nihss_alta_estable_o_grave} pudimos visualizar cómo asociamos las clasificaciones de la escala NIHSS a la variable binaria actual. A continuación, analizaremos el estado 0 de la variable binaria, en donde los pacientes tienen un pronóstico favorable post ACV.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{7}{\boxspacing}
@@ -56,7 +55,7 @@ procesados del tests.
 	\end{figure}
 \end{center}
     
-    Como se demuestra en el Figura \ref{fig:smpf}, la suma de los valores de las métricas de predicción en porcentaje supera los 225, pero no alcanzan los 300 que es el máximo para todos los valores de las métricas. El peor algoritmo en la suma de todas sus métricas es la Naïve Bayes con 226 puntos, en cambio el mejor algoritmo con un total de 261 puntos es Logistic Regression.
+    Como se demuestra en el Figura \ref{fig:smpf}, la suma de los valores de las métricas de predicción en porcentaje supera los 225, pero no alcanza los 300 que es el máximo para todos los valores de las métricas. El peor algoritmo en la suma de todas sus métricas es Naïve Bayes con 226 puntos, en cambio, el mejor algoritmo con un total de 261 puntos es Logistic Regression.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{71}{\boxspacing}
@@ -122,7 +121,7 @@ procesados del tests.
 	\end{figure}
 \end{center}
     
-    Como se demuestra en la Figura \ref{fig:smpmf}, la suma de los valores del estado 1 de las métricas de predicción en porcentaje supera los 145, pero no alcanzan los 300 que es el máximo para todos los valores de las métricas. El peor algoritmo en la suma de todas sus métricas es la Naïve Bayes con 146 puntos, en cambio el mejor algoritmo con un total de 249 puntos es Decision Tree. En este caso los algoritmos en su mayoria fueron menos efectivos al momento de predecir en contraparte con el otro estado.
+    Como se demuestra en la Figura \ref{fig:smpmf}, la suma de los valores del estado 1 de las métricas de predicción en porcentaje supera los 145, pero no alcanzan los 300 que es el máximo para todos los valores de las métricas. El peor algoritmo en la suma de todas sus métricas es la Naïve Bayes con 146 puntos, en cambio el mejor algoritmo con un total de 249 puntos es Decision Tree. En este caso los algoritmos en su mayoría fueron menos efectivos al momento de predecir en contraparte con el otro estado.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{83}{\boxspacing}
@@ -152,13 +151,13 @@ procesados del tests.
 	\end{figure}
 \end{center}
     
-   La Figura \ref{fig:cmpmf} muestra los valores de Predicción, Exhaustividad y F1 en cada uno de los algoritmos. Se demuestra con el estado 1 que el algoritmo más preciso fue un triple y el menos preciso fue Decision Tree con un 83\%. En la Exhaustividad el peor algoritmo fue Naïve Bayes con un 17\% y el mejor fue Decision Tree con un 83\%. El F1 peor fue para Naïve Bayes con un 29\% y el mejor fue Decision Tree.
-    Como resultado final, en la comparación del pronóstico favorable del paciente, el mejor algoritmo para el estado 1 es Decision Tree.
+   La Figura \ref{fig:cmpmf} muestra los valores de Predicción, Exhaustividad y F1 en cada uno de los algoritmos. Se demuestra con el estado 1 que el algoritmo más preciso fue un triple empate con un 100\%, solo dejando al menos preciso Decision Tree con un 83\%. En la Exhaustividad el peor algoritmo fue Naïve Bayes con un 17\% y el mejor fue Decision Tree con un 83\%. El F1 peor fue para Naïve Bayes con un 29\% y el mejor fue Decision Tree.
+    Como resultado final, en la comparación del pronóstico menos favorable del paciente, el mejor algoritmo para el estado 1 es Decision Tree.
 
     \hypertarget{comparaciuxf3n-final}{%
 \section{Comparación Final}\label{comparaciuxf3n-final}}
 
-	En la comparación final se evalúa el porcentaje de predicción acumulada para la variable predictora en sus dos estados. Se hace incapie que el resultado muestra el reflejo de los datos obtenidos y que los resultados pueden cambiar dependiendo de la BDD.
+	En la comparación final se evalúa el porcentaje de predicción acumulada para la variable predictora en sus dos estados. Se hace hincapié que el resultado muestra el reflejo de los datos obtenidos y que los resultados pueden cambiar dependiendo de la BDD.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{82}{\boxspacing}
@@ -194,4 +193,4 @@ procesados del tests.
 \end{itemize}   
 
 	Decision Tree y Logistic Regression quedaron empatados en las métricas de precisión general, la diferencia se produjo en el estado de la variable dicotómica. En el estado de pronóstico favorable, Logistic Regression fue superior por poco, aunque Decision Tree fue más estable. Por el contrario, en el estado de pronóstico menos favorable fue Decision Tree y el algoritmo siguió manteniendo la estabilidad presentada en el estado anterior de la variable.
-\par \textbf{Decision Tree logró alcanzar estabilidad en sus métricas y lo hicieron el algoritmo más preciso para este sistema de clasificación.}
+\par Decision Tree logró alcanzar estabilidad en sus métricas y lo hicieron el algoritmo más preciso para este sistema de clasificación.

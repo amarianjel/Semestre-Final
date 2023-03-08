@@ -58,8 +58,8 @@ Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 \end{center}
 
 	En la matriz de confusión \ref{fig:mctlr}, los valores de la diagonal principal (0,0) = 6 y (1,1) = 4 corresponden con los valores estimados de forma correcta por el modelo, tanto los TN, como los TP. La otra diagonal, representa los casos en los que el modelo \textit{"se ha equivocado"}, según la matriz de confusión \ref{fig:mcenb} son (0,1) = 0 FP y (1,0) = 2 FN.
-\par Las afirmaciones anteriores sugieren que la las predicciones son altas, pero también existen algunos errores en la predicción.
-\par Respecto al ACV, el modelo identifico a 6 pacientes que posee un buen pronóstico (estable) y 4 paciente que posee un pronóstico no tan favorable, según la variable objetivo detallada en \ref{crear-columna-para-nihss_alta_estable_o_grave}. Así mismo, el modelo identifica a 2 pacientes que poseen buen pronóstico, pero en realidad poseen mal pronóstico.\\
+\par Las afirmaciones anteriores sugieren que las predicciones son altas, pero también existen algunos errores en la predicción.
+\par Respecto al ACV, el modelo identificó a 6 pacientes que poseen un buen pronóstico (estable) y 4 pacientes que poseen un pronóstico no tan favorable, según la variable objetivo detallada en \ref{crear-columna-para-nihss_alta_estable_o_grave}. Así mismo, el modelo identifica a 2 pacientes que poseen buen pronóstico, pero en realidad poseen mal pronóstico.\\
     
 
     \hypertarget{logistic-regression---uso-del-algoritmo}{%
@@ -152,5 +152,5 @@ Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 \label{tab:clasificacion lr}
 \end{table}
 
-	Se observa en la tabla \ref{tab:clasificacion lr}, tomaremos para interpretación como ejemplo la tupla número 4. Esta tupla no pertence al estado 0, por ende, en términos de ACV, el paciente número 4 no tiene un pronóstico favorable. 
+	Tomaremos para interpretación la tupla número 4 de la tabla \ref{tab:clasificacion lr}. Esta tupla no pertenece al estado 0, por ende, en términos de ACV, el paciente número 4 no tiene un pronóstico favorable. 
 \par Recordamos que la Matriz de Confusión \ref{fig:mctlr} poseía 4 pacientes que tenian un pronóstico menos favorable, ellos son los que se registran con el valor 1 en la columna 0 de la tabla.\\

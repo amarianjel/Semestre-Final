@@ -6,7 +6,7 @@
     \hypertarget{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}{%
 \subsection{Predicciones sobre los datos del testing y métricas de rendimiento}\label{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}}
 
-	Tal como, la sección \ref{NBT:predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento} se realizará la evaluación de métricas del Testing.
+	Tal como, en la sección \ref{NBT:predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento} se realizará la evaluación de métricas del Testing.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{60}{\boxspacing}
@@ -30,7 +30,7 @@ weighted avg       0.83      0.83      0.83        12
 
     \end{Verbatim}
 
-	Por cada estado (0 y 1) la precisión de los datos del testing en el modelo tiene un valor de 83\% en ambos estados en predicción. La exhaustividad informa la cantidad de datos capaz de identificar y, en este caso, es de un 83\% para ambos estados, finalmente, el F1 combina los valores de precisión y exhaustividad obteniéndose un 83\% en ambos estados. 
+	Por cada estado (0 y 1) la precisión de los datos del testing en el modelo tiene un valor de 83\% en ambos estados en predicción. La exhaustividad informa la cantidad de datos capaz de identificar y, en este caso, es de un 83\% para ambos estados. Finalmente, el F1 combina los valores de precisión y exhaustividad obteniéndose un 83\% en ambos estados. 
 \par Lo que se busca es la precisión del modelo, por consecuencia, el algoritmo de ML Decision Tree tiene una precisión del 83,33\% de predicción en los 12 pacientes de muestra del testing.\\
 
     \hypertarget{matriz-de-confusiuxf3n}{%
@@ -58,13 +58,13 @@ Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 \end{center}
     
    	En la matriz de confusión \ref{fig:mctdt}, los valores de la diagonal principal (0,0) = 5 y (1,1) = 5 corresponden con los valores estimados de forma correcta por el modelo, tanto los TN, como los TP. La otra diagonal, representa los casos en los que el modelo \textit{"se ha equivocado"}, según la matriz de confusión \ref{fig:mcenb} son (0,1) = 1 FP y (1,0) = 1 FN.
-\par Las afirmaciones anteriores sugieren que la las predicciones son altas, pero también existen algunos errores en la predicción.
-\par Respecto al ACV, el modelo identifico a 5 pacientes que posee un buen pronóstico (estable) y 5 paciente que posee un pronóstico no tan favorable, según la variable objetivo detallada en \ref{crear-columna-para-nihss_alta_estable_o_grave}. Así mismo, el modelo identifica a 1 paciente que poseen buen pronóstico, pero en realidad poseen mal pronóstico, y a su vez, el modelo identifica a 1 paciente que poseen mal pronóstico, pero en realidad poseen buen pronóstico.\\
+\par Las afirmaciones anteriores sugieren que las predicciones acertadas son altas, pero también existen algunos errores en la predicción.
+\par Respecto al ACV, el modelo identificó a 5 pacientes que poseen un buen pronóstico (estable) y 5 pacientes que poseen un pronóstico no tan favorable, según la variable objetivo detallada en \ref{crear-columna-para-nihss_alta_estable_o_grave}. Así mismo, el modelo identifica a 1 paciente que posee buen pronóstico, pero en realidad posee mal pronóstico, y a su vez, el modelo identifica a 1 paciente que posee mal pronóstico, pero en realidad posee buen pronóstico.\\
 
     \hypertarget{decision-tree---uso-del-algoritmo}{%
 \section{Decision Tree - Uso del algoritmo}\label{decision-tree---uso-del-algoritmo}}
 
-	Al igual que en la sección \ref{nauxefve-bayes---uso-del-algoritmo}, realizaremos comparaciones de predicción y probabilidad. Además se incorporará métricas especiales para árboles de su libreria en esta sección.
+	Al igual que en la sección \ref{nauxefve-bayes---uso-del-algoritmo}, realizaremos comparaciones de predicción y probabilidad. Además, se incorporará métricas especiales para árboles de su librería en esta sección.
 
     \hypertarget{importancia-de-los-predictores}{%
 \subsection{Importancia de los predictores}\label{importancia-de-los-predictores}}
@@ -150,8 +150,8 @@ Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 \label{tab:clasificacion dt}
 \end{table}
         
-	En la tabla \ref{tab:clasificacion dt}, se observa para interpretación como ejemplo la tupla número 4. Esta tupla no pertence al estado 0, por ende, en términos de ACV, el paciente número 4 no tiene un pronóstico favorable. 
-\par Recordamos que la Matriz de Confusión \ref{fig:mctdt} poseía 5 pacientes que tenian un pronóstico menos favorable, ellos son los que se registran con el valor 1 en la columna 0 de la tabla.
+	En la tabla \ref{tab:clasificacion dt}, se observa para interpretación como ejemplo la tupla número 4. Esta tupla no pertenece al estado 0, por ende, en términos de ACV, el paciente número 4 no tiene un pronóstico favorable. 
+\par Recordamos que la Matriz de Confusión \ref{fig:mctdt} poseía 5 pacientes que tenían un pronóstico menos favorable, ellos son los que se registran con el valor 1 en la columna 0 de la tabla.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{64}{\boxspacing}
@@ -294,4 +294,4 @@ Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 Número de columna para el 95 \% de importancia: 4
     \end{Verbatim}
 
-    En la Figura \ref{fig:ipadt} de importancia acumulada, la curva se dispara con la ``GLUCOSA\_cat'' , ratificandosé con el resultado del 95\% de importancia medido anteriormente.\\
+    En la Figura \ref{fig:ipadt} de importancia acumulada, la curva se dispara con la ``GLUCOSA\_cat'' , ratificándose con el resultado del 95\% de importancia medido anteriormente.\\

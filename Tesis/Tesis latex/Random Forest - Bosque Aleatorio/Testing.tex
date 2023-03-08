@@ -6,7 +6,7 @@
     \hypertarget{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}{%
 \subsection{Predicciones sobre los datos del testing y métricas de rendimiento}\label{predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}}
 
-	Tal como, la sección \ref{NBT:predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento} se realizará la evaluación de métricas del Testing.\\
+	Tal como la sección \ref{NBT:predicciones-sobre-los-datos-del-testing-y-muxe9tricas-de-rendimiento}, se realizará la evaluación de métricas del Testing.\\
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{60}{\boxspacing}
@@ -57,14 +57,14 @@ Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 	\end{figure}
 \end{center}
     
-   	En la matriz de confusión \ref{fig:mctrf}, los valores de la diagonal principal (0,0) = 6 y (1,1) = 2 corresponden con los valores estimados de forma correcta por el modelo, tanto los TN, como los TP. La otra diagonal, representa los casos en los que el modelo \textit{"se ha equivocado"}, según la matriz de confusión \ref{fig:mcenb} son (0,1) = 0 FP y (1,0) = 4 FN.
-\par Las afirmaciones anteriores sugieren que la las predicciones son altas, pero también existen algunos errores en la predicción.
-\par Respecto al ACV, el modelo identificó a 6 pacientes que posee un buen pronóstico (estable) y 2 paciente que posee un pronóstico no tan favorable, según la variable objetivo detallada en \ref{crear-columna-para-nihss_alta_estable_o_grave}. Así mismo, el modelo identifica a 4 pacientes que poseen buen pronóstico, pero en realidad poseen mal pronóstico.\\
+   	En la matriz de confusión \ref{fig:mctrf}, los valores de la diagonal principal (0,0) = 6 y (1,1) = 2 corresponden a los valores estimados de forma correcta por el modelo, tanto los TN, como los TP. La otra diagonal, representa los casos en los que el modelo \textit{"se ha equivocado"}, según la matriz de confusión \ref{fig:mcenb} son (0,1) = 0 FP y (1,0) = 4 FN.
+\par Las afirmaciones anteriores sugieren que las predicciones correctas son altas, pero también existen algunos errores en la predicción.
+\par Respecto al ACV, el modelo identificó a 6 pacientes que poseen un buen pronóstico (estable) y 2 pacientes que poseen un pronóstico no tan favorable, según la variable objetivo detallada en \ref{crear-columna-para-nihss_alta_estable_o_grave}. Así mismo, el modelo identifica a 4 pacientes que poseen buen pronóstico, pero en realidad poseen mal pronóstico.\\
 
     \hypertarget{random-forest---uso-del-algoritmo}{%
 \section{Random Forest - Uso del algoritmo}\label{random-forest---uso-del-algoritmo}}
 	
-	Al igual que en la sección \ref{nauxefve-bayes---uso-del-algoritmo}, realizaremos comparaciones de predicción y probabilidad. Además se incorporará métricas especiales para árboles de su libreria en esta sección.
+	Al igual que en la sección \ref{nauxefve-bayes---uso-del-algoritmo}, realizaremos comparaciones de predicción y probabilidad. Además, se incorporará métricas especiales para árboles de su librería en esta sección.
 
     \hypertarget{importancia-de-los-predictores}{%
 \subsection{Importancia de los predictores}\label{importancia-de-los-predictores}}
@@ -109,7 +109,7 @@ Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 \label{tab:clasificacin rf}
 \end{table}
         
-    De acuerdo a lo mostrado en la tabla \ref{tab:probabilistica rf}, se observa como ejemplo, que la tupla 0 posee un 53\% de probabilidad para el estado 0 y un 47\% de probabilidad para el estado 1, en otras palabras, el paciente posee un buen pronóstico con un 53\% de probabilidad para este algoritmo.
+    De acuerdo a lo mostrado en la tabla \ref{tab:clasificacin rf}, se observa que la tupla 0 posee un 53\% de probabilidad para el estado 0 y un 47\% de probabilidad para el estado 1, en otras palabras, el paciente posee un buen pronóstico con un 53\% de probabilidad para este algoritmo.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{63}{\boxspacing}
@@ -150,8 +150,8 @@ Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 \label{tab:probabilistica rf}
 \end{table}
         
-	En la tabla \ref{tab:clasificacion dt}, se observa para interpretación como ejemplo la tupla número 6. Esta tupla no pertence al estado 0, por ende, en términos de ACV, el paciente número 6 no tiene un pronóstico favorable. 
-\par Recordamos que la Matriz de Confusión \ref{fig:mctrf} poseía 2 pacientes que tenian un pronóstico menos favorable, ellos son los que se registran con el valor 1 en la columna 0 de la tabla.
+	En la tabla \ref{tab:probabilistica rf}, se observa la tupla número 6. Esta tupla no pertenece al estado 0, por ende, en términos de ACV, el paciente número 6 no tiene un pronóstico favorable. 
+\par Recordamos que la Matriz de Confusión \ref{fig:mctrf} poseía 2 pacientes que tenían un pronóstico menos favorable, ellos son los que se registran con el valor 1 en la columna 0 de la tabla.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{64}{\boxspacing}
@@ -295,5 +295,5 @@ Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 Número de columna para el 95 \% de importancia: 14
     \end{Verbatim}
 
-    En la Figura \ref{fig:iparf} de importancia acumulada, la curva se dispara con la ``CONTEO G.B.\_cat'' , ratificandosé con el resultado del 95\% de importancia medido anteriormente.\\
+    En la Figura \ref{fig:iparf} de importancia acumulada, la curva se dispara con la ``CONTEO G.B.\_cat'', lo que consiste con el resultado del 95\% de importancia medido anteriormente.\\
 

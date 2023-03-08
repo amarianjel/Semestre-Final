@@ -3,7 +3,7 @@
 \spacing{1.5}
 
 \lettrine[lines=4, slope=0.2em, findent=0.2em, nindent=0.6em]{E}
-l presente capítulo tiene como finalidad la explicación del método realizado, en conjunto con la documentación del hecha y la implementación del método utilizado.\\
+l presente capítulo tiene como finalidad la explicación del método realizado, donde se recopilaron datos de pacientes del Hospital Herminda Martín de Chillán y se realizó la implementación del método escogido.\\
 
 
 \doublespacing
@@ -17,22 +17,21 @@ La investigación cuenta con un enfoque cuantitativo por los resultados que se q
 \section{Metodología}
 \spacing{1.5}
 El diseño metodológico dará una guía con los pasos a seguir para la obtención de la finalidad del proyecto. Se tendrá en cuenta el tipo, el enfoque, la población y la muestra para iniciar el trabajo.\\
-\par En este trabajo se tomará como referencia la propuesta del libro \emph{Machine Leaning in Action} \cite{Harrington2012}, en particular el procedimiento de la sección \emph{“Steps in developing a machine learning application”} que establece de 6 pasos para la implementación de una aplicación que utiliza técnicas de ML. \\
+\par En este trabajo se tomará como referencia la propuesta del libro \emph{Machine Leaning in Action} \cite{Harrington2012}, en particular el procedimiento de la sección \emph{“Steps in developing a machine learning application”} que establece 6 pasos para la implementación de una aplicación que utiliza técnicas de ML. \\
 \begin{enumerate}
 	\item \textbf{Colección de los datos de entrada:} El primer paso para implementar una aplicación que trabaje utilizando técnicas de ML es coleccionar los datos que serán analizados. 
-	\item \textbf{Preparación de datos de entrada:} Una vez que se obtienen los datos, es necesario asegurarse que estén en el formato correcto para ser procesados por el algoritmo de ML seleccionado. El formato que usaremos en este estudio es la lista de Python. El beneficio de tener este formato estándar es que puede mezclar, combinar algoritmos y fuentes de datos, asimismo, es posible que se deba realizar un formato de un algoritmo en este paso.
-\par Por lo que este paso involucra, si fuera necesario, formatear los datos para adaptarlos a la necesidad de cada algoritmo.
+	\item \textbf{Preparación de datos de entrada:} Una vez que se obtienen los datos, es necesario asegurarse que estén en el formato correcto para ser procesados por el algoritmo de ML seleccionado. El formato que usaremos en este estudio es la lista de Python. El beneficio de tener este formato estándar es que puede mezclar, combinar algoritmos y fuentes de datos.
+\par Este paso involucra, si fuera necesario, formatear los datos para adaptarlos a la necesidad de cada algoritmo.
 
-	\item \textbf{Analizar los datos de entrada:} En este paso se debe observar los datos para reconocer algún patrón 	o si hay algo obvio, como algunos puntos de datos que son muy diferentes del resto del conjunto. Los pasos 1 y 2 deben realamente funcionar y no contener un montón de datos vacios. 
+	\item \textbf{Analizar los datos de entrada:} En este paso se debe observar los datos para reconocer algún patrón 	o si hay algo obvio, como algunos puntos de datos que son muy diferentes del resto del conjunto. Los pasos 1 y 2 deben realmente funcionar y no contener un montón de datos vacíos. 
 
-	\item \textbf{Entrenamiento del algoritmo:} Aquí es donde tiene lugar el aprendizaje automático. Este paso y el siguiente paso es donde se encuentran los algoritmos "básicos". Se alimenta el algoritmo con los datos limpios de los primeros dos pasos y se extrae el conocimiento y la información dependiendo de la funcionalidad del algoritmo. El conocimiento se almacenará en un formato simple de utilización para el algoritmo, en los siguientes pasos se volverá a utilizar este conocimiento.
+	\item \textbf{Entrenamiento del algoritmo:} Aquí es donde tiene lugar el aprendizaje automático. Este paso y el siguiente paso es donde se encuentran los algoritmos "básicos". Se alimenta el algoritmo con los datos limpios de los primeros dos pasos y se extrae el conocimiento y la información dependiendo de la funcionalidad del algoritmo. El conocimiento se almacenará en un formato simple de utilización para el algoritmo, en los siguientes pasos se utilizará este conocimiento.
 
-	\item \textbf{Testeo del algoritmo (Pruebe el algoritmo):} La información aprendida por el algoritmo es testeada, es decir, se mide el nivel de acierto que tiene el algoritmo. Utilizando los datos de entrenamiento podremos establecer el grado de eficacia de la implementación de la técnica seleccionada. Si los resultados no son los esperados es probable que haya que volver a etapas previas para intentar identificar el error, que tal vez se encuentre en los datos de entrada o en el algoritmo en sí. Una vez realizado los cambios hará falta volver a pasar por todos los pasos anteriores una vez más.
-\item \textbf{Uso del algoritmo:} Una vez se han consumado todos los pasos, no queda
-más que usar el algoritmo, esta etapa implica tener que volver a ejecutar los pasos 1, 2, 3 y 5.\\
+	\item \textbf{Testeo del algoritmo (Prueba del algoritmo):} La información aprendida por el algoritmo es testeada, es decir, se mide el nivel de acierto que tiene el algoritmo. Utilizando los datos de entrenamiento podremos establecer el grado de eficacia de la implementación de la técnica seleccionada. Si los resultados no son los esperados es probable que haya que volver a etapas previas para intentar identificar el error, que tal vez se encuentre en los datos de entrada o en el algoritmo en sí. Una vez realizados los cambios, hará falta volver a pasar por todos los pasos anteriores una vez más.
+\item \textbf{Uso del algoritmo:} Una vez se han consumado todos los pasos previos, no queda más que usar el algoritmo, esta etapa implica tener que volver a ejecutar los pasos 1, 2, 3 y 5.\\
 \end{enumerate}
 
-\par A continuación, en la Figura 4.1 se muestra un mapa de secuencia con los pasos a seguir para obtener los resultados esperados:
+\par A continuación, en la Figura \ref{fig:mapaDeTiempo} se muestra un mapa de secuencia con los pasos a seguir para obtener los resultados esperados:
 
 \begin{figure}[H]
 	\centering
@@ -54,7 +53,7 @@ Los lenguajes de programación más usados para el ML son Java, R o Python. Para
 	\item Interoperabilidad: Python se integra fácilmente con otros lenguajes y tecnologías, lo que significa que se pueden utilizar conjuntamente con otros sistemas y herramientas en proyectos de IA.\\
 \end{enumerate}
 
-\par Siguiendo con este razonamiento, para trabajar con el lenguaje Python se puedieron ocupar framework como Tensor Flow, Theano, Amazon Machine Learning, entre otros; al final se opto por la plataforma llamada Jupyter Notebook, popular en la Ciencia de Datos e IA debido a estas ventajas:
+\par Siguiendo con este razonamiento, para trabajar con el lenguaje Python se puedieron ocupar framework como Tensor Flow, Theano, Amazon Machine Learning, entre otros; al final se optó por la plataforma llamada Jupyter Notebook, popular en la Ciencia de Datos e IA debido a estas ventajas:
 
 \begin{enumerate}
 	\item Interfaz interactiva: Jupyter permite a los usuarios ejecutar código en un entorno interactivo y ver los resultados en tiempo real, lo que facilita la exploración y experimentación con datos y modelos de IA.
