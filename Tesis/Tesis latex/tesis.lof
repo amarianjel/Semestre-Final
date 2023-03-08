@@ -40,8 +40,8 @@
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Matriz de confusión de testing Random Forest\relax }}{127}{figure.caption.87}%
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Importancia de los predictores en Random Forest\relax }}{132}{figure.caption.91}%
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Importancia de los predictores acumulada en Random Forest\relax }}{134}{figure.caption.92}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Sumatoria de métricas en pronóstico favorable favorables\relax }}{137}{figure.caption.93}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Comparativa de métrica en pronóstico favorable favorables\relax }}{138}{figure.caption.94}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Sumatoria de métricas en pronóstico favorable\relax }}{137}{figure.caption.93}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Comparativa de métrica en pronóstico favorable\relax }}{138}{figure.caption.94}%
 \contentsline {figure}{\numberline {5.11}{\ignorespaces Sumatoria de métricas en pronóstico menos favorable\relax }}{140}{figure.caption.95}%
 \contentsline {figure}{\numberline {5.12}{\ignorespaces Comparativa de métricas en pronóstico menos favorable\relax }}{141}{figure.caption.96}%
 \contentsline {figure}{\numberline {5.13}{\ignorespaces Predicción Acumulada\relax }}{143}{figure.caption.97}%

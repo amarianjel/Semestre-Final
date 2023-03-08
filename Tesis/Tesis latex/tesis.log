@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.3)  8 FEB 2023 06:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.3)  6 MAR 2023 00:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5218,7 +5218,7 @@ Package rerunfilecheck Info: File `tesis.out' has not changed.
 ### bottom level 
 Here is how much of TeX's memory you used:
  34418 strings out of 476406
- 663399 string characters out of 2789568
+ 668853 string characters out of 2789568
  1966787 words of memory out of 3000000
  53496 multiletter control sequences out of 15000+600000
  557053 words of font info for 126 fonts, out of 8000000 for 9000
@@ -5246,7 +5246,7 @@ KTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/abrah/AppData/Local/Programs
 /MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/abrah/AppData/Local/Prog
 rams/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/abrah/AppData/Local/P
 rograms/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on tesis.pdf (170 pages, 2717489 bytes).
+Output written on tesis.pdf (170 pages, 2717481 bytes).
 PDF statistics:
  2043 PDF objects out of 2073 (max. 8388607)
  500 named destinations out of 1000 (max. 500000)
