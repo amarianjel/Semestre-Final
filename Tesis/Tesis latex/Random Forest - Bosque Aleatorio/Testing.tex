@@ -11,13 +11,13 @@
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{60}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Tests \PYZhy{} Presición :}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{metrics}\PY{o}{.}\PY{n}{accuracy\PYZus{}score}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{prediccionTests}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Tests \PYZhy{} Precisión :}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{metrics}\PY{o}{.}\PY{n}{accuracy\PYZus{}score}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{prediccionTests}\PY{p}{)}\PY{p}{)}
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Tests \PYZhy{} Reporte de clasificación:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{metrics}\PY{o}{.}\PY{n}{classification\PYZus{}report}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{prediccionTests}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-Tests - Presición : 0.6666666666666666
+Tests - Precisión : 0.6666666666666666
 Tests - Reporte de clasificación:
                precision    recall  f1-score   support
 
@@ -295,5 +295,5 @@ Evaluaremos la matriz de confusión que se elaboró con los datos del testing.
 Número de columna para el 95 \% de importancia: 14
     \end{Verbatim}
 
-    En la Figura \ref{fig:iparf} de importancia acumulada, la curva se dispara con la ``CONTEO G.B.\_cat'', lo que consiste con el resultado del 95\% de importancia medido anteriormente.\\
+    En la Figura \ref{fig:iparf} de importancia acumulada, la curva se dispara con la ``CONTEO G.B.\_cat'', lo que da con el resultado del 95\% de importancia medido anteriormente.\\
 
